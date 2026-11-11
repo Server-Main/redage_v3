@@ -1,4 +1,4 @@
-global.entity = null;
+﻿global.entity = null;
 global.nearestObject = null;
 global.boosted = false;
 
@@ -491,12 +491,10 @@ gm.events.add("render", () => {
 
 	//
 
-	/*
 	if (global.circleOpen) {
 		global.UpdateCircle (global.entity);
 		return;
 	}
-	*/
 
 	if (global.entity) {
 		const type = global.entity.type;

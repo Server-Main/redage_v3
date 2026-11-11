@@ -5,6 +5,7 @@
     import { format } from 'api/formatter'
     import './css/main.sass';
     import './fonts/style.css';
+    import './css/new.css';
     import authInfo from './authInfo';
     const authColors =[
         "#000",
@@ -98,103 +99,61 @@
 
 <svelte:window on:keyup={HandleKeyDown} />
 <div id="autoshop">
-    <div class="box-KeyInfo relative">
-        <div class="KeyInfo"><span class="autoshop-mouse" /></div>
-        {translateText('business', 'ЛКМ - осмотреть')}
+
+    <div class="colors-menu">
+        <a>Выберите цвет</a>
+        <div class="colors-menu__item white"></div>
+        <div class="colors-menu__item purple"></div>
+        <div class="colors-menu__item purp"></div>
+        <div class="colors-menu__item red"></div>
+        <div class="colors-menu__item yellow"></div>
+        <div class="colors-menu__item green"></div>
+      </div>
+      <div class="selectnameauto1">
+			<a>Гос. цена</a>
+			$ 451.250$
+		</div>
+    <div class="selectnameauto228">
+        Дилерский цвет можно подобрать приммо в автосалон
     </div>
+    {#if (select !== -1 && list [select])}
+        <div on:mouseenter={() => executeClient ("client.camera.toggled", false)} on:mouseleave={() => executeClient ("client.camera.toggled", true)}>
+            <div class="selectnameauto">
+                <a style="color: #fff;">МОДЕЛЬ</a>
+                {list [select].modelName}
+            </div>
+        </div>
+    {/if}
 
     <div class="box-content">
-        <div class="box-auto-list" on:mouseenter={() => executeClient ("client.camera.toggled", false)} on:mouseleave={() => executeClient ("client.camera.toggled", true)}>
-            <span class="autoshop-racing logo" />
-            <div class="title">{translateText('business', 'Автосалон')}</div>
-            <div class="box-sort">
-                <button class="btn-sort" class:active={sordId === "price"}>
-                    <span class="autoshop-money" on:click={() => sort ("price")} />
-                </button>
-                <button class="btn-sort" class:active={sordId === "speed"}>
-                    <span class="autoshop-speed" on:click={() => sort ("speed")} />
-                </button>
-                <button class="btn-sort" class:active={sordId === "seat"}>
-                    <span class="autoshop-seat" on:click={() => sort ("seat")} />
-                </button>
-                <button class="btn-sort" class:active={sordId === "boost"}>
-                    <span class="autoshop-boost" on:click={() => sort ("boost")} />
-                </button>
-            </div>
-            <div class="box-list">
-            {#each list as value, index}
-                <div class="box-item" class:active={select === index} on:click={() => setItem (index)}>
-                    {@html value.modelName}
-                    <span>{format("money", value.price)}{isDonateAutoroom === true ? 'RB' : '$'}</span>
-                </div>
-            {/each}
+        <div on:mouseenter={() => executeClient ("client.camera.toggled", false)} on:mouseleave={() => executeClient ("client.camera.toggled", true)}>
+            <div class="list228">
+                {#each list as value, index}
+                    <div class="block228" class:active={select === index} on:click={() => setItem (index)}>
+                        <a>{@html value.modelName}</a>
+                        <b>{format("money", value.price)}{isDonateAutoroom === true ? 'RB' : '$'}</b>
+                    </div>
+                {/each}
             </div>
         </div>
-        {#if (select !== -1 && list [select])}
-        <div class="box-auto-info" on:mouseenter={() => executeClient ("client.camera.toggled", false)} on:mouseleave={() => executeClient ("client.camera.toggled", true)}>
-            <div class="box-title">
-                <div class="title">{list [select].modelName}</div>
-                <span class="autoshop-racing logo" />
-            </div>
-            {#if list [select].desc}
-            <div class="desc">
-                <span>{list [select].modelName} - </span>{list [select].desc}
-            </div>
-            {/if}
-            <div class="info">{translateText('business', 'Характеристики')}:</div>
-            <div class="box-info">
-                <div class="box-item">
-                    <div class="box-icon">
-                        <span class="autoshop-money" />
-                        {translateText('business', 'Гос.стоимость')}:
-                    </div>
-                    {format("money", list [select].gosPrice)}
-                </div>
-                <div class="box-item">
-                    <div class="box-icon">
-                        <span class="autoshop-speed" />
-                        {translateText('business', 'Макс.скорость')}:
-                    </div>
-                    {list [select].speed}
-                </div>
-                <div class="box-item">
-                    <div class="box-icon">
-                        <span class="autoshop-boost" />
-                        {translateText('business', 'Разгон')}:
-                    </div>
-                    {list [select].boost}
-                </div>
-                <div class="box-item">
-                    <div class="box-icon">
-                        <span class="autoshop-seat" />
-                        {translateText('business', 'Кол-во мест')}:
-                    </div>
-                    {list [select].seat}
-                </div>
-                <div class="box-item">
-                    <div class="box-icon">
-                        <span class="autoshop-invslots" />
-                        {translateText('business', 'Багажных мест')}:
-                    </div>
-                    {list [select].invslots}
-                </div>
-            </div>
-            <div class="info">{translateText('business', 'Цвет')}:</div>
-            <div class="box-colors">
-            {#each authColors as value, index}
-                <i key={index} class={`color ${colorId !== index || "active"}`} on:click={() => setColor (index)} style="background: {value}" />
-            {/each}
-            </div>
-            <button class="btn-test-drive" on:click={() => startTestDrive (1)}>{translateText('business', 'Тест-драйв')} (100$)</button>
-            <button class="btn-test-drive" on:click={() => startTestDrive (2)}>{translateText('business', 'Тест-драйв FT')} (300$)</button>
-        </div>
-        {/if}
     </div>
+    <div class="testdrive" on:click={() => startTestDrive (2)}>{translateText('business', 'Тест-драйв FT')} (300$)</div>
+
+    {#if (select !== -1 && list [select])}
+    <div class="buy228" on:click={() => executeClient ('buyAuto', 1)}>{translateText('business', 'Купить за')} {isDonateAutoroom === true ? `${format("money", list [select].price)}RB` : `$${format("money", list [select].price)}`}</div>
+    <div class="falily123" on:click={() => executeClient ('buyAuto', 2)}>{translateText('business', 'Купить для семьи за')} {isDonateAutoroom === true ? `${format("money", list [select].price)}RB` : `$${format("money", list [select].gosPrice)}`}</div>
+    {/if}
+
+    <div class="namesalon">АВТОСАЛОН</div>
+    <div class="namesalon2">ПРЕМИАЛЬНЫЙ</div>
+    <div class="namesalon3">Добро пожаловать в автосалон, примсотрите себе новенькое авто.</div>
+    
     <div class="box-KeyInfo relative" on:mouseenter={() => executeClient ("client.camera.toggled", false)} on:mouseleave={() => executeClient ("client.camera.toggled", true)}>
-        {#if (select !== -1 && list [select])}
-            <button class="btn-footer" on:click={() => executeClient ('buyAuto', 1)}>{translateText('business', 'Купить за')} {isDonateAutoroom === true ? `${format("money", list [select].price)}RB` : `$${format("money", list [select].price)}`}</button>
-            <button class="btn-footer" on:click={() => executeClient ('buyAuto', 2)}>{translateText('business', 'Купить для семьи за')} {isDonateAutoroom === true ? `${format("money", list [select].price)}RB` : `$${format("money", list [select].gosPrice)}`}</button>
-        {/if}
-        <button class="btn-footer" on:click={() => executeClient ('closeAuto')}>{translateText('business', 'Выйти')}</button>
+
+
+
+        <div on:click={() => executeClient ('closeAuto')} class="masks__exit228">
+			{translateText('business', 'Выйти')}
+		</div>
     </div>
 </div>

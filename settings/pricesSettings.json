@@ -62,13 +62,14 @@
     175000,
     10000,
     25000,
-    50000
+    50000,
+    999999999
   ],
   "DalnoboyMoney": [
-    3500,
-    1000
+    1000000,
+    1500000
   ],
-  "CreateOrgPrice": 1500000,
+  "CreateOrgPrice": 15000000,
   "FirstOrgPrice": 1000000,
   "SecondOrgPrice": 50000,
   "CustomsPrice": 750000,
@@ -89,7 +90,7 @@
   "SMGAmmoPrice": 4,
   "RiflesAmmoPrice": 6,
   "SnniperAmmoPrice": 15,
-  "PosobieNew": 500,
-  "PosobieOld": 800,
+  "PosobieNew": 50000,
+  "PosobieOld": 80000,
   "MaxOgrableine": 3000
 }

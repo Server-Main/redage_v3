@@ -88,7 +88,7 @@ namespace NeptuneEvo.Houses
         public static readonly nLog Log = new nLog("Houses.HouseFurniture");
         public static Dictionary<int, Dictionary<int, HouseFurniture>> HouseFurnitures = new Dictionary<int, Dictionary<int, HouseFurniture>>();
         public static string QuestName = "npc_furniture";
-        public static Vector3 FurnitureBuyPos = new Vector3(-591.12317, -285.2158, 35.45478);
+        public static Vector3 FurnitureBuyPos = new Vector3(2747.858, 3472.558, 55.665962);
         public static void Init()
         {
             try
@@ -125,7 +125,7 @@ namespace NeptuneEvo.Houses
                 Log.Write($"Loaded {HouseFurnitures.Count} players furnitures.", nLog.Type.Success);
                 
                 Main.CreateBlip(new Main.BlipData(566, "Мебельный магазин",FurnitureBuyPos, 30, true));
-                PedSystem.Repository.CreateQuest("s_m_y_airworker", FurnitureBuyPos, -64.57715f, questName: QuestName, title: "~y~NPC~w~ Иван\nПродавец мебели", colShapeEnums: ColShapeEnums.FurnitureBuy);
+                PedSystem.Repository.CreateQuest("s_m_y_airworker", FurnitureBuyPos, -108.483406f, questName: QuestName, title: "~y~NPC~w~ Иван\nПродавец мебели", colShapeEnums: ColShapeEnums.FurnitureBuy);
             }
             catch (Exception e)
             {

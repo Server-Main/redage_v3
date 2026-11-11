@@ -22,7 +22,7 @@ namespace NeptuneEvo.Players.Restart
                 Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, "Вы ввели запрещенное слово", 3000);
                 return;
             }
-            
+             
             //var characterData = player.GetCharacterData();
 
             //if (characterData != null && characterData.AdminLVL > 0)

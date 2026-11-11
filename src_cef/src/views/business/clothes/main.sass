@@ -123,6 +123,7 @@
             display: flex
             align-items: center
             justify-content: space-between
+            gap: 1.5vh
             width: 100%
         .newbarbershop__category
             @include fluid("height", 80)
@@ -132,15 +133,15 @@
             align-items: center
             justify-content: center
             box-sizing: border-box
-            background: rgba(255, 255, 255, 0.1)
+            background: rgba(29, 27, 28, 0.68)
             @include fluid("font-size",40)
-            color: rgba(255,255,255,0.2)
+            color: rgba(255,255,255,0.4)
 
             &.active
                 transform: skew(-2deg, -2deg)
                 color: white
-                background: rgba(255, 255, 255, 0.2)
-                border: 2px solid rgba(255,255,255,0.1)
+                background: rgba(29, 27, 28, 0.7)
+                border: 1px solid #FFFFFF
 
                 .newbarbershop__category_icon
                     transform: skew(2deg, 2deg)

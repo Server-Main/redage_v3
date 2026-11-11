@@ -20,7 +20,7 @@
         </div>
         <div class="newphone__weather_gradus">
             {#if currentWeather.temp}
-                -{currentWeather.temp}&#176;C
+                {currentWeather.temp}&#176;C
             {:else}
                 5&#176;C
             {/if}

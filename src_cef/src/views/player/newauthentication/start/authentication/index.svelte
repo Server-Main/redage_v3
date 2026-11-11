@@ -2,9 +2,10 @@
     import { translateText } from 'lang'
     import { accountIsSession } from 'store/account'
     import { executeClient } from 'api/rage'
-    import InputCustom from 'components/input/index.svelte'
+    import InputCustom from 'components/input/inputrega.svelte'
     import { accountLogin } from 'store/account'
     import { onMount } from 'svelte'
+    import "./mainauth.css";
     export let OnSelectViews;
     let loginInput;
     let loginIsFocus = false;
@@ -38,7 +39,7 @@
     }
 </script>
 <svelte:window on:keyup={onKeyUp} />
-<div class="main">
+<!-- <div class="main">
     <div class="main__box">
         <div class="main__forms">
             <InputCustom updateLang={(lang) => language = lang} setValue={(value) => loginInput = value} value={loginInput} isFocus={loginIsFocus} placeholder={translateText('player2', 'Логин или почта')} type="text" icon="auth-user"/>
@@ -63,5 +64,42 @@
             </div>
         </div>
         <div class="main__scroll"/>
+    </div>
+</div> -->
+<!-- <div class="passwordpole1">
+    <InputCustom updateLang={(lang) => language = lang} setValue={(value) => loginInput = value} value={loginInput} isFocus={loginIsFocus} placeholder={translateText('player2', 'Логин или почта')} type="text" icon="auth-user"/>
+    <InputCustom updateLang={(lang) => language = lang} setValue={(value) => passwordInput = value} value={passwordInput} isFocus={passwordIsFocus} placeholder={translateText('player2', 'Пароль')} type="password" icon="auth-lock"/>
+</div> -->
+
+
+<link href="https://fonts.googleapis.com/css?family=Uni+Neue-Trial&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+     font-family: Uni Neue-Trial;
+     src: url(fonts/UniNeue-Trial.ttf);
+    }
+</style>
+
+<div id="auth">
+    <div class="auth">
+        <div class="auth-left">
+            <div class="auth-left-texted">
+                <h1>Авторизация</h1>
+                <h2>Войдите, и начните творить чудеса на RAGECODE V3!</h2>
+            </div>
+            <div class="auth-left-inputs">
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => loginInput = value} placeholder="Логин" value={loginInput} isFocus={loginIsFocus}  type="text"/>
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => passwordInput = value} placeholder="Пароль" value={passwordInput} isFocus={passwordIsFocus}  type="password"/>
+            </div>
+            <div class="auth-left-buttons">
+                <div class="auth-left-buttons-button" on:click={onLogin}>{translateText('player2', 'Войти')}</div>
+                <div class="auth-left-buttons-button" on:click={() => OnSelectViews("Restore")}>Восстановить пароль</div>
+            </div>
+        </div>
     </div>
 </div>

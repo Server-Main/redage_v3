@@ -1203,6 +1203,7 @@
         PremiumPlus,
         PremiumPlusPlus,
         Lux,
+        Mansion,
         SucMarkerInstallSbyt,
         SucMarkerInstallSdacha,
         NumberExists,

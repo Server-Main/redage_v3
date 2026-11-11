@@ -83,7 +83,10 @@ namespace NeptuneEvo.Organizations.Player
                             Date = date,
                             LastLoginDate = date,
                             Time = "{}",
-                            Tasks = "[]"
+                            Tasks = "[]",
+                            DepartmentId = 0,
+                            DepartmentRank = 0,
+                            Score = 0,
                         });
                     }
                     catch (Exception e)

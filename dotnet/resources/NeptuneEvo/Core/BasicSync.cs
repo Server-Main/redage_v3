@@ -49,6 +49,35 @@ namespace NeptuneEvo.Core
             }
         }
 
+        public static void AttachObjectToPlayer(Player player, uint model, int bone, Vector3 posOffset, Vector3 rotOffset)
+        {
+            var attObj = new AttachedObject(model, bone, posOffset, rotOffset);
+            player.SetSharedData("attachedObject", JsonConvert.SerializeObject(attObj));
+            Trigger.ClientEventInRange(player.Position, 550, "attachObject", player);
+        }
+
+        public static void DetachObject(Player player)
+        {
+            player.ResetSharedData("attachedObject");
+            Trigger.ClientEventInRange(player.Position, 550, "detachObject", player);
+        }
+
+        internal class AttachedObject
+        {
+            public uint Model { get; set; }
+            public int Bone { get; set; }
+            public Vector3 PosOffset { get; set; }
+            public Vector3 RotOffset { get; set; }
+
+            public AttachedObject(uint model, int bone, Vector3 pos, Vector3 rot)
+            {
+                Model = model;
+                Bone = bone;
+                PosOffset = pos;
+                RotOffset = rot;
+            }
+        }
+
         public static bool GetInvisible(ExtPlayer player)
         {
             try

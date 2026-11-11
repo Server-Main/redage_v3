@@ -81,7 +81,7 @@ namespace NeptuneEvo.Quests
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()
         {
-            PedSystem.Repository.CreateQuest("u_m_m_partytarget", new Vector3(-480.28732, -305.2201, 35.106697), -157f, questName: QuestName, title: "~y~NPC~w~ Виталий Дебич\nКвесты новичков", colShapeEnums: ColShapeEnums.QuestZdobich);
+            PedSystem.Repository.CreateQuest("u_m_m_partytarget", new Vector3(-208.99068, -787.5381, 30.454033), -119.70193f, questName: QuestName, title: "~y~NPC~w~ Залимхан\nКвесты новичков", colShapeEnums: ColShapeEnums.QuestZdobich);
             
                 //PedSystem.Repository.CreateQuest("a_c_rhesus", new Vector3(-592.5721, -1598.3741, 27.003511), 163f, title: "~y~NPC~w~ Праздничная обезьянка\nБонус-код", colShapeEnums: ColShapeEnums.QuestBonus);
             /*  PedSystem.Repository.CreateQuest("s_f_y_cop_01", new Vector3(1407.8423, 680.5664, 78.88384), -16f, questName: "s_f_y_cop_01", isBlipVisible: false);						

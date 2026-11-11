@@ -20,12 +20,14 @@ namespace NeptuneEvo.Chars
         {
             try
             {
-                Main.CreateBlip(new Main.BlipData(478, "Хранилище 'GoPostal'", new Vector3(-545.02136, -204.28348, 38.2), 32, true));
-                Main.CreateBlip(new Main.BlipData(525, "Центр занятости", new Vector3(-116.56201, -604.71436, 36.28072), 0, true));
+                Main.CreateBlip(new Main.BlipData(478, "Почта", new Vector3(133.0005, 96.25439, 83.50748), 32, true));
+                Main.CreateBlip(new Main.BlipData(446, "Шахта", new Vector3(1489.8354, -2369.478, 72.82428), 32, true));
+                // Main.CreateBlip(new Main.BlipData(674, "Broker Family", new Vector3(-1550.5554, 131.81812, 56.783707), 71, true));
+                Main.CreateBlip(new Main.BlipData(85, "Центр занятости", new Vector3(436.5074, -627.4617, 28.707539), 0, true));
                 //NAPI.Marker.CreateMarker(1, new Vector3(-545.02136, -204.28348, 38.2) - new Vector3(0, 0, 1.5), new Vector3(), new Vector3(), 1f, new Color(255, 255, 255, 220));
                 //CustomColShape.CreateCylinderColShape(new Vector3(132.9969, 96.3529, 83.5076), 1f, 2, 0, ColShapeEnums.WarehouseEnter);
                 CustomColShape.CreateCylinderColShape(new Vector3(1048.2255, -3097.1624, -38.9999), 1f, 2, 5, ColShapeEnums.WarehouseExit);
-                PedSystem.Repository.CreateQuest("s_m_m_postal_01", new Vector3(-545.02136, -204.28348, 38.2), -151.96516f, 0, title: "~y~NPC~w~ Почтальон Александр\nСклад посылок", colShapeEnums: ColShapeEnums.Warehouse);
+                PedSystem.Repository.CreateQuest("s_m_m_postal_01", new Vector3(133.0005, 96.25439, 83.50748), -151.96516f, 0, title: "~y~NPC~w~ Почтальон Александр\nСклад посылок", colShapeEnums: ColShapeEnums.Warehouse);
             }
             catch (Exception e)
             {

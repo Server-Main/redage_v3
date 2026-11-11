@@ -73,5 +73,10 @@
 	"72": {"Id":72,"Name":"Virgin Mary","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_027","FemaleHash":"FM_Tat_F_027","Slots":[2],"Price":1900,"Donate":0},
 	"73": {"Id":73,"Name":"Mermaid","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_028","FemaleHash":"FM_Tat_F_028","Slots":[1],"Price":1900,"Donate":0},
 	"74": {"Id":74,"Name":"Dagger","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_038","FemaleHash":"FM_Tat_F_038","Slots":[1],"Price":1900,"Donate":0},
-	"75": {"Id":75,"Name":"Lion","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_047","FemaleHash":"FM_Tat_F_047","Slots":[2],"Price":1900,"Donate":0}
+	"75": {"Id":75,"Name":"Lion","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_047","FemaleHash":"FM_Tat_F_047","Slots":[2],"Price":1900,"Donate":0},
+	"76": {"Id":76,"Name":"Black Work RA 1","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_010_M","FemaleHash":"MP_Gta5rptattoo_Tat_010_F","Slots":[1,2],"Price":50000,"Donate":0},
+	"77": {"Id":77,"Name":"Black Work RA 2","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_018_M","FemaleHash":"MP_Gta5rptattoo_Tat_018_F","Slots":[1,2],"Price":50000,"Donate":0},
+	"78": {"Id":78,"Name":"Black Work RA 3","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_002_M","FemaleHash":"MP_Gta5rptattoo_Tat_002_F","Slots":[1,2],"Price":50000,"Donate":0},
+	"79": {"Id":79,"Name":"Black Work RA 4","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_134_M","FemaleHash":"MP_Gta5rptattoo_Tat_134_F","Slots":[1,2],"Price":50000,"Donate":0},
+	"80": {"Id":80,"Name":"Black Work RA 5","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_135_M","FemaleHash":"MP_Gta5rptattoo_Tat_135_F","Slots":[1],"Price":50000,"Donate":0}
 }

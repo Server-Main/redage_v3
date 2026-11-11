@@ -9,7 +9,7 @@
 
     let messages = [];
 
-    //messages = JSON.parse(`[{"Number":41570,"Avatar":"https://api.redage.net/image/11_121/23/1640267825898.jpg","Name":"Vitala","Date":"2021-12-23T19:37:28","Text":"С…РµР№ С…РµР№ С…Р° СЌС‚Рѕ РґРёСЃСЃ РЅР° РїРµС‚СѓС…Р° С…Р° С…Р°","Type":0,"IsMe":true,"Status":true}]`)
+    //messages = JSON.parse(`[{"Number":41570,"Avatar":"https://api.virtual.net//image/11_121/23/1640267825898.jpg","Name":"Vitala","Date":"2021-12-23T19:37:28","Text":"С…РµР№ С…РµР№ С…Р° СЌС‚Рѕ РґРёСЃСЃ РЅР° РїРµС‚СѓС…Р° С…Р° С…Р°","Type":0,"IsMe":true,"Status":true}]`)
 
     executeClientAsyncToGroup("getMessages").then((result) => {
         if (result && typeof result === "string")

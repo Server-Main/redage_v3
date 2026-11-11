@@ -1,9 +1,12 @@
 {
-	"maxplayers" : 100,
-	"name" : "RAGE:MP Unofficial server", 
-	"gamemode" : "freeroam", 
-	"stream-distance" : 500.0,
-	"announce" : false,
-	"csharp" : "enabled",
+	"maxplayers": 500,
+	"name": "RAGECODE.PRO | REDAGE V3 [ROLEPLAY][VOICE]",
+	"language": "ru",
+	"gamemode": "roleplay",
+	"stream-distance": 500.0,
+	"announce": true,
+	"voice-chat": true,
+	"voice-chat-sample-rate": 48000,
+	"csharp": "enabled",
 	"port": 22005
 }

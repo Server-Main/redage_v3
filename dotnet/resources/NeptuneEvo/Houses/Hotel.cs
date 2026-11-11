@@ -45,11 +45,11 @@ namespace NeptuneEvo.Houses
                 int HotelID = 0;
                 foreach (Vector3 pos in HotelEnters)
                 {
-                    /*Blip blip = (ExtBlip) NAPI.Blip.CreateBlip(pos);
+                    Blip blip = (ExtBlip) NAPI.Blip.CreateBlip(pos);
                     blip.ShortRange = true;
                     blip.Sprite = 475;
                     blip.Color = 59;
-                    blip.Name = "Hotel";*/
+                    blip.Name = "Hotel";
 
                     Main.CreateBlip(new Main.BlipData(475, LangFunc.GetText(LangType.Ru, DataName.Hotel), pos, 16, true));
 

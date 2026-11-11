@@ -934,9 +934,9 @@ namespace NeptuneEvo.Events
                                         Trigger.ClientEvent(foreachPlayer, "airsoft_updateAirsoftLobbyValue", foreachSessionData.InAirsoftLobby);
 
                                         if (player != foreachPlayer)
-                                            NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                            NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-251.2867, -2031.6125, 29.94202));
                                         else
-                                            NAPI.Player.SpawnPlayer(player, new Vector3(-478.86032, -395.27307, 34.027653));
+                                            NAPI.Player.SpawnPlayer(player, new Vector3(-251.2867, -2031.6125, 29.94202));
                                         
                                         Trigger.Dimension(foreachPlayer);
 
@@ -1062,7 +1062,7 @@ namespace NeptuneEvo.Events
                                                 if (AirsoftPlayerData.ContainsKey(foreachPlayer)) foreachPlayer.Health = Convert.ToInt32(AirsoftPlayerData[foreachPlayer].CorrectHealth);
                                                 else foreachPlayer.Health = 100;
 
-                                                NAPI.Player.SpawnPlayer(foreachPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                                NAPI.Player.SpawnPlayer(foreachPlayer, new Vector3(-251.2867, -2031.6125, 29.94202));
                                                 Trigger.Dimension(foreachPlayer);
 
                                                 ClearGun(foreachPlayer);
@@ -1395,7 +1395,7 @@ namespace NeptuneEvo.Events
 
                                     Trigger.ClientEvent(foreachPlayer, "airsoft_updateAirsoftLobbyValue", foreachSessionData.InAirsoftLobby);
 
-                                    NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                    NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-251.2867, -2031.6125, 29.9420));
                                     Trigger.Dimension(foreachPlayer);
 
                                     if (AirsoftPlayerData.ContainsKey(foreachPlayer))
@@ -1496,7 +1496,7 @@ namespace NeptuneEvo.Events
 
                                     Trigger.ClientEvent(foreachPlayer, "airsoft_updateAirsoftLobbyValue", foreachSessionData.InAirsoftLobby);
 
-                                    NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                    NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-251.2867, -2031.6125, 29.9420));
                                     Trigger.Dimension(foreachPlayer);
 
                                     if (AirsoftPlayerData.ContainsKey(foreachPlayer)) foreachPlayer.Health = Convert.ToInt32(AirsoftPlayerData[foreachPlayer].CorrectHealth);
@@ -1544,7 +1544,7 @@ namespace NeptuneEvo.Events
                         Trigger.ClientEvent(player, "airsoft_updateAreaLimit", 0);
                         Trigger.ClientEvent(player, "airsoft_updateStats_client", 0);
 
-                        NAPI.Entity.SetEntityPosition(player, new Vector3(-478.86032, -395.27307, 34.027653));
+                        NAPI.Entity.SetEntityPosition(player, new Vector3(-251.2867, -2031.6125, 29.9420));
                         Trigger.Dimension(player);
 
                         if (AirsoftPlayerData.ContainsKey(player)) player.Health = Convert.ToInt32(AirsoftPlayerData[player].CorrectHealth);
@@ -1707,7 +1707,7 @@ namespace NeptuneEvo.Events
 
                                             Trigger.ClientEvent(foreachPlayer, "airsoft_updateAirsoftLobbyValue", foreachSessionData.InAirsoftLobby);
 
-                                            NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                            NAPI.Entity.SetEntityPosition(foreachPlayer, new Vector3(-251.2867, -2031.6125, 29.94202));
                                             Trigger.Dimension(foreachPlayer);
 
                                             if (AirsoftPlayerData.ContainsKey(foreachPlayer)) foreachPlayer.Health = Convert.ToInt32(AirsoftPlayerData[foreachPlayer].CorrectHealth);

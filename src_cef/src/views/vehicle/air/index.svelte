@@ -87,6 +87,10 @@
                     Получить дубликат ключа
                 </div>
                 <div class="arenda-customize__button"
+                     on:click={() => onAction (VehicleArray [SelectVehicle].Number, "zavoddvig")}>
+                    Завести двигатель
+                </div>
+                <div class="arenda-customize__button"
                      on:click={() => onAction (VehicleArray [SelectVehicle].Number, "changekey")}>
                     Сменить замки (100$)
                 </div>

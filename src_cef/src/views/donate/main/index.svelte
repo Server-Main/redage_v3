@@ -77,7 +77,7 @@
         }
     }
 
-    let isLoad = false;
+    let isLoad = true;
     const getData = () => {
         isLoad = true;
     }
@@ -97,24 +97,17 @@
     {/if}
 
     <div id="newdonate" class:popupOpened={Popups[SelectPopup]}>
-        <div class="box-date">
-            <div class="box-time">
-                <div class="time">{TimeFormat ($serverDateTime, "H:mm")}</div>
-                {TimeFormat ($serverDateTime, "DD.MM.YYYY")}
-            </div>
-        </div>
         <div class="newdonate__header">
             <div class="newdonate__header-left">
                 <div class="header__title-block">
-                    <div class="shop-img"/>
-                    <div class="newdonate__title">{translateText('donate', 'Донат-меню')}</div>
+                    <div class="donate-img"/>
+                    <div class="newdonate__title">DONATE-MAIN</div>
                     <div class="back-button" class:active={SelectView !== "MainMenu"} on:click={() => SetView("MainMenu")}>
-                        <span class="back-img"/>
                         <div>{translateText('donate', 'Назад')}</div>
                     </div>
                 </div>
                 <div class="newdonate__subtitle">
-                    {translateText('donate', 'Добро пожаловать! На этой странице представлены к приобретению за')}<b>RB</b>:{translateText('donate', 'кейсы, подписки, VIP-статусы, донат-пакеты, редкие вещи, смена имени/внешности, конвертация валюты и другие интересности')};
+                    {translateText('donate', 'Добро пожаловать! На этой странице представлены к приобретению')} : {translateText('donate', 'кейсы, подписки, VIP-статусы, донат-пакеты, редкие вещи, конвертация валюты и другие интересности')}
                 </div>
             </div>
             <div class="newdonate__header-right">
@@ -133,12 +126,6 @@
                         </div>
                         <div class="newdonate__header-info" on:click={() => SelectPopup = "PopupPrise" }>Подробнее</div>
                     </div>-->
-                </div>
-               <div class="newdonate__button">
-                    <div class="newdonate__button-main">
-                        <div class="newdonate__button-text">Донат в lk.redage.net</div>
-                        {#if $serverDonatMultiplier > 1}<div class="newdonate__button-x2">x{$serverDonatMultiplier}</div>{/if}
-                    </div>
                 </div>
             </div>
         </div>

@@ -21,20 +21,23 @@ namespace NeptuneEvo.Core
     {
         private static readonly nLog Log = new nLog("Core.DrivingSchool");
 
-        private static Vector3 enterSchool = new Vector3(435.8382, -984.11847, 30.689484);
+        private static Vector3 enterSchool = new Vector3(-635.6657, -2255.6418, 5.938693);
 
         [ServerEvent(Event.ResourceStart)]
         public void onResourceStart()
         {
             try
             {
-                //CustomColShape.CreateCylinderColShape(enterSchool, 1, 2, 0, ColShapeEnums.DriveSchool);
+                Main.CreateBlip(new Main.BlipData(778, "Автошкола", enterSchool, 38, true));
+                Main.CreateBlip(new Main.BlipData(318, "Инкассаторы", new Vector3(102.15202, -1071.9646, 29.205887), 38, true));
+                Main.CreateBlip(new Main.BlipData(198, "Такси", new Vector3(-1527.5526, -397.76672, 41.338135), 5, true));
+                Main.CreateBlip(new Main.BlipData(477, "Дальнобойщики", new Vector3(861.18506, -3185.2095, 6.034954), 26, true));
+                Main.CreateBlip(new Main.BlipData(513, "Автобусы", new Vector3(-2188.1128, -394.79517, 13.439546), 2, true));
 
                 //NAPI.Marker.CreateMarker(1, enterSchool - new Vector3(0, 0, 0.7f), new Vector3(), new Vector3(), 1, new Color(255, 255, 255, 220));
                 //NAPI.TextLabel.CreateTextLabel(Main.StringToU16("~w~Автошкола"), enterSchool + new Vector3(0, 0, 1f), 5f, 0.3f, 0, new Color(255, 255, 255));
 
-               //Main.CreateBlip(new Main.BlipData(498, "Автошкола", enterSchool, 2, true));
-                PedSystem.Repository.CreateQuest("mp_m_securoguard_01", enterSchool, -60.65183f, title: "~y~NPC~w~ Офицер Бенсон\nВыдача лицензий", colShapeEnums: ColShapeEnums.DriveSchool);
+                PedSystem.Repository.CreateQuest("mp_m_securoguard_01", enterSchool, -37.837715f, title: "~y~NPC~w~ Офицер Бенсон\nВыдача лицензий", colShapeEnums: ColShapeEnums.DriveSchool);
 
                 /*for (int i = 0; i < 72; i++)
                 {

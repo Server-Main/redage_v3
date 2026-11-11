@@ -48,9 +48,5 @@
             <div class="level">{level}</div>
             <div class="newlevel">{level + 1}</div>
         </div>
-        <div class="hudevo__notification_subtitle ">Ура! Вы стали опытнее</div>
-        <div class="hudevo__notification_title fs-14">
-            До следующего уровня осталось {(3 + level * 3) - $charEXP} EXP
-        </div>
     </div>
 {/if}

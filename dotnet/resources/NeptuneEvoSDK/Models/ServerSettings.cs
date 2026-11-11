@@ -11,7 +11,7 @@ namespace Redage.SDK.Models
         /// <summary>
         /// Номер сервера - 0 - тестовый
         /// </summary>
-        public byte ServerId = 0;
+        public byte ServerId = 1;
         /// <summary>
         /// Множетель зарплат
         /// </summary>
@@ -67,11 +67,11 @@ namespace Redage.SDK.Models
         /// <summary>
         /// 
         /// </summary>
-        public string GoogleTrackingId = ""; // UA-XXXXXXXXX-XX (old - UA-138889592-2)
+        public string GoogleTrackingId = "UA-138889592-2"; // UA-XXXXXXXXX-XX
         /// <summary>
         /// 
         /// </summary>
-        public string GoogleCategory = ""; // 555 - any user identifier (old  - ra_game)
+        public string GoogleCategory = "ra_game"; // 555 - any user identifier
 
         public string ClientInterfaceUrl = "";
         public bool IsEmailConfirmed = false; // 555 - any user identifier

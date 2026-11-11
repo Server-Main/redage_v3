@@ -60,11 +60,11 @@ namespace NeptuneEvo.VehicleModel
         public void Event_ResourceStart()
         {
  
-            Main.CreateBlip(new Main.BlipData(359, "AirShop", NpcBuyPosition, 4, true));
-            PedSystem.Repository.CreateQuest("csb_reporter", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Продавец воздушного транспорта", colShapeEnums: ColShapeEnums.AirAutoRoom);
+            //Main.CreateBlip(new Main.BlipData(359, "AirShop", NpcBuyPosition, 4, true));
+            //PedSystem.Repository.CreateQuest("csb_reporter", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Продавец воздушного транспорта", colShapeEnums: ColShapeEnums.AirAutoRoom);
             //
-            Main.CreateBlip(new Main.BlipData(602, "HeliPort", NpcSpawnPosition, 60, true));
-            PedSystem.Repository.CreateQuest("s_m_y_airworker", NpcSpawnPosition, NpcSpawnRotation, title: "~y~NPC~w~ Работник Аэропорта", colShapeEnums: ColShapeEnums.AirSpawn);
+            //Main.CreateBlip(new Main.BlipData(602, "HeliPort", NpcSpawnPosition, 60, true));
+            //PedSystem.Repository.CreateQuest("s_m_y_airworker", NpcSpawnPosition, NpcSpawnRotation, title: "~y~NPC~w~ Работник Аэропорта", colShapeEnums: ColShapeEnums.AirSpawn);
         }
         
         public static bool isAirCar(string model)

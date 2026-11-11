@@ -92,7 +92,7 @@ namespace NeptuneEvo.Players
                 player.Skin = model;
                 player.SetSkin(model);
             }
-        }
+        } 
 
         public static void setKick(this ExtPlayer player, string text)
         {

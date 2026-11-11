@@ -1,16 +1,21 @@
 ﻿using GTANetworkAPI;
 using NeptuneEvo.Handles;
 using NeptuneEvo.Accounts;
+using NeptuneEvo.Players.Models;
 using NeptuneEvo.Players;
+using NeptuneEvo.Character.Models;
 using NeptuneEvo.Character;
 using NeptuneEvo.Chars;
 using NeptuneEvo.Core;
 using NeptuneEvo.Functions;
 using Redage.SDK;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Localization;
 using NeptuneEvo.Jobs.Models;
 using NeptuneEvo.Quests;
+using NeptuneEvo.VehicleData.LocalData;
 
 namespace NeptuneEvo.Jobs
 {
@@ -31,7 +36,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"Event_ResourceStart Exception: {e}");
+                Log.Write($"Event_ResourceStart Exception: {e.ToString()}");
             }
         }
 
@@ -176,7 +181,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"CollectorTakeMoney Exception: {e}");
+                Log.Write($"CollectorTakeMoney Exception: {e.ToString()}");
             }
         }
         [Interaction(ColShapeEnums.Atm, In: true)]
@@ -277,7 +282,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"CollectorEnterATM Exception: {e}");
+                Log.Write($"CollectorEnterATM Exception: {e.ToString()}");
             }
         }
     }

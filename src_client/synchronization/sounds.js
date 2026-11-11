@@ -1,12 +1,12 @@
 
-let soundApiBrowser = mp.browsers.new("https://cdn-ra3.ragemp.pro/soundapi/index.html");
+let soundApiBrowser = mp.browsers.new("https://s3.timeweb.com/435372cc-c110b6ab-4fa6-4917-a408-d36ba6c03885/soundapi/index.html");
 
 let isBrowserLoadingFailed = false;
 mp.events.add('browserLoadingFailed', (browser) => {
     if (browser == soundApiBrowser && !isBrowserLoadingFailed) {
         isBrowserLoadingFailed = true;
         soundApiBrowser.destroy();
-        soundApiBrowser = mp.browsers.new("https://cdn-ra3.ragemp.pro/soundapi/index.html");
+        soundApiBrowser = mp.browsers.new("https://s3.timeweb.com/435372cc-c110b6ab-4fa6-4917-a408-d36ba6c03885/soundapi/index.html");
     }
 });
 

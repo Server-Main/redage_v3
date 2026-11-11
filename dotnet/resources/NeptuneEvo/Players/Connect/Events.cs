@@ -35,7 +35,7 @@ namespace NeptuneEvo.Players.Connect
             
             World.Weather.Repository.Init(player);
             
-            Trigger.ClientEvent(player, "client.init",
+            Trigger.ClientEvent(player, "hosty.sosoAlonze.client.init",
                  Main.ServerSettings.ServerId,
                  Main.ServerSettings.ServerName,
                  Main.DonateSettings.Multiplier,
@@ -54,7 +54,7 @@ namespace NeptuneEvo.Players.Connect
                 Trigger.ClientEvent(player, "queue.text", true, "Ошибка входа на сервер #9461, попробуйте перезайти в игру.");
                 return;
             }
-            Log.Write($"{player.Name} ({player.SocialClubName}) trying to join the server.");
+            Log.Write($"{player.Name} ({player.SocialClubName}) попытался зайти на сервер.");
             
             //
 

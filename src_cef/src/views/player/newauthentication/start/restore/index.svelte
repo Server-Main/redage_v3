@@ -2,7 +2,7 @@
     export let OnSelectViews;
 
     import { executeClient } from 'api/rage'
-    import InputCustom from 'components/input/index.svelte'
+    import InputCustom from 'components/input/inputrega.svelte'
     import { accountLogin } from 'store/account'
     import { onMount } from 'svelte'
 
@@ -65,24 +65,26 @@
 
 </script>
 <svelte:window on:keyup={onKeyUp} />
-<div class="main">
-    <div class="main__box">
-        <div class="main__forms">
-            <InputCustom setValue={(value) => restoreInput = value} value={restoreInput} placeholder={placeholder} type="text" icon="auth-user"/>
-            <div class="box-flex">
-                <div class="main__button main_button_size_large" style="width:100%;" on:click={onSubmitRestore}>
-                    <div class="main__button_left box-center">Восстановить</div>
-                    <div class="main__button_right box-center">
-                        <div class="main__button_square box-center">
-                            <span class="auth-arrow"/>
-                        </div>
-                    </div>
-                </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+</style>
+
+<div id="auth">
+    <div class="auth">
+        <div class="auth-left" style="margin-top: 4vh;">
+            <div class="auth-left-texted">
+                <h1 style="font-size: 4.4vh;">Восстановление Пароля</h1>
+                <h2>Восстановите, и начните творить чудеса на RAGECODE V3!</h2>
             </div>
-            <div class="main__button main_button_size_large" style="width:100%; margin-top: 30px" on:click={() => OnSelectViews("Authentication")}>
-                <div class="main__button_left box-center none">Назад</div>
+            <div class="auth-left-inputs">
+                <InputCustom setValue={(value) => restoreInput = value} placeholder="Email" value={restoreInput} type="text"/>
+            </div>
+            <div class="auth-left-buttons">
+                <div class="auth-left-buttons-button" on:click={onSubmitRestore}>Восстановить</div>
+                <div class="auth-left-buttons-button" on:click={() => OnSelectViews("Authentication")}>Назад</div>
             </div>
         </div>
-        <div class="main__scroll"/>
     </div>
 </div>
+

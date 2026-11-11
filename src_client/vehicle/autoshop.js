@@ -24,7 +24,7 @@ let auto = {
 let selectSpawn = 0;
 
 const spawnCar = [
-	[-973.6858, -3005.5195, 14.035086, 60.0],
+	[-1395.5187, 45.75966, 53.448025, 106.0],
 ]
 
 global.AirCarList = [

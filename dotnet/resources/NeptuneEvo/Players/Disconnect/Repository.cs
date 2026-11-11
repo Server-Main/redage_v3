@@ -331,7 +331,7 @@ namespace NeptuneEvo.Players.Disconnect
                     Chars.Repository.UpdateSqlItemData($"char_{characterData.UUID}", "accessories", 7, aItem);
                 }
                 
-                Log.Write(player.Name + " disconnected from server. (" + reason + ")");
+                Log.Write(player.Name + " отключился от сервера. (" + reason + ")");
 
                 if (isSave)
                 {

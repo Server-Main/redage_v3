@@ -35,14 +35,16 @@
 #newauthentication
     font-family: "TTNorms-Regular"
     width: 100%
-    height: 100%
+    height: 100vh
+    left: 0
+    top: 0
     position: relative    
     display: flex
     flex-direction: column
-    width: 100%
-    height: 100%
+    background-position: center
+    background-repeat: no-repeat
     color: rgba(243,243,243,1.0)
-    background: radial-gradient(50% 50% at 50% 50%, rgba(1, 22, 39, 0) 0%, rgba(1, 22, 39, 0.85) 100%)
+    background: #5c5c5c25
     @include fluid("font-size", 18)
     .newauthentication__popup
         width: 100%
@@ -78,6 +80,7 @@
         @include fluid("margin-top", 16)
         opacity: 0.75
     .box-center
+        
         display: flex
         align-items: center
         justify-content: center
@@ -115,7 +118,7 @@
         .header__logo
             @include fluid("width", 250)
             @include fluid("height", 26)
-            background-image: url('images/logo.png')
+           
             background-size: contain
             background-position: center
             background-repeat: no-repeat
@@ -425,6 +428,7 @@
                             background: #E71D36
                 .auth__characters_input
                     @include fluid("height", 42)
+                    
             .auth__characters_block
                 position: relative
                 @include fluid("width", 300)
@@ -620,7 +624,7 @@
         align-items: flex-start
         justify-content: space-between
         @include fluid("width", 530)
-        @include fluid("margin-bottom", 50)
+        @include fluid("margin-bottom", 30)
         .auth__customization_leftside
             @include fluid("min-width", 190)
         .auth__customization_characteristics
@@ -628,13 +632,6 @@
             flex-direction: column
             align-items: center
             justify-content: space-between
-            .auth__scroll
-                @include fluid("width", 14)
-                @include fluid("height", 33)
-                background: url(./images/scroll.png)
-                background-repeat: no-repeat
-                background-size: contain
-                background-position: center
             .auth__customization_header
                 @include fluid("font-size", 24)
                 @include fluid("margin-bottom", 40)
@@ -668,15 +665,18 @@
                     justify-content: space-between
                     @include fluid("padding-left", 20)
                     @include fluid("padding-right", 20)
-                    @include fluid("min-width", 434)
-                    @include fluid("min-height", 38)
+                    @include fluid("min-width", 433)
+                    background: radial-gradient(50% 50% at 50% 50%, rgba(1, 22, 39, 0) 0%, rgba(1, 22, 39, 0.85) 100%)
+                    @include fluid("min-height", 80)
+                    border: 1px solid rgba(224, 224, 224, 0.3)
                     @include fluid("margin-bottom", 16)
-
+                    border-radius: .2vw
                     &:last-child
                         margin-bottom: 0
                     &:hover, &.active
-                        color: black
-                        background: white
+                        color: white
+                        border: 2px solid rgba(1, 22, 39, 0.85)
+                        background: rgba(224, 224, 224, 0.1)
                         
                         .auth__customization_icon
                             @include fluid("font-size", 20)
@@ -751,6 +751,7 @@
             justify-content: center
             @include fluid("width", 60)
             @include fluid("height", 60) 
+            margin-left: -32vw
             border: 1px solid rgba(253,255,252,0.4)
             box-sizing: border-box
             color: rgba(253,255,252,0.4)
@@ -769,13 +770,13 @@
                 margin-bottom: 0
                 @include fluid("margin-top", 46)
     .auth__customization_image
-        @include fluid("width", 304)
-        @include fluid("height", 124)
+        @include fluid("width", 500)
+        @include fluid("height", 200)
         background-image: url('images/back.png')
         background-size: contain
         background-position: center
         background-repeat: no-repeat
-        @include fluid("margin-bottom", 16)
+        @include fluid("margin-bottom", 20)
         position: relative
         .auth__customization_father
             z-index: 2

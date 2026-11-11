@@ -1,0 +1,9 @@
+.box-ch
+{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+background: url("./img/background.png");
+width: 55vw;
+height: 35vw;
+}

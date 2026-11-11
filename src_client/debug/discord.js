@@ -1,8 +1,8 @@
 gm.discord = (detailedStatus) => {
-    let state = "на RedAge";
+    let state = "на RAGECODE V3";
 
     if (global.localplayer && typeof global.localplayer.remoteId !== "undefined")
-        state = translateText('на RedAge под ID {0}', global.localplayer.remoteId);
+        state = translateText('на RAGECODE V3 под ID {0}', global.localplayer.remoteId);
 
     mp.discord.update(detailedStatus, state);
 }

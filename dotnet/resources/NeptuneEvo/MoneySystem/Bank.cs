@@ -396,7 +396,7 @@ namespace NeptuneEvo.MoneySystem
             {
                 for (int i = 0; i < ATMs.Count; i++)
                 {
-                    if (i != 58) Main.CreateBlip(new Main.BlipData(500, "Банкомат", ATMs[i], 7, true, 0.32f));
+                    if (i != 58) Main.CreateBlip(new Main.BlipData(605, "Банкомат", ATMs[i], 4, true, 0.33f));
                     CustomColShape.CreateCylinderColShape(ATMs[i], 1, 2, 0, ColShapeEnums.Atm, i);
                 }
                 Bank.Log.Write("ATMs loaded", nLog.Type.Success);

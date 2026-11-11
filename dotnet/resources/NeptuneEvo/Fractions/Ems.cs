@@ -480,11 +480,11 @@ namespace NeptuneEvo.Fractions
             try
             {
                 var sessionData = player.GetSessionData();
-                if (sessionData == null) 
+                if (sessionData == null)
                     return;
 
                 var characterData = player.GetCharacterData();
-                if (characterData == null) 
+                if (characterData == null)
                     return;
 
                 if (!sessionData.DeathData.IsDying) return;
@@ -499,9 +499,9 @@ namespace NeptuneEvo.Fractions
                 if (EMSCalls.ContainsKey(player))
                 {
                     var blip = EMSCalls[player];
-                    if (blip != null && blip.Exists) 
+                    if (blip != null && blip.Exists)
                         blip.Delete();
-                    
+
                     EMSCalls.Remove(player);
                 }
                 Trigger.ClientEvent(player, "freeze", false);
@@ -514,22 +514,34 @@ namespace NeptuneEvo.Fractions
                     var fracId = player.GetFractionId();
                     if (characterData.DemorganTime >= 1)
                     {
-                        spawnPos = Admin.DemorganPositions[Main.rnd.Next(55)] + new Vector3(0, 0, 1.12);
-                        player.SetSkin(Admin.DemorganSkins[Main.rnd.Next(14)]);
+                        spawnPos = Admin.DemorganPosition + new Vector3(0, 0, 1.12);
+                        Trigger.ClientEvent(player, "client.stop.demorgan");
                     }
                     else if (characterData.ArrestTime >= 1)
                     {
-                        if (characterData.ArrestType == 1) spawnPos = Sheriff.FirstPrisonPosition;
-                        else if (characterData.ArrestType == 2) spawnPos = Sheriff.SecondPrisonPosition;
-                        else spawnPos = Police.PrisonPosition;
+                        if (characterData.ArrestType == 1)
+                        {
+                            spawnPos = Sheriff.FirstPrisonPosition;
+                            Trigger.ClientEvent(player, "client.stop.demorgan");
+                        }
+                        else if (characterData.ArrestType == 2)
+                        {
+                            spawnPos = Sheriff.SecondPrisonPosition;
+                            Trigger.ClientEvent(player, "client.stop.demorgan");
+                        }
+                        else
+                        {
+                            spawnPos = Police.PrisonPosition;
+                            Trigger.ClientEvent(player, "client.stop.demorgan");
+                        }
                     }
-                    else if (fracId == (int) Models.Fractions.ARMY) 
+                    else if (fracId == (int)Models.Fractions.ARMY)
                     {
                         spawnPos = Manager.FractionSpawns[14] + new Vector3(0, 0, 1.12);
                         spawnDimension = 3244522;
                     }
-                    else if (fracId == (int) Models.Fractions.SHERIFF) spawnPos = Manager.FractionSpawns[18] + new Vector3(0, 0, 1.12);
-                    else if (fracId == (int) Models.Fractions.FIB) spawnPos = Manager.FractionSpawns[(int) Models.Fractions.FIB] + new Vector3(0, 0, 1.12);
+                    else if (fracId == (int)Models.Fractions.SHERIFF) spawnPos = Manager.FractionSpawns[18] + new Vector3(0, 0, 1.12);
+                    else if (fracId == (int)Models.Fractions.FIB) spawnPos = Manager.FractionSpawns[(int)Models.Fractions.FIB] + new Vector3(0, 0, 1.12);
                     else spawnPos = (characterData.Gender == true) ? emsCheckpoints[1] : emsCheckpoints[2];
                     characterData.InCasino = false;
                     characterData.InsideGarageID = -1;
@@ -546,16 +558,34 @@ namespace NeptuneEvo.Fractions
                     }
 
                 }
-                else spawnPos = player.Position + new Vector3(0, 0, 0.5);
-                characterData.CurPosition = spawnPos;
-                NAPI.Player.SpawnPlayer(player, spawnPos);
-                Trigger.StopAnimation(player);
-                if (characterData.DemorganTime <= 0) NAPI.Player.SetPlayerHealth(player, 20);
-                else NAPI.Player.SetPlayerHealth(player, 3);
-                characterData.IsAlive = true;
-                sessionData.DeathData.InDeath = false;
-                if (characterData.DemorganTime <= 0 && characterData.Unmute <= 0) player.SetSharedData("vmuted", false);
-                Main.OffAntiAnim(player);
+                else
+                {
+                    spawnPos = player.Position + new Vector3(0, 0, 0.5);
+                    characterData.CurPosition = spawnPos;
+                    NAPI.Player.SpawnPlayer(player, spawnPos);
+                    Trigger.StopAnimation(player);
+
+                    if (characterData.DemorganTime <= 0)
+                    {
+                        NAPI.Player.SetPlayerHealth(player, 90);
+                        Trigger.ClientEvent(player, "client.stop.demorgan");
+                    }
+                    else
+                    {
+                        NAPI.Player.SetPlayerHealth(player, 3);
+                    }
+
+                    characterData.IsAlive = true;
+                    sessionData.DeathData.InDeath = false;
+
+                    if (characterData.DemorganTime <= 0 && characterData.Unmute <= 0)
+                    {
+                        player.SetSharedData("vmuted", false);
+                    }
+
+                    Main.OffAntiAnim(player);
+                    Trigger.ClientEvent(player, "client.stop.demorgan");
+                }
             }
             catch (Exception e)
             {

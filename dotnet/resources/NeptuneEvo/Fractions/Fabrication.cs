@@ -223,15 +223,15 @@ namespace NeptuneEvo.Fractions
 
                 }
 
-                Main.CreateBlip(new Main.BlipData(121, "Клуб Bahama Mamas West", new Vector3(-1388.761, -586.3921, 29.09945), 0, true));
-                Main.CreateBlip(new Main.BlipData(121, "Клуб Vanilla", new Vector3(141.3792, -1281.576, 28.2172), 0, true));
-                Main.CreateBlip(new Main.BlipData(121, "Клуб Tequilla", new Vector3(-564.5512, 275.6993, 81.98249), 0, true));
+                //Main.CreateBlip(new Main.BlipData(121, "Клуб Bahama Mamas West", new Vector3(-1388.761, -586.3921, 29.09945), 0, true));
+                //Main.CreateBlip(new Main.BlipData(121, "Клуб Vanilla", new Vector3(141.3792, -1281.576, 28.2172), 0, true));
+                //Main.CreateBlip(new Main.BlipData(121, "Клуб Tequilla", new Vector3(-564.5512, 275.6993, 81.98249), 0, true));
                 //Main.CreateBlip(new Main.BlipData(121, "Клуб Diamond", new Vector3(945.4526, 16.871, 115.0442), 0, true));
                 
-                Main.CreateBlip(new Main.BlipData(136, "Кафе Stand Up", new Vector3(-439.601, 271.704, 82.015), 0, true));
-                Main.CreateBlip(new Main.BlipData(136, "Китайский ресторан", new Vector3(-158.242, 303.829,98.822), 0, true));
+                //Main.CreateBlip(new Main.BlipData(136, "Кафе Stand Up", new Vector3(-439.601, 271.704, 82.015), 0, true));
+                //Main.CreateBlip(new Main.BlipData(136, "Китайский ресторан", new Vector3(-158.242, 303.829,98.822), 0, true));
 
-                Main.CreateBlip(new Main.BlipData(674, "White Company", new Vector3(-858.5887, -424.25665, 84.235405), 73, true));
+                //Main.CreateBlip(new Main.BlipData(674, "Создание семьи", new Vector3(-858.5887, -424.25665, 84.235405), 73, true));
 
                 /*NAPI.Blip.CreateBlip(93, new Vector3(-1388.761, -586.3921, 29.09945), 1, 0, "Club", 255, 0, true);
                 NAPI.Blip.CreateBlip(93, new Vector3(141.3792, -1281.576, 28.2172), 1, 0, "Club", 255, 0, true);

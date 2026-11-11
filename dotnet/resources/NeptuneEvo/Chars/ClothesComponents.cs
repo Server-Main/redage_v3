@@ -265,6 +265,13 @@ namespace NeptuneEvo.Chars
                         clothesData.Donate = item.Donate;
                         clothesData.Gender = item.Gender;
                         clothesComponentData[true][ClothesComponent.Masks].TryAdd(item.Id, clothesData);
+
+                        Log.Write($"ClothesMaleMasks [{item.Variation} -> {clothesData.Variation}]");
+
+                        /*db.ClothesMaleMasks
+                            .Where(clothes => clothes.Id == item.Id)
+                            .Set(clothes => clothes.Variation, clothesData.Variation)
+                            .Update();*/
                     }
                     OnSaveJsonClothes("Male_Masks", clothesComponentData[true][ClothesComponent.Masks], IsHair: true, IsHat: true, IsGlasses: true);
                     Log.Write($"Load Masks");
@@ -900,46 +907,46 @@ namespace NeptuneEvo.Chars
         { 
             { true, new Dictionary<ClothesComponent, int>() 
                 {//Man 
-                    { ClothesComponent.Hat, 247 }, //+
-                    { ClothesComponent.Torsos, 215 }, 
-                    { ClothesComponent.Legs, 230 },  //+
-                    { ClothesComponent.Shoes, 162 }, //+
-                    { ClothesComponent.Accessories, 203 }, //+
-                    { ClothesComponent.BodyArmors, 65 }, 
-                    { ClothesComponent.Tops, 612 }, // +
-                    { ClothesComponent.Undershirts, 222 }, 
-                    { ClothesComponent.Masks, 249 },//+
+                    { ClothesComponent.Hat, 195 }, //+
+                    { ClothesComponent.Torsos, 211 }, 
+                    { ClothesComponent.Legs, 177 },  //+
+                    { ClothesComponent.Shoes, 135 }, //+
+                    { ClothesComponent.Accessories, 175 }, //+
+                    { ClothesComponent.BodyArmors, 58 }, 
+                    { ClothesComponent.Tops, 495 }, // +
+                    { ClothesComponent.Undershirts, 199 }, 
+                    { ClothesComponent.Masks, 226 },//+
                     { ClothesComponent.Ears, 42 }, 
-                    { ClothesComponent.Watches, 49}, //+
-                    { ClothesComponent.Glasses, 59 }, 
+                    { ClothesComponent.Watches, 47}, //+
+                    { ClothesComponent.Glasses, 53 }, 
 
                     { ClothesComponent.Bugs,111 }, 
 
-                    { ClothesComponent.Bracelets, 16 }, 
+                    { ClothesComponent.Bracelets, 14 }, 
      
-                    { ClothesComponent.Decals, 274 }, 
+                    { ClothesComponent.Decals, 174 }, 
                 } 
             }, 
             { false, new Dictionary<ClothesComponent, int>() 
                 { 
-                    { ClothesComponent.Hat, 246 }, //+
-                    { ClothesComponent.Torsos, 249 }, 
-                    { ClothesComponent.Legs, 243 },  //+
-                    { ClothesComponent.Shoes, 170 }, //+
-                    { ClothesComponent.Accessories, 173 }, //a
-                    { ClothesComponent.BodyArmors, 65 }, 
-                    { ClothesComponent.Tops, 655 }, //+
-                    { ClothesComponent.Undershirts, 267 }, 
-                    { ClothesComponent.Masks,  250}, //+
-                    { ClothesComponent.Ears, 23 }, 
-                    { ClothesComponent.Watches, 38 }, //+
-                    { ClothesComponent.Glasses, 61 }, //+
+                    { ClothesComponent.Hat, 194 }, //+
+                    { ClothesComponent.Torsos, 245 }, 
+                    { ClothesComponent.Legs, 191 },  //+
+                    { ClothesComponent.Shoes, 142 }, //+
+                    { ClothesComponent.Accessories, 145 }, //a
+                    { ClothesComponent.BodyArmors, 58 }, 
+                    { ClothesComponent.Tops, 534 }, //+
+                    { ClothesComponent.Undershirts, 245 }, 
+                    { ClothesComponent.Masks,  227}, //+
+                    { ClothesComponent.Ears, 22 }, 
+                    { ClothesComponent.Watches, 36 }, //+
+                    { ClothesComponent.Glasses, 55 }, //+
 
                     { ClothesComponent.Bugs, 111 },     
 
-                    { ClothesComponent.Bracelets, 23 }, 
+                    { ClothesComponent.Bracelets, 21 }, 
      
-                    { ClothesComponent.Decals, 291 }, 
+                    { ClothesComponent.Decals, 191 }, 
                 }
             },
         }; 
@@ -1711,7 +1718,7 @@ namespace NeptuneEvo.Chars
                     { BarberComponent.Beard, 183 }, 
                     { BarberComponent.Body, 132 }, 
                     { BarberComponent.Eyebrows, 97 }, 
-                    { BarberComponent.Eyes, 150 }, 
+                    { BarberComponent.Eyes, 300 }, 
                     { BarberComponent.Lips, 55 }, 
                     { BarberComponent.Makeup, 361 }, 
                     { BarberComponent.Palette, 177 }, 
@@ -1723,14 +1730,13 @@ namespace NeptuneEvo.Chars
                     { BarberComponent.Beard, 183 }, 
                     { BarberComponent.Body, 132 }, 
                     { BarberComponent.Eyebrows, 97 }, 
-                    { BarberComponent.Eyes, 150 }, 
+                    { BarberComponent.Eyes, 300 }, 
                     { BarberComponent.Lips, 55 }, 
                     { BarberComponent.Makeup, 361 }, 
                     { BarberComponent.Palette, 177 }, 
                 }
             }
         };
-        
         public static ConcurrentDictionary<bool, ConcurrentDictionary<BarberComponent, ConcurrentDictionary<int, BarberData>>> BarberComponentData = new ConcurrentDictionary<bool, ConcurrentDictionary<BarberComponent, ConcurrentDictionary<int, BarberData>>>();
         public static ConcurrentDictionary<bool, Dictionary<string, List<List<object>>>> BarberComponentPriceData =
             new ConcurrentDictionary<bool, Dictionary<string, List<List<object>>>>();

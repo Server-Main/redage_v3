@@ -14,7 +14,6 @@ using NeptuneEvo.Organizations.Player;
 using NeptuneEvo.Players.Phone.Gps.Models;
 using Newtonsoft.Json;
 using NeptuneEvo.Fractions.LSNews;
-using Localization;
 
 namespace NeptuneEvo.Players.Phone.Gps
 {
@@ -172,9 +171,9 @@ namespace NeptuneEvo.Players.Phone.Gps
             funCategory.Name = "Развлечения";
             funCategory.Icon = "smiles";
             funCategory.Items = new List<GpsItem>();
-            
-            
-            funCategory.Items.Add(new GpsItem("Казино", -367.80692f, -241.19814f));
+
+
+            funCategory.Items.Add(new GpsItem("Казино", -483.149f, -400.09946f));
             funCategory.Items.Add(new GpsItem("Арена 3 в 1", -483.149f, -400.09946f));
             funCategory.Items.Add(new GpsItem("AirDrop", -483.149f, -400.09946f));
             funCategory.Items.Add(new GpsItem("Начальные квесты", -480.28732f, -305.2201f));
@@ -236,7 +235,7 @@ namespace NeptuneEvo.Players.Phone.Gps
             gosCategory.Items = new List<GpsItem>();
 
             gosCategory.Items.Add(new GpsItem("City Hall", Fractions.Cityhall.GpsPosition.X, Fractions.Cityhall.GpsPosition.Y));
-            gosCategory.Items.Add(new GpsItem("National Guard", -294.8565f, -2605.4185f));
+            gosCategory.Items.Add(new GpsItem("SANG", -294.8565f, -2605.4185f));
             gosCategory.Items.Add(new GpsItem("LSPD", Fractions.Police.GunsPosition.X, Fractions.Police.GunsPosition.Y));
             gosCategory.Items.Add(new GpsItem("EMS", Fractions.Ems.emsCheckpoints[0].X, Fractions.Ems.emsCheckpoints[0].Y));
             gosCategory.Items.Add(new GpsItem("FIB", Fractions.Fbi.GpsPosition.X, Fractions.Fbi.GpsPosition.Y));
@@ -270,7 +269,6 @@ namespace NeptuneEvo.Players.Phone.Gps
             
             mafiaCategory.Items.Add(new GpsItem("La Cosa Nostra", Fractions.Manager.FractionSpawns[10].X, Fractions.Manager.FractionSpawns[10].Y));
             mafiaCategory.Items.Add(new GpsItem("Russian Mafia", Fractions.Manager.FractionSpawns[11].X, Fractions.Manager.FractionSpawns[11].Y));
-            mafiaCategory.Items.Add(new GpsItem("Yakuza", Fractions.Manager.FractionSpawns[12].X, Fractions.Manager.FractionSpawns[12].Y));
             mafiaCategory.Items.Add(new GpsItem("Armenian Mafia", Fractions.Manager.FractionSpawns[13].X, Fractions.Manager.FractionSpawns[13].Y));
             
             gpsList.Add(mafiaCategory);
@@ -280,20 +278,12 @@ namespace NeptuneEvo.Players.Phone.Gps
             var licensesCategory = new GpsCategory();
             licensesCategory.Name = "Работы";
             licensesCategory.Icon = "licenses";
-            licensesCategory.Items = new List<GpsItem>
-            {
-                new GpsItem("Центр занятости", -116.56201f, -604.71436f),
-                new GpsItem("Электростанция", 724.9625f, 133.9959f),
-                new GpsItem("Стоянка газонокосилок", -1330.482f, 42.12986f),
+            licensesCategory.Items = new List<GpsItem>();
 
-                new GpsItem("Отделение почты", 133.0764f, 96.67652f),
-                new GpsItem(LangFunc.GetText(LangType.Ru, DataName.TaxiRent), 899.3858f, -172.74521f),
-                new GpsItem(LangFunc.GetText(LangType.Ru, DataName.BusRent), 435.23758f, -653.01117f),
-                new GpsItem(LangFunc.GetText(LangType.Ru, DataName.MechanikRent), -229.61082f, -1378.2086f),
-                new GpsItem(LangFunc.GetText(LangType.Ru, DataName.FuraRent), 1018.9361f, -2511.5688f),
-                new GpsItem(LangFunc.GetText(LangType.Ru, DataName.FurgonRent), -196.52617f, -830.6757f)
-
-            };
+            licensesCategory.Items.Add(new GpsItem("Центр занятости", 418.70874f, -624.9391f));
+            licensesCategory.Items.Add(new GpsItem("Электростанция", 724.9625f, 133.9959f));
+            licensesCategory.Items.Add(new GpsItem("Отделение почты", 133.0764f, 96.67652f));
+            licensesCategory.Items.Add(new GpsItem("Стоянка газонокосилок", -1330.482f, 42.12986f));
 
             gpsList.Add(licensesCategory);
             
@@ -322,7 +312,7 @@ namespace NeptuneEvo.Players.Phone.Gps
             
             clubsCategory.Items.Add(new GpsItem("Склад", -544.56104f, -203.99673f));
             clubsCategory.Items.Add(new GpsItem("Получение лицензии", 435.8382f, -984.11847f));
-            clubsCategory.Items.Add(new GpsItem("Семьи", -773.8519f, 312.5361f));
+            clubsCategory.Items.Add(new GpsItem("Создани Семьи", -773.8519f, 312.5361f));
             clubsCategory.Items.Add(new GpsItem("Фейерверки", -602.0729f, -347.30234f));
             clubsCategory.Items.Add(new GpsItem("Амфитеатр", 679.7624f, 559.8024f));
             clubsCategory.Items.Add(new GpsItem("Humane Labs", 3420.554f, 3758.799f));

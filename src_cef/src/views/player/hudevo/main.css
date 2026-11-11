@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.leftmenu {
+    position: absolute;
+    width: auto;
+    height: fit-content;
+    bottom: 0;
+    left: 0;
+}
+
+.buttons {
+    position: absolute;
+    width: 15vw;
+    height: 3.8vw;
+    bottom: 4.6vw;
+    
+    background: linear-gradient(90.22deg, rgba(37, 37, 37, 0.8) -80.73%, rgba(0, 0, 0, 0) 109.06%);
+    border-radius: 0.7407vh;
+}
+
+.buttons .m {
+    display: inline-block;
+width: 2.1vw;
+height: 1.25vw;
+margin-left: 0.6vw;
+margin-right: 1vw;
+margin-top: 0.4vw;
+
+background: rgba(255, 255, 255, 0.13);
+border-radius: 0.3704vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 0.6vw;
+line-height: 1.25vw;
+color: #FFFFFF;
+text-align: center;
+}
+
+
+.buttons .active {
+    background: #FFFFFF;
+    box-shadow: 0vh 0vh 0.7407vh rgba(255, 255, 255, 0.24);
+    border-radius: 0.3704vh;
+    color: #2D2D2D;    
+}
+
+.buttons .home{
+    position: absolute;
+    left: 3vw;
+    top: 0.8vw;
+    width: 0.5vw;
+    height: 0.55vw;
+}
+
+.buttons .inv{
+    position: absolute;
+    left: 7vw;
+    top: 0.8vw;
+    width: 0.6vw;
+    height: 0.55vw;
+}
+
+.buttons .vzaim{
+    position: absolute;
+    left: 11vw;
+    top: 0.8vw;
+    width: 0.5vw;
+    height: 0.55vw;
+}
+
+.buttons .mic{
+    position: absolute;
+    left: 3vw;
+    top: 2.5vw;
+    width: 0.4vw;
+    height: 0.5vw;
+}
+
+.buttons .tel{
+    position: absolute;
+    left: 7vw;
+    top: 2.5vw;
+    width: 0.35vw;
+    height: 0.5vw;
+}
+
+.buttons .chat{
+    position: absolute;
+    left: 11vw;
+    top: 2.5vw;
+    width: 0.5vw;
+    height: 0.5vw;
+}
+
+.street{
+    position: absolute;
+    width: 15vw;
+    height: 2.05vw;
+    bottom: 2.4vw;
+}
+
+
+.street .compas{
+    position: absolute;
+    width: 2.25vw;
+    height: 2.05vw;
+    left: 0;
+    top: 0;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5vw;
+    line-height: 2.05vw;
+    color: #FFFFFF;
+}
+
+.street .linia{
+    position: absolute;
+    width: 0.1852vh;
+    height: 1.65vw;
+    top: 0.3vw;
+    left: 2.8vw;
+    
+    background: #FFFFFF;
+    border-radius: 0.0926vh;
+}
+
+.street .name{
+    position: absolute;
+width: 30vw;
+height: 1.45vw;
+left: 3.45vw;
+top: 0;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.2vw;
+line-height: 1.45vw;
+
+color: #FFFFFF;
+}
+
+.street .name2{
+    position: absolute;
+    width: 30vw;
+    height: 0.75vw;
+    left: 3.6vw;
+    bottom: 0;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 0.6vw;
+line-height: 0.75vw;
+
+display: flex;
+align-items: center;
+
+
+color: #FFFFFF;
+
+opacity: 0.7;
+}
+
+.kvest {
+    display: grid;
+    gap: 0vw;
+    color: #fff;
+    
+}
+
+.kvest{
+    position: absolute;
+    width: 16.7778vw;
+    height: 4.4815vw;
+    bottom: 7vw;
+}
+
+.kvestitem span {
+    margin: 0;
+    display: flex;
+}
+
+.kvestitem {
+    display: flex;
+    margin: 0;
+    gap: .4vw;
+    align-items: center;
+}
+.kvestitem_tilte {
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.kvestitem_krug {
+    width: .36vw;
+    height: .36vw;
+    border-radius: 46.2963vh;
+    background: #FF2B51;
+}
+
+.kvestitem_romb1 { 
+    width: 0.7vw;
+    height: 0.7vw;
+    border: 0.0926vw solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.0926vw;
+    transform: rotate(45deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kvestitem_romb2 {
+    width: 0.3vw;
+    height: 0.3vw;
+    
+    background: #fff;
+    border-radius: 0.0926vw;
+    transform: rotate(45deg);
+} 
+
+
+
+
+.logo img{
+    position: absolute;
+    width: 3.45vw;
+    height: 3.35vw;
+    right: 3.1vw;
+    top: 2.85vw;
+}
+
+.logo .text1123123123{
+    position: absolute;
+    width: 7vw;
+    height: 1.5vw;
+    top: 3.4vw;
+    left: 87vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25vw;
+    line-height: 1.5vw;
+
+    color: #FFFFFF;
+}
+
+.logo .text212312312{
+    position: absolute;
+    width: 5vw;
+    height: 0.9vw;
+    top: 4.75vw;
+    left: 87vw;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75vw;
+    line-height: 0.9vw;
+
+    color: #FFFFFF;
+}
+
+
+.info{
+    position: absolute;
+    width: fit-content;
+
+    display: flex;
+    gap: .8vh;
+
+    height: 0.9vw;
+    right: 3.3vw;
+    top: 7vw;
+
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 0vh;
+}
+
+.item img{
+    width: 0.6vw;
+    height: 0.6vw;
+}
+
+.info .item .text{
+    margin-left: 0.55vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75vw;
+    line-height: 0.9vw;
+    letter-spacing: 0.045em;
+
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+
+.moneys_items {
+    position: absolute;
+    display: grid;
+    text-align: right;
+    right: 3.4vw;
+    top: 9.8vw;
+    justify-content: flex-end;
+    gap: 0vw;
+}
+
+
+.money {
+    display: flex;
+    gap: .1vw;
+}
+
+.bank {
+    display: flex;
+    justify-content: flex-end;
+    gap: .1vw;
+}
+
+.money a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    letter-spacing: 0.02em;
+    text-align: right;
+
+    color: #FFFFFF;
+}
+
+.money p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    letter-spacing: 0.02em;
+    text-align: right;
+
+    color: #FFFFFF;
+}
+
+.bank a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 653;
+    font-size: 0.75vw;
+    line-height: 0.9vw;
+    letter-spacing: 0.02em;
+    text-align: right;
+    
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.bank p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 653;
+    font-size: 0.75vw;
+    line-height: 0.9vw;
+    letter-spacing: 0.02em;
+    text-align: right;
+    
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.greenzone{
+    position: absolute;
+    width: 5vw;
+    height: 3vw;
+    right: 3.4vw;
+    top: 14vw;
+    background: linear-gradient(259.94deg, rgba(92, 230, 27, 0.4) 53.31%, rgba(32, 236, 77, 0) 72.54%);
+    border-radius: 0.8vh;
+
+    transition: all .64s;
+}
+
+.greenzone .block .text2{
+    position: absolute;
+    width: 3.5vw;
+    height: 0.4vw;
+    right: 3vw;
+    bottom: 0.5vw;
+    text-align: right;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.6vw;
+    line-height: 0.75vw;
+    /* identical to box height */
+
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+
+    color: #FFFFFF;
+}
+
+.greenzone .block .text1{
+    position: absolute;
+width: 8vw;
+height: 0.75vw;
+right: 3vw;
+bottom: 1.2vw;
+text-align: right;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 0.6vw;
+line-height: 0.75vw;
+/* identical to box height */
+
+letter-spacing: 0.1em;
+font-variant: small-caps;
+
+color: #FFFFFF;
+}
+
+
+.greenzone .block .img{
+position: absolute;
+width: 2.5vw;
+height: 2.5vw;
+right: 0;
+top: 0.4;
+background: #2FF342;
+border-radius: 0.5556vh;
+}
+
+
+.greenzone .block .img img{
+    position: absolute;
+    width: 1.1vw;
+    height: 1.1vw;
+    top: 0.7vw;
+    left: 0.3vw;
+}
+
+section.hud .hud-speedometer {
+    position: absolute;
+    right: 1.66666667vw;
+    bottom: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 12.8125vw;
+    transform-origin: bottom right
+}
+
+section.hud .hud-speedometer .circle-speedometer-wrap {
+    width: 12.8125vw;
+    height: 12.8125vw;
+    position: relative
+}
+
+section.hud .hud-speedometer .circle-speedometer {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+section.hud .hud-speedometer .circle-speedometer .circle-wrap {
+    width: 12.5vw;
+    height: 6.25vw
+}
+
+section.hud .hud-speedometer .circle-speedometer .circle-wrap>div {
+    position: absolute;
+    width: 12.5vw;
+    height: 6.25vw;
+    bottom: -2.08333333vw;
+    left: 3.125vw;
+    transform: rotate(-60deg);
+    transform-origin: left bottom
+}
+
+section.hud .hud-speedometer .circle-speedometer .block-rotate {
+    transform: rotate(-60deg);
+    transform-origin: left bottom;
+    width: 12.5vw;
+    height: 6.25vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper {
+    justify-content: flex-start
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper,
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .in-speed-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .in-speed-wrap {
+    justify-content: center
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .in-speed-wrap .in-speed-opacity {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -1.875vw
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .in-speed-wrap .in-speed-opacity p {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 3.125vw;
+    color: hsla(0, 0%, 100%, .3)
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .in-speed-wrap .in-speed-opacity span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-style: italic;
+    font-weight: 800;
+    font-size: 3.125vw;
+    color: #fff
+}
+
+section.hud .hud-speedometer .circle-speedometer .in-speed-wrapper .p-descr {
+    position: absolute;
+    bottom: 1.45833333vw;
+    font-style: italic;
+    font-size: 1.25vw;
+    color: hsla(0, 0%, 100%, .4);
+    margin-top: 0
+}
+
+section.hud .hud-speedometer .petrol-wrap {
+    position: relative;
+    width: 6.25vw;
+    height: 12.8125vw;
+    margin-right: -3.125vw;
+    margin-bottom: -1.51041667vw
+}
+
+section.hud .hud-speedometer .petrol-wrap .petrol-level {
+    position: absolute;
+    width: 6.25vw;
+    height: 12.8125vw;
+    font-size: 0
+}
+
+section.hud .hud-speedometer .petrol-wrap .petrol-level img {
+    width: 100%;
+    height: 100%
+}
+
+section.hud .hud-speedometer .petrol-wrap .icon-wrap {
+    position: absolute;
+    right: -.72916667vw;
+    top: 0;
+    width: 1.25vw;
+    height: 1.25vw
+}
+
+section.hud .hud-speedometer .petrol-wrap .icon-wrap img {
+    width: 100%;
+    height: 100%
+}
+
+section.hud .hud-speedometer .petrol-wrap .icon-wrap i {
+    display: block;
+    font-style: italic;
+    font-weight: 700;
+    font-size: .83333333vw;
+    color: #fff;
+    transform: rotate(-8.25deg);
+    position: absolute;
+    right: -2.08333333vw;
+    top: -.52083333vw
+}
+
+section.hud .hud-speedometer .other-value-wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: .36458333vw
+}
+
+section.hud .hud-speedometer .other-value-wrap .other-value-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .83333333vw
+}
+
+section.hud .hud-speedometer .other-value-wrap .other-value-item:last-of-type {
+    margin-bottom: 0
+}
+
+section.hud .hud-speedometer .other-value-wrap .other-value-item img {
+    width: 1.25vw;
+    height: 1.25vw;
+    margin-right: .3125vw
+}
+
+section.hud .hud-speedometer .other-value-wrap .other-value-item p {
+    font-style: italic;
+    font-weight: 900;
+    font-size: .72916667vw;
+    text-align: center;
+    text-transform: uppercase
+}
+
+section.hud .hud-speedometer .other-value-wrap .other-value-item.active img {
+    opacity: 1
+}
+
+
+
+

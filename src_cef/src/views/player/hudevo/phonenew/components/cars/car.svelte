@@ -15,6 +15,10 @@
             isPark: true
         },
         {
+            name: "Двигатель",
+            func: "zavoddvig",
+        },
+        {
             name: translateText('player2', 'Получить дубликат ключа'),
             func: "key",
         },

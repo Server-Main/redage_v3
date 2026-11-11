@@ -63,18 +63,18 @@ namespace Redage.SDK
                 {
                     case Type.Error:
                         //Console.ForegroundColor = ConsoleColor.Red;
-                        ctext += "Error";
+                        ctext += "Ошибка";
                         break;
                     case Type.Warn:
                         //Console.ForegroundColor = ConsoleColor.Yellow;
-                        ctext += "Warn";
+                        ctext += "Предупреждение";
                         break;
                     case Type.Info:
-                        ctext += "Info";
+                        ctext += "Инфо";
                         break;
                     case Type.Success:
                         //Console.ForegroundColor = ConsoleColor.Green;
-                        ctext += "Succ";
+                        ctext += "Успех";
                         break;
                     default:
                         return;
@@ -109,18 +109,18 @@ namespace Redage.SDK
                 {
                     case Type.Error:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("Error");
+                        Console.Write(" Ошибка");
                         break;
                     case Type.Warn:
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write(" Warn");
+                        Console.Write(" Предупреждение");
                         break;
                     case Type.Info:
-                        Console.Write(" Info");
+                        Console.Write(" Инфо");
                         break;
                     case Type.Success:
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(" Succ");
+                        Console.Write(" Успех");
                         break;
                     default:
                         return;

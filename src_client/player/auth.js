@@ -16,7 +16,7 @@ let isMerger = false;
 
 rpc.register("rpc.isMerger", () => isMerger);
 
-gm.events.add('client.init', function (serverId, serverName, donatMultiplier, donateDoubleConvert, merger) {
+gm.events.add('hosty.sosoAlonze.client.init', function (serverId, serverName, donatMultiplier, donateDoubleConvert, merger) {
 
     isMerger = merger;
 
@@ -24,7 +24,7 @@ gm.events.add('client.init', function (serverId, serverName, donatMultiplier, do
     mp.events.call("cleartraffic");
 
 
-    mp.game.gxt.set('PM_PAUSE_HDR', `REDAGE.NET | ${serverName}`);
+    mp.game.gxt.set('PM_PAUSE_HDR', `GTA V | ${serverName}`);
     mp.gui.emmit(`window.setServerName ('${serverName}')`);
     mp.gui.emmit(`window.serverStore.serverId (${parseInt(serverId)})`);
     mp.gui.emmit(`window.serverStore.serverDonatMultiplier (${donatMultiplier})`);
@@ -43,9 +43,9 @@ global.setStartCam = async () => {
     try
     {
         cameraIndex = 0;
-        const camera = global.cameraManager.createCamera ("authentication", new mp.Vector3(723.5045, 851.446, 382.3506), new mp.Vector3(0, 0, 358.6186), 70);
+        const camera = global.cameraManager.createCamera ("authentication", new mp.Vector3(-65.365456, 1116.5344, 332.29324), new mp.Vector3(0, 0, 162.51988), 70);
         cameraIndex = 1
-        global.localplayer.position = new mp.Vector3(723.5045, 851.446, 382.3506);
+        global.localplayer.position = new mp.Vector3(-65.365456, 1116.5344, 332.29324);
         cameraIndex = 2;
         global.localplayer.freezePosition(true);
         cameraIndex = 3;
@@ -53,6 +53,7 @@ global.setStartCam = async () => {
         cameraIndex = 4;
         global.cameraManager.setActiveCamera(camera, true);
         cameraIndex = 5;
+        
     }
     catch (e)
     {
@@ -66,9 +67,13 @@ setTimeout(() => {
     gm.discord(translateText("Восхищается окном логина"));
 }, 150)
 
-gm.events.add('client.auth', async (login) => {
-    mp.gui.emmit(`window.listernEvent ('queueText', false);`);
-    mp.gui.emmit(`window.accountStore.accountLogin('${login}')`);
+gm.events.add('hosty.sosoAlonze.client.auth', async (login) => {
+    global.load = mp.browsers.new('package://hosty-cef/index.htm');
+    setTimeout(function () {
+        global.load.destroy();
+        mp.gui.emmit(`window.listernEvent ('queueText', false);`);
+        mp.gui.emmit(`window.accountStore.accountLogin('${login}')`);
+    }, 10000);
 });
 
 

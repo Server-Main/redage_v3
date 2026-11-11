@@ -28,6 +28,7 @@ const eventsData = [
 	{name: "Old1"},
 	{name: "Old2"},
 	{name: "Old3"},
+	{name: "UUID"},
 ];
 
 eventsData.forEach(data => {
@@ -136,36 +137,38 @@ const nameSettings = {
 }
 
 const SetNameTag = (player) => {
-	try {
+    try {
 
-		if (!player || !mp.players.exists(player))
-			return;
+        if (!player || !mp.players.exists(player))
+            return;
 
-		if (player['INVISIBLE'] || player['HideNick']) {
-			player.nameTag = false;
-		} else {
-			if (player['REDNAME']) {
-				player.nameTag = `~r~${player.name.replace('_', ' ')} (${player.remoteId})`;
-			} else {
-				player.nameTag = global.getName (player);
-			}
+        if (player['INVISIBLE'] || player['HideNick']) {
+            player.nameTag = false;
+        } else {
+            let uuid = `~n~#${player['UUID']}`;
 
-			player.nameWidth = ((text, font, scale) => (
-				mp.game.ui.setTextEntryForWidth("STRING"),
-				mp.game.ui.addTextComponentSubstringPlayerName(text),
-				mp.game.ui.setTextFont(font),
-				mp.game.ui.setTextScale(scale, scale),
-				mp.game.ui.getTextScreenWidth(true)
-			))(player.nameTag, nameSettings.font, nameSettings.scale);
+            if (player['REDNAME']) {
+                player.nameTag = `~r~Администратор сервера` + uuid;
+            } else {
+                player.nameTag = global.getName(player) + uuid;
+            }
 
-			player.nameHeight = mp.game.ui.getTextScaleHeight(nameSettings.scale, nameSettings.font);
+            player.nameWidth = ((text, font, scale) => (
+                mp.game.ui.setTextEntryForWidth("STRING"),
+                mp.game.ui.addTextComponentSubstringPlayerName(text),
+                mp.game.ui.setTextFont(font),
+                mp.game.ui.setTextScale(scale, scale),
+                mp.game.ui.getTextScreenWidth(true)
+            ))(player.nameTag, nameSettings.font, nameSettings.scale);
 
-		}
-	}
-    catch (e) 
-	{
-		mp.events.callRemote("client_trycatch", "player/gametag", "SetNameTag", e.toString());
-	}
+            player.nameHeight = mp.game.ui.getTextScaleHeight(nameSettings.scale, nameSettings.font);
+
+        }
+    }
+    catch (e)
+    {
+        mp.events.callRemote("client_trycatch", "player/gametag", "SetNameTag", e.toString());
+    }
 }
 
 global.loadTextureDict = dict => new Promise(async (resolve, reject) => {

@@ -280,5 +280,8 @@
 	"279": {"Id":279,"Name":"Flaming Shamrock","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_034","FemaleHash":"FM_Tat_F_034","Slots":[1],"Price":5000,"Donate":0},
 	"280": {"Id":280,"Name":"Way of the Gun","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_036","FemaleHash":"FM_Tat_F_036","Slots":[2],"Price":5000,"Donate":0},
 	"281": {"Id":281,"Name":"Stone Cross","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_044","FemaleHash":"FM_Tat_F_044","Slots":[0,1],"Price":5000,"Donate":0},
-	"282": {"Id":282,"Name":"Skulls and Rose","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_045","FemaleHash":"FM_Tat_F_045","Slots":[3,4,5,6],"Price":5000,"Donate":0}
+	"282": {"Id":282,"Name":"Skulls and Rose","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_045","FemaleHash":"FM_Tat_F_045","Slots":[3,4,5,6],"Price":5000,"Donate":0},
+	"283": {"Id":283,"Name":"Blackwork 1 ","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_103_M","FemaleHash":"MP_Gta5rptattoo_Tat_103_F","Slots":[0,1,2,3,4,5,6,7,8],"Price":50000,"Donate":0},
+	"284": {"Id":284,"Name":"Blackwork 2","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_104_M","FemaleHash":"MP_Gta5rptattoo_Tat_104_F","Slots":[0,1,2,3,4,5,6,7,8],"Price":50000,"Donate":0},
+	"285": {"Id":285,"Name":"Blackwork 3","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_105_M","FemaleHash":"MP_Gta5rptattoo_Tat_105_F","Slots":[0,1,2,3,4,5,6,7,8],"Price":50000,"Donate":0}
 }

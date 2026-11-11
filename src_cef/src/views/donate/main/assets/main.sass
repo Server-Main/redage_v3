@@ -26,6 +26,7 @@
     align-items: center
     background-image: url('images/background.png')
     background-repeat: no-repeat
+    background-color: black
     background-size: cover
     background-position: center
     color: white
@@ -76,21 +77,21 @@
                 @include fluid("font-size", 24)
                 @include fluid("line-height", 24)
     .newdonate__button
-        @include fluid("margin-left", 19)
-        @include fluid("width", 295)
+        @include fluid("width", 50)
         @include fluid("height", 54)
-        background: linear-gradient(270deg, rgba(255,105,105,0.2) -0.04%, rgba(255,64,64,0.2) 87.53%) 
-        transform: skewX(-40deg)
+        border-radius: 0.5vw
+        border: 1px solid rgba(255, 255, 255, 0.055)
         display: flex
         align-items: center
         justify-content: center
         cursor: pointer
 
         .newdonate__button-main
-            @include fluid("width", 250)
-            @include fluid("height", 46)    
-            background: linear-gradient(270deg, #FF6969 -0.04%, #FF4040 87.53%)
-            box-shadow: 0px 0px 40px rgba(255, 64, 64, 0.4)
+            @include fluid("width", 300)
+            @include fluid("height", 54)    
+            border-radius: 0.5vw
+            background: linear-gradient(257.93deg, rgba(255, 255, 255, 0.03) 6.57%, rgba(4, 4, 4, 0.03) 61.63%)
+            border: 1px solid rgba(255, 255, 255, 0.055)
             display: flex
             align-items: center
             justify-content: center
@@ -98,37 +99,35 @@
             animation: buttonanim 1.5s ease infinite
 
             &:hover
-                box-shadow: 0px 0px 30px #FF6969
+                box-shadow: 0px 0px 30px rgba(56, 139, 228, 0.21)
 
                 .newdonate__button-x2
-                    box-shadow: 0px 0px 30px #FF6969
+                    box-shadow: 0px 0px 30px  rgba(56, 139, 228, 0.21)
             .newdonate__button-text
-                transform: skewX(40deg)
                 font-weight: bold
                 @include fluid("font-size", 20)
                 @include fluid("line-height", 27)
 
             .newdonate__button-x2
                 position: absolute
-                background: linear-gradient(270deg, #FF6969 -0.04%, #FF4040 87.53%)
-                border-radius: 50%
+                background: var(--unnamed, linear-gradient(to bottom right, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) top right / 50% 50% no-repeat)
+                border-radius: .5vw
                 @include fluid("width", 30)
                 @include fluid("min-height", 30)
                 display: flex
                 align-items: center
                 justify-content: center
                 @include fluid("font-size", 14)
-                @include fluid("right", 10)
-                @include fluid("top", -8)
-                transform: skewX(40deg)
+                @include fluid("right", 130)
+                @include fluid("top", 80)
 
     .newdonate__button_small
-        @include fluid("margin-left", 19)
-        transform: skewX(-40deg)
+        @include fluid("margin-left", 0)
+        border-radius: .1vw
         @include fluid("width", 250)
         @include fluid("height", 46)    
-        background: linear-gradient(270deg, #FF6969 -0.04%, #FF4040 87.53%)
-        box-shadow: 0px 0px 40px rgba(255, 64, 64, 0.4)
+        background: linear-gradient(257.93deg, rgba(255, 255, 255, 0.03) 6.57%, rgba(4, 4, 4, 0.03) 61.63%)
+        border: 1px solid rgba(255, 255, 255, 0.055)
         display: flex
         align-items: center
         justify-content: center
@@ -136,9 +135,8 @@
         background-size: 400% 400%
         animation: buttonanim 1.5s ease infinite
         &:hover
-            box-shadow: 0px 0px 30px #FF6969
+            box-shadow: 0px 0px 30px rgba(56, 139, 228, 0.13)
         .newdonate__button-text
-            transform: skewX(40deg)
             font-weight: bold
             @include fluid("font-size", 18)
             @include fluid("line-height", 24)
@@ -166,26 +164,38 @@
                     background-repeat: no-repeat
                     background-size: contain
                     background-position: center
+                .donate-img
+                    @include fluid("width", 37)
+                    @include fluid("height", 37)
+                    background-image: url('images/donation.png')
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-position: center
 
                 .newdonate__title
-                    font-family: 'UniNeue'
-                    font-weight: 800
-                    @include fluid("margin-left", 20)
-                    @include fluid("font-size", 32)
-                    @include fluid("line-height", 43)
-                    @include fluid("width", 450)
+                    text-shadow: 0px 0px 4px #4B41CD
+                    font-family: Inter
+                    font-size: 35px
+                    font-style: normal
+                    font-weight: 700
+                    line-height: normal
+                    margin-left: 1.5vw
+                    background: rgba(56, 139, 228, 1)
+                    background-clip: text
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    letter-spacing: -1.575px
                 .back-button
-                    @include fluid("width", 163)
+                    @include fluid("width", 125)
                     @include fluid("height", 34)
-                    background: #FFFFFF
-                    @include fluid("border", 2, "solid #C9C9C9")
-                    @include fluid("border-radius", 55)
-                    @include fluid("margin-left", 38)
+                    background:#13131C                    
+                    border-radius: .5vw
+                    @include fluid("margin-left", 0)
                     display: flex
                     justify-content: space-between
                     @include fluid("padding-left", 32)
                     @include fluid("padding-right", 32)
-                    color: black
+                    color: white
                     text-transform: uppercase
                     @include fluid("font-size", 20)
                     @include fluid("line-height", 27)
@@ -206,6 +216,9 @@
                         cursor: pointer
             .newdonate__subtitle
                 @include fluid("margin-top", 20)
+                color: gray
+                width: 340px
+                font-family: Inter
                 font-weight: 500
             
         .newdonate__header-right
@@ -213,13 +226,13 @@
             
             .newdonate__header-coins
                 display: flex
-                @include fluid("margin-right", 196)
+                @include fluid("margin-right", 20)
 
                 .newdonate__header-coin
                     display: flex
                     flex-direction: column
                     &:first-child
-                        @include fluid("margin-right", 88)
+                        @include fluid("margin-right", 20)
                     .header-coin__top
                         display: flex
                         align-items: center
@@ -239,7 +252,7 @@
                         .newdonate__count
                             @include fluid("margin-left", 30)
                             font-weight: bold
-                            @include fluid("font-size", 32)
+                            @include fluid("font-size", 20)
                             @include fluid("line-height", 43)
 
                     .newdonate__header-info
@@ -262,17 +275,17 @@
             justify-content: space-between
 
             .main-menu__header-element
-                @include fluid("width", 740)
+                @include fluid("width", 1700)
                 @include fluid("height", 360)
-                background: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)
-                @include fluid("border", 2, "solid rgba(255, 255, 255, 0.4)")
+                background: linear-gradient(180deg, rgba(34, 35, 48, 0.42) 0%, rgba(34, 35, 48, 0) 100%)
+                border: 1px solid rgba(255, 255, 255, 0.055)
                 box-sizing: border-box
                 @include fluid("border-radius", 6)
                 display: flex
                 justify-content: space-between
                 align-items: center
                 .main-menu__star-block
-                    @include fluid("width", 340)
+                    @include fluid("width", 680)
                     @include fluid("height", 340)
                     background-image: url('images/star-shadow.png')
                     background-repeat: no-repeat
@@ -280,7 +293,7 @@
                     background-position: center
 
                     .star-img
-                        @include fluid("width", 340)
+                        @include fluid("width", 1700)
                         @include fluid("height", 340)
                         background-image: url('images/star.png')
                         background-repeat: no-repeat
@@ -292,34 +305,37 @@
                 .main-menu__element-info
                     @include fluid("margin-left", 32)
                     height: 100%
-                    @include fluid("padding-top", 35)
-                    @include fluid("width", 336)
+                    @include fluid("padding-top",  35)
+                    @include fluid("width", 1700)
 
                     .main-menu__timer-box
                         display: flex
-                        @include fluid("font-size", 24)
+                        @include fluid("font-size", 12)
                         @include fluid("line-height", 32)
+                        color: #F13E53
                         font-weight: bold
 
                         .main-menu__timer
-                            @include fluid("margin-left", 21)
+                            @include fluid("margin-left", 400)
+                            @include fluid("margin-top", 40)
                             @include fluid("padding-left", 15)
                             @include fluid("padding-right", 15)
-                            @include fluid("height", 32)
-                            background: linear-gradient(90deg, #FF4040 64.73%, #FF7979 116.51%)
-                            box-shadow: 0px 0px 40px rgba(255, 64, 64, 0.4)
+                            @include fluid("height", 28)
+                            background: linear-gradient(257.93deg, rgba(255, 255, 255, 0.03) 6.57%, rgba(4, 4, 4, 0.03) 61.63%)
+                            border: 1px solid rgba(255, 255, 255, 0.055)
+                            box-shadow: 0px 0px 40px rgba(4, 4, 4, 0.03)
                             @include fluid("border-radius", 6)
 
 
                     .main-menu__title
                         @include fluid("margin-top", 20)
-                        @include fluid("max-width", 271)
+                        @include fluid("max-width", 500)
                         @include fluid("font-size", 32)
                         @include fluid("line-height", 43)
                         font-weight: 800
                     
                     .main-menu__paragraph
-                        @include fluid("width", 288)
+                        @include fluid("width", 500)
                         @include fluid("margin-top", 7)
                         @include fluid("margin-bottom", 23)
             
@@ -360,10 +376,11 @@
             @include fluid("margin-top", 54)
 
             .main-menu__main-element
-                @include fluid("width", 300)
-                @include fluid("height", 300)
-                @include fluid("border", 2, "solid rgba(255, 255, 255, 0.4)")
-                background: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)
+                @include fluid("width", 400)
+                @include fluid("height", 200)
+                border: 2px rgba(255, 255, 255, 0.02) solid
+                background: linear-gradient(180deg, rgba(34, 35, 48, 0.42) 0%, rgba(34, 35, 48, 0) 100%)
+                border: 1px solid rgba(255, 255, 255, 0.055)
                 box-sizing: border-box
                 @include fluid("border-radius", 6)
                 display: flex
@@ -371,12 +388,12 @@
                 align-items: center
                 cursor: pointer
                 &:hover
-                    background: none
+                    background: linear-gradient(180deg, rgba(44, 237, 219, 0.5) 0%, rgba(44, 237, 219, 0.03) 116.05%)
 
                 .main-menu__main-element-img
                     @include fluid("margin-top", 20)
-                    @include fluid("width", 180)
-                    @include fluid("height", 180)
+                    @include fluid("width", 90)
+                    @include fluid("height", 90)
                     background-repeat: no-repeat
                     background-size: contain
                     background-position: center
@@ -387,7 +404,7 @@
                 .main-menu__main-element-text
                     @include fluid("margin-top", 30)
                     text-transform: uppercase
-                    @include fluid("font-size", 22)
+                    @include fluid("font-size", 15)
                     @include fluid("line-height", 30)
                     font-weight: 800
 
@@ -423,15 +440,15 @@
         .shop-element
             @include fluid("width", 500)
             @include fluid("height", 220)
-            background: linear-gradient(360deg, rgba(255, 64, 64, 0.2) 0%, rgba(255, 64, 64, 0) 100%)
-            @include fluid("border", 2, "solid rgba(255, 64, 64, 0.4)")
+            background: rgba(16, 19, 27, .3)
+            @include fluid("border", 2, "solid rgba(16, 19, 27, 1)")
             box-sizing: border-box
             @include fluid("border-radius", 6)
             display: flex
             justify-content: space-between
             align-items: center
             &:hover
-                background: linear-gradient(360deg, rgba(255, 64, 64, 0.4) 0%, rgba(255, 64, 64, 0) 100%)
+                background: rgba(16, 19, 27, .5)
 
             .star-img
                 @include fluid("margin-left", 29)
@@ -572,13 +589,13 @@
                 @include fluid("border-radius", 6)
             
             .shop-categorie__element
-                @include fluid("width", 440)
-                @include fluid("height", 220)
-                background: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)
-                @include fluid("border", 2, "solid rgba(255, 255, 255, 0.4)")
+                @include fluid("width", 500)
+                @include fluid("height", 300)
                 box-sizing: border-box
                 @include fluid("border-radius", 6)
                 display: flex
+                zoom: .7
+                transform: rotate(40deg)
                 justify-content: space-between
                 align-items: center
                 @include fluid("padding-right", 34)
@@ -591,9 +608,9 @@
                 &.active
                     .shop-categorie__checkbox_active 
                         display: block !important
-                &:hover
-                    background: linear-gradient(360deg, rgba(131, 131, 131, 0.2) 0%, rgba(131, 131, 131, 0) 100%)
-
+                :hover
+                    .shop-categorie__checkbox_active 
+                        display: block !important
                 .shop-categorie__info
                     display: flex
                     flex-direction: column
@@ -614,13 +631,15 @@
                             @include fluid("width", 20)
                             @include fluid("height", 20)
                             @include fluid("border-radius", 6)
-                            background: #FFFFFF
+                            background: var(--222, linear-gradient(to bottom right, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(56, 139, 228, 0.13) 0%, rgba(56, 139, 228, 0.21) 50%) top right / 50% 50% no-repeat)
+                            backdrop-filter: blur(10.5px)
                     .shop-element__title
                         font-weight: 800
+                        transform: rotate(-40deg)
                         @include fluid("font-size", 22)
                         @include fluid("line-height", 30)
-                        @include fluid("margin-top", 11)
-                        @include fluid("margin-bottom", 8)
+                        @include fluid("margin-top", 40)
+                        @include fluid("margin-left", -170)
                         text-align: center
                     .shop-element__paragraph
                         text-align: center
@@ -651,8 +670,8 @@
             @include fluid("padding-top", 40)
             @include fluid("padding-bottom", 46)
             &.reborn
-                background: linear-gradient(360deg, rgba(255, 64, 64, 0.2) 0%, rgba(255, 64, 64, 0) 100%)
-                @include fluid("border", 2, "solid rgba(255, 64, 64, 0.4)")
+                background: #0A0B11
+                @include fluid("border", 2, "solid #2C7BC6")
                 
                 .star-img
                     @include fluid("width", 760)
@@ -670,11 +689,12 @@
                 @include fluid("border", 2, "solid rgba(221, 221, 221, 0.4)")
 
                 .newdonate__button_small
-                    background: linear-gradient(270deg, #9D9D9D 0.01%, #DDDDDD 93.13%)
+                    background: linear-gradient(360deg, rgba(221, 221, 221, 0.5) 0%, rgba(221, 221, 221, 0) 100%)
                     box-shadow: 0px 0px 40px rgba(221, 221, 221, 0.4)
+                    :hover 
+                    box-shadow: 0px 0px 40px rgba(255, 221, 221, 0.4)
 
             &.silver //gold
-            
                 background: linear-gradient(360deg, rgba(255, 212, 88, 0.2) 0%, rgba(255, 212, 88, 0) 100%)
                 @include fluid("border", 2, "solid rgba(255, 212, 88, 0.4)") 
                 .newdonate__button_small
@@ -894,14 +914,14 @@
     .donatelist-element
         @include fluid("width", 500)
         @include fluid("height", 220)
-        background: linear-gradient(360deg, rgba(255, 64, 64, 0.2) 0%, rgba(255, 64, 64, 0) 100%)
-        @include fluid("border", 2, "solid rgba(255, 64, 64, 0.4)")
+        background: rgba(4, 4, 4, 0.5) 
+        border: 1px solid rgba(255, 255, 255, 0.055)
         box-sizing: border-box
         @include fluid("border-radius", 6)
         display: flex
         align-items: center
         &:hover
-            background: linear-gradient(360deg, rgba(255, 64, 64, 0.4) 0%, rgba(255, 64, 64, 0) 100%)
+            background: rgba(4, 4, 4, 0.9) 
 
         .star-img
             @include fluid("margin-left", 29)
@@ -1147,9 +1167,9 @@
             display: flex
             align-items: center
             .donateicons-esc
-                @include fluid("font-size", 64)
+                @include fluid("font-size", 24)
             .newdonate__escape-title
-                @include fluid("font-size", 64)
+                @include fluid("font-size", 24)
                 @include fluid("line-height", 86)
                 font-weight: bold
                 @include fluid("margin-left", 24)
@@ -1163,15 +1183,6 @@
                     color: #FF4040
                     transition: color 0.25s
                     
-        .newdonate__escape-text
-            text-align: center
-            @include fluid("margin-top", 11)
-            @include fluid("font-size", 22)
-            @include fluid("line-height", 30)
-            letter-spacing: 0.15em
-            b
-                color: #FF4040
-                text-decoration: underline
 
     .newdonate__prise
         display: flex
@@ -1343,7 +1354,7 @@
             @include fluid("margin-top", 38)
             @include fluid("width", 915)
             @include fluid("height", 460)
-            background: linear-gradient(360deg, rgba(199, 51, 51, 0.8) 0%, #1B1E28 100%)
+            background:#14171E4A
             box-shadow: 0px 0px 44px rgba(0, 0, 0, 0.5)
             display: flex
             align-items: center
@@ -1419,6 +1430,10 @@
                         @include fluid("font-size", 18)
                         @include fluid("line-height", 24)
                         @include fluid("max-width", 378)
+                        & h
+                        color: #388BE4
+    
+
     
     .newdonate__payment
         display: flex

@@ -15,7 +15,7 @@ namespace NeptuneEvo.Players
             if (login == String.Empty)
                 return true;
             
-            login = login.ToLower();
+            login = login.ToLower(); 
 
             if (Logins.Count > 0 && !Logins.Any(l => l.ToLower() == login))
             {

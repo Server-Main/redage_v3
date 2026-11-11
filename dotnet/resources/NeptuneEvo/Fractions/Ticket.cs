@@ -80,15 +80,8 @@ namespace NeptuneEvo.Fractions
             CustomColShape.CreateSphereColShape(ImpoundLotPos, 5f, 0, ColShapeEnums.ImpoundLot);
             NAPI.Marker.CreateMarker(36, ImpoundLotPos + new Vector3(0, 0, 0.5f), new Vector3(), new Vector3(), 3.5f,
                 new Color(255, 255, 255, 220));
-            
-            //
-            PedSystem.Repository.CreateQuest("s_m_m_ciasec_01", PedPos, PedRot, questName: QuestName, title: "~y~NPC~w~ Роберт\nСотрудник полиции", colShapeEnums: ColShapeEnums.ImpoundLotPed, pedBlipData: new PedBlipData
-            {
-                BlipId = 783,
-                BlipName = "Штрафстоянка",
-                BlipColor = 59
 
-            });
+            //
         
         }
         [Interaction(ColShapeEnums.ImpoundLot, In: true)]

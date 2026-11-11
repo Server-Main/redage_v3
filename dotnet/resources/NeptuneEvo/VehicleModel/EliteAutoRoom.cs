@@ -15,16 +15,16 @@ namespace NeptuneEvo.VehicleModel
     public class EliteAutoRoom : Script
     {
         public static readonly nLog Log = new nLog("VehicleModel.EliteAutoRoom");
-        public static Vector3 NpcBuyPosition = new Vector3(-1380.4304, -256.1946, 42.821304);
-        private static float NpcBuyRotation = -97.236244f;
+        public static Vector3 NpcBuyPosition = new Vector3(-176.95227, -1157.38, 23.117794);
+        private static float NpcBuyRotation = -350.236244f;
         //
         public static string NpcName = "npc_eliteroom";
         [ServerEvent(Event.ResourceStart)]
         public void Event_ResourceStart()
         {
  
-            Main.CreateBlip(new Main.BlipData(669, "Elite AutoRoom", NpcBuyPosition, 4, true));
-            PedSystem.Repository.CreateQuest("s_m_m_movprem_01", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Продавец элитного транспорта", colShapeEnums: ColShapeEnums.EliteAutoRoom);
+            // Main.CreateBlip(new Main.BlipData(669, "Элитный автосалон", NpcBuyPosition, 4, true));
+            // PedSystem.Repository.CreateQuest("s_m_m_movprem_01", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Федор Александрович\nПродавец элитного транспорта", colShapeEnums: ColShapeEnums.EliteAutoRoom);
         }
         [Interaction(ColShapeEnums.EliteAutoRoom)]
         public static void OpenDialog(ExtPlayer player, int index)

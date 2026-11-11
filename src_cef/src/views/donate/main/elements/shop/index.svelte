@@ -87,7 +87,7 @@
             title: "Основное",
             desc: "",
             function: "onSelectPrice",
-            img: ImgBuy,
+            img: "",
             list: [
                 /*{
                     name: "Пополнить",
@@ -113,7 +113,7 @@
             title: "Персонаж",
             desc: "",
             function: "onSelectP",
-            img: ImgMenuChar,
+            img: "",
             list: [
                 {
                     id: 0,
@@ -533,7 +533,7 @@
     <div class="shop-elements">
 
         {#each shopList[selectIndex].list as item, index}
-        <div class="shop-element">
+        <div  on:click={() => onToServer (item)} class="shop-element">
             {#if item.icon}
             <div class="shop-element__icon">
                 <span class="{item.icon} element__icon" />
@@ -550,16 +550,6 @@
                 {:else}
                 <div class="shop-element__paragraph">{item.desc}</div>
                 {/if}
-                <div class="shop-element__button-box">
-                    <div class="newdonate__button_small shop-element__button" on:click={() => onToServer (item)}>
-                        {#if item.btnName}
-                        <div class="newdonate__button-text">{item.btnName}</div>
-                        {:else}
-                        <div class="newdonate__button-text">{translateText('donate', 'Купить за')} {format("money", item.price)} RB</div>
-                        {/if}
-                    </div>
-                    
-                </div>
             </div>
         </div>
         {/each}

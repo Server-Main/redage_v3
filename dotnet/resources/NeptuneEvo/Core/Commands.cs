@@ -312,9 +312,9 @@ namespace NeptuneEvo.Core
             {
                 if (!CommandsAccess.CanUseCmd(player, AdminCommands.Giveredsall)) return;
 
-                if (amount < 1 || amount > 500)
+                if (amount < 1 || amount > 100000)
                 {
-                    Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, "Выдать можно минимум 1 RB и максимум 500 RB.", 3000);
+                    Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, "Выдать можно минимум 1 SCoin и максимум 100000 SCoins.", 3000);
                     return;
                 }
                 
@@ -333,7 +333,7 @@ namespace NeptuneEvo.Core
                     Players.Phone.Messages.Repository.AddSystemMessage(foreachPlayer, (int)DefaultNumber.RedAge, LangFunc.GetText(LangType.Ru, DataName.RbIncome, amount, player.Name.Replace('_', ' ')), DateTime.Now);
                 }
                 
-                NAPI.Chat.SendChatMessageToAll($"{CommandsAccess.AdminPrefixChat}{player.Name.Replace('_', ' ')} выдал всем игрокам {amount} RedBucks.");
+                NAPI.Chat.SendChatMessageToAll($"{CommandsAccess.AdminPrefixChat}{player.Name.Replace('_', ' ')} выдал всем игрокам {amount} SCoins.");
                 GameLog.Admin(player.Name, $"giveredsall({amount})", "allOnlinePlayers");
             }
             catch (Exception e)
@@ -1668,7 +1668,7 @@ namespace NeptuneEvo.Core
                 if (!CommandsAccess.CanUseCmd(player, AdminCommands.Admins)) return;
                 var characterData = player.GetCharacterData();
                 if (characterData == null) return;
-                Trigger.SendChatMessage(player, "=== ADMINS ONLINE ===");
+                Trigger.SendChatMessage(player, "=== Администрация в онлайне ===");
                 var currentDate = DateTime.Now;
                 foreach (ExtPlayer foreachPlayer in Main.AllAdminsOnline)
                 {
@@ -1699,8 +1699,7 @@ namespace NeptuneEvo.Core
 
                     Trigger.SendChatMessage(player, $"[{foreachPlayer.Value}] {foreachPlayer.Name} - {foreachCharacterData.AdminLVL} {afkTimeInfo}");
                 }
-                Trigger.SendChatMessage(player, "=== ADMINS ONLINE ===");
-                Admin.AdminLog(characterData.AdminLVL, $"{player.Name} ({player.Value}) проверяет список администрации в сети");
+                Trigger.SendChatMessage(player, "=== Администрация онлайн ===");
             }
             catch (Exception e)
             {
@@ -2856,7 +2855,7 @@ namespace NeptuneEvo.Core
                             VehicleStreaming.DeleteVehicle(vehicleAdmin);
                     }
                 }
-                Admin.AdminLog(characterData.AdminLVL, $"{player.Name} ({player.Value}) удалил все админ-машины");
+                NAPI.Chat.SendChatMessageToAll($"{CommandsAccess.AdminPrefixChat}{player.Name.Replace('_', ' ')} очистил админские машины.");
                 GameLog.Admin($"{player.Name}", AdminCommands.Delvehall, $"");
             }
             catch (Exception e)
@@ -3733,10 +3732,9 @@ namespace NeptuneEvo.Core
                     else veh = VehicleStreaming.CreateVehicle(NAPI.Util.GetHashKey(name), player.Position, player.Rotation.Z, 0, 0, acc: VehicleAccess.Admin, by: player.Name, petrol: 9999, engine: true);
                 }
                 Trigger.Dimension(veh, UpdateData.GetPlayerDimension(player));
-                veh.NumberPlate = "ADMIN";
+                veh.NumberPlate = "RAGECODE.PRO";
                 veh.PrimaryColor = a;
                 veh.SecondaryColor = b;
-                Admin.AdminLog(characterData.AdminLVL, $"{player.Name} ({player.Value}) создал машину({name},{veh.Value})");
                 GameLog.Admin($"{player.Name}", $"vehCreate({name})", $"");
             }
             catch (Exception e)
@@ -3759,9 +3757,9 @@ namespace NeptuneEvo.Core
                     {
                         for (byte i = 0; i != count; i++)
                         {
-                            var veh = (ExtVehicle) VehicleStreaming.CreateVehicle(vehHash, new Vector3((player.Position.X + (4 * i)), player.Position.Y, player.Position.Z), player.Rotation.Z, a, b, "ADMIN", acc: VehicleAccess.Admin, by: player.Name, petrol: 9999, engine: true);
+                            var veh = (ExtVehicle) VehicleStreaming.CreateVehicle(vehHash, new Vector3((player.Position.X + (4 * i)), player.Position.Y, player.Position.Z), player.Rotation.Z, a, b, "RAGECODE.PRO", acc: VehicleAccess.Admin, by: player.Name, petrol: 9999, engine: true);
                             Trigger.Dimension(veh, UpdateData.GetPlayerDimension(player));
-                            veh.NumberPlate = "ADMIN";
+                            veh.NumberPlate = "RAGECODE.PRO";
                             veh.PrimaryColor = a;
                             veh.SecondaryColor = b;
                         }
@@ -3776,9 +3774,9 @@ namespace NeptuneEvo.Core
                             uint model = NAPI.Util.GetHashKey(name);
                             for (byte i = 0; i != count; i++)
                             {
-                                var veh = (ExtVehicle) VehicleStreaming.CreateVehicle(model, new Vector3((player.Position.X + (4 * i)), player.Position.Y, player.Position.Z), player.Rotation.Z, a, b, "ADMIN", acc: VehicleAccess.Admin, by: player.Name, petrol: 9999, engine: true);
+                                var veh = (ExtVehicle) VehicleStreaming.CreateVehicle(model, new Vector3((player.Position.X + (4 * i)), player.Position.Y, player.Position.Z), player.Rotation.Z, a, b, "RAGECODE.PRO", acc: VehicleAccess.Admin, by: player.Name, petrol: 9999, engine: true);
                                 Trigger.Dimension(veh, UpdateData.GetPlayerDimension(player));
-                                veh.NumberPlate = "ADMIN";
+                                veh.NumberPlate = "RAGECODE.PRO";
                                 veh.PrimaryColor = a;
                                 veh.SecondaryColor = b;
                             }
@@ -4848,13 +4846,13 @@ namespace NeptuneEvo.Core
             try
             {
                 Admin.releasePlayerFromDemorgan(player, Main.GetPlayerByID(id));
+                Trigger.ClientEvent(player, "client.stop.demorgan");
             }
             catch (Exception e)
             {
                 Log.Write($"CMD_releaseTargetFromDemorgan Exception: {e.ToString()}");
             }
         }
-        
         [Command(AdminCommands.Offjail, GreedyArg = true)]
         public static void CMD_offlineJailTarget(ExtPlayer player, string targetName, int time, string reason)
         {

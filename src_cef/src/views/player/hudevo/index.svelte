@@ -4,11 +4,13 @@
 
     export let visible;
     import { isPlayer, isPhone } from 'store/hud'
+
     import './main.sass';
+    import './main.css'
+
     import './fonts/style.css';
     import './fonts/hudfonts/style.css';
     import { fly } from 'svelte/transition';
-
 
     import Chat from './elements/chat.svelte'
     import ButtonsInfo from './elements/buttonsinfo.svelte'
@@ -27,7 +29,7 @@
     import WeekPrise from './elements/weekprise.svelte'
     import Level from './elements/level.svelte'
     import Winner from './elements/Winner.svelte'
-    import Quest from './elements/quest.svelte'
+    // import Quest from './elements/quest.svelte'
     import Streamer from './elements/streamer.svelte'
     import PlayerInfo from './elements/playerinfo.svelte'
     import Lobby from './elements/lobby.svelte'
@@ -45,7 +47,6 @@
     import Phone from './phonenew/index.svelte';
     import PhoneNotify from './phonenew/indexNotify.svelte';
 
-
     let SelectPopup = "";
 
     let screenX = 0;
@@ -61,7 +62,6 @@
     window.hud = {
         updateSafeZone: (screenWidht, screenHeight, safeZoneSize, ratio) => {
             aspectRatio = ratio;
-            //console.log(`window.hud.updateSafeZone (${screenWidht}, ${screenHeight}, ${safeZoneSize}, ${aspectRatio})`)
             safeZoneSize = (((1.0 - safeZoneSize) * 0.5) * 100.0);
 
             screenX = screenWidht / 100;
@@ -75,14 +75,6 @@
                 div.style.paddingRight = div.style.paddingLeft = SafeSone.x + "px";
                 div.style.paddingTop = div.style.paddingBottom = SafeSone.y + "px";
             });
-
-            /*savezoneDiv = document.querySelector('body');
-            savezoneDiv.style.width = screenWidht + "px";
-            savezoneDiv.style.height = screenHeight + "px";
-
-            savezoneDiv = document.querySelector('#viewcontainer');
-            savezoneDiv.style.width = screenWidht + "px";
-            savezoneDiv.style.height = screenHeight + "px";*/
 
             window.hud.updateMapSize (lastStatus)
         },
@@ -136,7 +128,6 @@
     let isTaxiCounter = false;
     window.hudStore.isTaxiCounter = (value) => isTaxiCounter = value;
 
-
     let phoneNotification = false;
     const onPhoneNotification = (json) => {
         if (json)
@@ -145,8 +136,7 @@
         phoneNotification = json;
     }
     import { addListernEvent } from 'api/functions';
-    addListernEvent ("phone.notify", onPhoneNotification)
-        
+    addListernEvent ("phone.notify", onPhoneNotification);  
 
     let hour = 0
     window.hudStore.setHour = (value) => hour = value;
@@ -155,13 +145,15 @@
         else return true;
     }
 </script>
+
 <Notification night={isDay(hour)} />
 <div id="hudevo" class:hudevo__hide={!(visible && isHudVisible)} class:night={isDay(hour)}>
+    <ButtonsInfo />
+    <Check />
     <Chat {SafeSone} />
     <div class="hudevo__left">
         <div class="hudevo__chat_obman"></div>
         <div class="box-column hudevo__leftcenter_absolute">
-            <ButtonsInfo />
             <PetControl />
             {#if isTaxiCounter}
                 <TaxiCount />
@@ -178,7 +170,6 @@
         <ActiveCapt />
         <WarInfo />
         <EventAnounce />
-        <Check />
         <WeekPrise />
         <Winner />
         <QuestComplite />
@@ -187,16 +178,14 @@
             <UseButton />
             <KeyClamp />
             <DropItem />
-            <!-- <Streamer /> -->
         </div>
     </div>
     <div class="hudevo__right">
         <div class="box-flex flex-start justify-start">
             <Gift {SafeSone}/>
-            <Quest />
+            <!-- <Quest /> -->
             <PlayerInfo {SafeSone}/>
         </div>
-        <!-- <Lobby /> -->
         <AdminInfo />
         <BizWar />
         <Killist />
@@ -217,6 +206,7 @@
         </div>
     {/if}
 {/if}
+
 <div id="hudevo" class:hudevo__hide={!(visible && isHudVisible) || !isWalkietalkie}>
     <Walkietalkie />
 </div>

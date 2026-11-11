@@ -51,7 +51,7 @@ namespace NeptuneEvo.Fractions
                 {
                     NAPI.Marker.CreateMarker(1, pos - new Vector3(0, 0, 1.12), new Vector3(), new Vector3(), 4, new Color(255, 0, 0), false, 0);
                     //NAPI.Blip.CreateBlip(140, pos, 1f, 4, "Drugs", 255, 0, true, 0, 0);
-                    Main.CreateBlip(new Main.BlipData(496, "Трава", pos, 25, true));
+                    Main.CreateBlip(new Main.BlipData(496, "Крафт травы", pos, 25, true));
 
                     CustomColShape.CreateCylinderColShape(pos - new Vector3(0, 0, 1.12), 4, 5, 0, ColShapeEnums.DrugPoints);
                 }

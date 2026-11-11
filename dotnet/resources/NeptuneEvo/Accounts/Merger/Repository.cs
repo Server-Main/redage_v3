@@ -429,7 +429,7 @@ namespace NeptuneEvo.Accounts.Merger
                     Armor = character.Armor,
                     Lvl = character.Lvl,
                     Exp = character.Exp,
-                    Money = Convert.ToInt32(MoneyTo / 10),
+                    Money = (int?)Convert.ToInt64(MoneyTo / 10),
                     Bank = bankID,
                     Work = character.Work,
                     Drugaddi = character.Drugaddi,

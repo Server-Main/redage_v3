@@ -260,6 +260,18 @@ namespace NeptuneEvo.Core
                             }
                         }
                         break;
+					case 15:
+                        foreach (string name in CarsNames[4])
+                        {
+                            if (!BusProductsData.ContainsKey(name)) continue;
+                            else if (BusProductsData[name].Price == 0) continue;
+                            if (data.Products.FirstOrDefault(x => x.Name == name) == null)
+                            {
+                                data.Products.Add(new Product(BusProductsData[name].Price, 0, 0, name, false));
+                                changed = true;
+                            }
+                        }
+                        break;
 
                 }
                 if (data.Products.Count != 0)
@@ -300,8 +312,8 @@ namespace NeptuneEvo.Core
         {
             try
             {
-                Main.CreateBlip(new Main.BlipData(73, "Premium Clothes Shop", new Vector3(-1126.9141, -1440.1637, 4.108331), 35, true, 1f));
-                PedSystem.Repository.CreateQuest("a_m_y_hipster_01", new Vector3(-1126.9141, -1440.1637, 4.108331 + 1.12), -63.85f, title: "~y~NPC~w~ Вовчик", colShapeEnums: ColShapeEnums.PremiumShop);
+                // Main.CreateBlip(new Main.BlipData(73, "Premium Clothes Shop", new Vector3(-1126.9141, -1440.1637, 4.108331), 35, true, 1f));
+                // PedSystem.Repository.CreateQuest("a_m_y_hipster_01", new Vector3(-1126.9141, -1440.1637, 4.108331 + 1.12), -63.85f, title: "~y~NPC~w~ Вовчик", colShapeEnums: ColShapeEnums.PremiumShop);
 
                 using MySqlCommand cmd = new MySqlCommand()
                 {
@@ -395,7 +407,7 @@ namespace NeptuneEvo.Core
             "Low Autoroom", // 4
             "Motoroom", // 5
             "Gun shop", // 6
-            "Clothes Shop", // 7
+            "Магазин одежды", // 7
             "Burger-Shot", // 8
             "Tattoo-salon", // 9
             "Barber-Shop", // 10
@@ -420,7 +432,7 @@ namespace NeptuneEvo.Core
             71, // barber-shop
             362, //463, // masks shop
             643, // ls customs
-            524, // carwash
+            100, // carwash
             273, // Petshop
             669, // Rare Autoroom
         };
@@ -524,18 +536,18 @@ namespace NeptuneEvo.Core
                 "Tampa2",
                 "Tropos",
                 "Felon2",
-                "Sentinel2", 
-                "Zion2", 
+                "Sentinel2",
+                "Zion2",
                 "Fusilade",
                 "Penumbra",
                 "Rapidgt",
-                "Rapidgt2", 
+                "Rapidgt2",
                 "Schafter3",
-                "Sentinel3", 
+                "Sentinel3",
                 "Voltic",
-                "Gauntlet4", 
-                "Caracara2", 
-                "Issi7", 
+                "Gauntlet4",
+                "Caracara2",
+                "Issi7",
                 "Schafter4",
                 "Novak",
 
@@ -569,7 +581,6 @@ namespace NeptuneEvo.Core
             }, // premium
             new List<string>() // Luxor
             {
-                "astron",
                 "baller7",
                 "comet7",
                 "zeno",
@@ -636,9 +647,9 @@ namespace NeptuneEvo.Core
                 "Jester3",
                 "Coquette2",
                 "Gt500",
-                "Stinger", 
-                "Stingergt", 
-                "Italigtb", 
+                "Stinger",
+                "Stingergt",
+                "Italigtb",
                 "Windsor2",
                 "Deviant",
                 "Dominator3",
@@ -653,7 +664,7 @@ namespace NeptuneEvo.Core
                 "Drafter",
                 "Emerus",
                 "Zorrusso",
-                
+
                 "Comet5",
                 "Furia",
                 "Taipan",
@@ -677,7 +688,7 @@ namespace NeptuneEvo.Core
                 "comet6",
                 "sm722",
                 "torero2",
-                "lm87"
+                "lm87",
             }, // sport
             new List<string>() // Low
             {
@@ -761,8 +772,8 @@ namespace NeptuneEvo.Core
                 "Brioso2",
                 "Weevil",
                 "Tornado5",
-                "Brioso", 
-                "Issi3", 
+                "Brioso",
+                "Issi3",
                 "Tulip",
                 "Vamos",
                 "Hellion",
@@ -873,6 +884,21 @@ namespace NeptuneEvo.Core
             }, // moto
             new List<string>() // elite
             {
+                "6x6urus",
+                "jeepsrt8",
+                "Camry",
+                "mbx18",
+                "rolls6x6",
+                "cadctsv",
+                "BentleyC",
+                "BmwM3",
+                "dilettante",
+                "BentleyB",
+                "AudiRS7",
+                "AudiR8",
+                "g63",
+                "Regera",
+                "audia6",
                 "Caddy",
                 "Romero",
                 "Hotknife",
@@ -911,10 +937,142 @@ namespace NeptuneEvo.Core
                 "Regera",
                 "Lambo640",
                 "Ferrari488",
+                "16challenger",
+                "240nismott",
+                "370driftmachine",
+                "918spyder",
+                "dawn",
+                "lada2107",
                 "lambo580",
                 "cadctsv",
                 "quad1",
-                "vapidse"
+                "vapidse",
+                "dilettante",
+                "cadctsv",
+                "BentleyC",
+                "BentleyB",
+                "audia6",
+                "AudiR8",
+                "AudiRS7",
+                "W900",
+                "Regera",
+                "mbx18",
+                "VNL780",
+                "w221s63",
+                "Camry",
+                "g63",
+                "500",
+                "6x6urus",
+                "BmwM3",
+                "jeepsrt8",
+                "markii",
+                "BMWE38",
+                "vapidse",
+                "MBE420",
+                "Fudocycle",
+                "MazdaRX7",
+                "zentenario",
+                "minic",
+                "impala67",
+                "Skyline",
+                "SubaruWRX",
+                "MLEvoX",
+                "silvias15",
+                "lada2107",
+                "lexusgsf",
+                "escalade900",
+                "720sPrior",
+                "bmwx5",
+                "NGTR",
+                "lp700r",
+                "TeslaS",
+                "RRSVR",
+                "LX570",
+                "v250",
+                "AudiTT",
+                "mx5",
+                "Supra",
+                "quadra",
+                "cls17",
+                "porschegt4",
+                "Shotaro",
+                "BmwM5",
+                "bentayga21",
+                "Db11",
+                "BMWX6",
+                "MBC63S",
+                "benze55",
+                "BmwI8",
+                "panamera",
+                "lambo770",
+                "atlantic",
+                "16challenger",
+                "370driftmachine",
+                "mustang65",
+                "MBG63",
+                "MBC63",
+                "c7",
+                "BmwM8",
+                "23s63l",
+                "DodgeViper",
+                "Lambo640",
+                "240nismott",
+                "x3ramtrx21",
+                "diablosv",
+                "rc",
+                "taycan",
+                "rrcullinan",
+                "maybach",
+                "torajeeptrackhawk",
+                "mbamggt",
+                "esc21",
+                "Lambo580",
+                "gemera",
+                "Ferrari488",
+                "alphardwald",
+                "DMx5m",
+                "Bugatti",
+                "x6m",
+                "krcgtr35",
+                "p1",
+                "m5cs",
+                "sf90",
+                "avtr",
+                "Lambo770",
+                "amgone",
+                "w223",
+                "urus",
+                "wyccvt",
+                "rrsport2023_vip",
+                "xxxxx",
+                "revueltobeast",
+                "sian",
+                "noire19wb",
+                "sc20",
+                "jesko",
+                "veyronss",
+                "918spyder",
+                "4x4x7",
+                "bmwmafiam3",
+                "S145Drift",
+                "bdivo",
+                "chargerf8",
+                "bolide",
+                "caph1",
+                "exp100",
+                "nisa31",
+                "ikx3mso21",
+                "gxg20",
+                "monza",
+                "mvisiongt",
+                "nerodrcustom",
+                "bmistralw16",
+                "fxxkevo",
+                "bugatti",
+                "monster5",
+                "merc6x6",
+                "m4comp",
+                "rolls6x6",                    
             } // elite
         };
 
@@ -973,6 +1131,17 @@ namespace NeptuneEvo.Core
                         break;
                     case 5:
                         foreach (string name in CarsNames[3])
+                        {
+                            if (!BusProductsData.ContainsKey(name)) continue;
+                            var productsData = BusProductsData[name];
+                            if (!productsData.Toggled) continue;
+                            if (productsData.Price == 0) continue;
+                            Product product = new Product(productsData.Price, 0, 0, name, false);
+                            _ProductsList.Add(product);
+                        }
+                        break;
+                    case 15:
+                        foreach (string name in CarsNames[4])
                         {
                             if (!BusProductsData.ContainsKey(name)) continue;
                             var productsData = BusProductsData[name];
@@ -1092,7 +1261,7 @@ namespace NeptuneEvo.Core
                             return;
                         }
                         sessionData.TempBizID = biz.ID;
-                        OpenClothes(player, biz, isGloves: true);
+                        OpenClothes(player, biz, isGloves: true, addClothes: new List<string>() { ClothesComponent.Bugs.ToString() });
                         return;
                     case 11:
                         if ((sessionData.WorkData.OnDuty && Fractions.Manager.FractionTypes[player.GetFractionId()] == FractionsType.Gov) || sessionData.WorkData.OnWork)
@@ -3089,25 +3258,21 @@ namespace NeptuneEvo.Core
                 cmd.Parameters.AddWithValue("@val10", taxes);
                 MySQL.Query(cmd);
 
-                NAPI.Task.Run(() =>
+                Business biz = new Business(lastBizID, "Государство", govPrice, type, products_list, pos, new Vector3(), bankID, -1, new List<Order>(), taxes);
+                biz.UpdateLabel();
+                BizList.TryAdd(lastBizID, biz);
+
+                if (type == 6)
                 {
-                    Business biz = new Business(lastBizID, "Государство", govPrice, type, products_list, pos, new Vector3(), bankID, -1, new List<Order>(), taxes);
-                    biz.UpdateLabel();
-                    BizList.TryAdd(lastBizID, biz);
-
-                    if (type == 6)
+                    using MySqlCommand cmd1 = new MySqlCommand
                     {
-                        using MySqlCommand cmd1 = new MySqlCommand
-                        {
-                            CommandText = "INSERT INTO `weapons`(`id`,`lastserial`) VALUES(@val0,@val1)"
-                        };
-                        cmd1.Parameters.AddWithValue("@val0", biz.ID);
-                        cmd1.Parameters.AddWithValue("@val1", 0);
-                        MySQL.Query(cmd1);
-                    }
-
-                    Notify.Send(player, NotifyType.Info, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.BizCreated, biz.ID), 3000);
-                });
+                        CommandText = "INSERT INTO `weapons`(`id`,`lastserial`) VALUES(@val0,@val1)"
+                    };
+                    cmd1.Parameters.AddWithValue("@val0", biz.ID);
+                    cmd1.Parameters.AddWithValue("@val1", 0);
+                    MySQL.Query(cmd1);
+                }
+                Notify.Send(player, NotifyType.Info, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.BizCreated), 3000);
             }
             catch (Exception e)
             {
@@ -4078,6 +4243,7 @@ namespace NeptuneEvo.Core
             shape = CustomColShape.CreateCylinderColShape(EnterPoint, range, 3, 0, ColShapeEnums.BusinessAction, ID);
 
             Main.CreateBlip(new Main.BlipData(BusinessManager.BlipByType[Type], BusinessManager.BusinessTypeNames[Type], EnterPoint, BusinessManager.BlipColorByType[Type], true));
+
             //blip = (ExtBlip) NAPI.Blip.CreateBlip(Convert.ToUInt32(BusinessManager.BlipByType[Type]), EnterPoint, 1, Convert.ToByte(BusinessManager.BlipColorByType[Type]), Main.StringToU16(BusinessManager.BusinessTypeNames[Type]), 255, 0, true);
             float textrange = (Type == 1) ? 5F : 20F;
             label = (ExtTextLabel) NAPI.TextLabel.CreateTextLabel(Main.StringToU16("Business"), new Vector3(EnterPoint.X, EnterPoint.Y, EnterPoint.Z + 1.5), textrange, 0.5F, 0, new Color(255, 255, 255), true, 0);

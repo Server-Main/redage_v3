@@ -66,7 +66,7 @@ namespace NeptuneEvo.Players.Connect
 
                         if (ban != null)
                         {
-                            player.setBan($"Вы заблокированы {ban.Time.Day} {ban.Time.ToString("MMMM")} {ban.Time.Year}г. {ban.Time.Hour}:{ban.Time.Minute}:{ban.Time.Second} до {ban.Until.Day} {ban.Until.ToString("MMMM")} {ban.Until.Year}г. {ban.Until.Hour}:{ban.Until.Minute}:{ban.Until.Second} (UTC+3). Причина: {ban.Reason} ({ban.Byadmin})");
+                            player.setBan($"Вы заблокированы {ban.Time.Day} {ban.Time.ToString("MMMM")} {ban.Time.Year}г. {ban.Time.Hour}:{ban.Time.Minute}:{ban.Time.Second} до {ban.Until.Day} {ban.Until.ToString("MMMM")} {ban.Until.Year}г. {ban.Until.Hour}:{ban.Until.Minute}:{ban.Until.Second}. Причина: {ban.Reason} ({ban.Byadmin})");
                             return;
                         }
 
@@ -114,11 +114,11 @@ namespace NeptuneEvo.Players.Connect
 
             var auntificationData = sessionData.AuntificationData;
             
-            Log.Write($"{sessionData.Name} ({sessionData.SocialClubName} | {sessionData.RealSocialClub}) joining the server.");
+            Log.Write($"{sessionData.Name} ({sessionData.SocialClubName} | {sessionData.RealSocialClub}) присоеденился к серверу.");
 
             /*if (!IsWhiteLogin(auntificationData.Login))
             {
-                Trigger.ClientEvent(player, "client.auth", -1);
+                Trigger.ClientEvent(player, "hosty.sosoAlonze.client.auth", -1);
                 Trigger.ClientEvent(player, "client.closeAll");
                 Notify.Send(player, NotifyType.Error, NotifyPosition.Center, $"В данный момент на сервере ведутся технические работы, следите за новостями в оф. дискорде.", 1000 * 60);
                 return;
@@ -138,17 +138,16 @@ namespace NeptuneEvo.Players.Connect
             {
                 if (auntificationData.IsCreateAccount)
                 {
-                    Trigger.ClientEvent(player, "client.auth", auntificationData.Login);
+                    Trigger.ClientEvent(player, "hosty.sosoAlonze.client.auth", auntificationData.Login);
                 }
                 else 
-                    Trigger.ClientEvent(player, "client.auth", -1);
+                    Trigger.ClientEvent(player, "hosty.sosoAlonze.client.auth", -1);
 
                 sessionData.TimersData.AutoDCTimer = Timers.StartOnce(1000 * (60 * 10), () =>
                 {
                     if (player == null || !player.IsSessionData()) return;
                     sessionData.TimersData.AutoDCTimer = null;
                     if (player.IsAccountData()) return;
-                    player.setKick(LangFunc.GetText(LangType.Ru, DataName.AuthorizationTimeout));
                 });
             }
         }

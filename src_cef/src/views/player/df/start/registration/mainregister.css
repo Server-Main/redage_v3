@@ -1,0 +1,492 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.mainregister {
+  width: 100%;
+  height: 1080px;
+  opacity: 1;
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+  overflow: hidden;
+}
+.inputpoleregister {
+  width: 100%;
+  height: 1080px;
+  opacity: 1;
+  position: absolute;
+  top: -10vh;
+  left: -10vh;
+  overflow: hidden;
+}
+.backgroundregister { 
+  width: 100%;
+  height: 100%;
+  background: url("./images/auth.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  overflow: hidden;
+}
+.backgroundregister1 { 
+  width: 100%;
+  height: 1080px;
+  background: url("./images/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0vh;
+  left: 0vh;
+  overflow: hidden;
+}
+.registerknp {
+  width: 400px;
+  height: 86px;
+  opacity: 1;
+  position: absolute;
+  top: 795px;
+  left: 707px;
+  overflow: hidden;
+  /* display: flex;
+  flex-direction: row;
+  align-items: flex-start; */
+  /* padding: 31px 148px 31px 119px; */
+  /* gap: 10px; */
+  background: #A00000;
+  border-radius: 8px; 
+  order: 35;
+  z-index: 35;
+}
+.regknptext {
+  width: 161px;
+  position: absolute;
+  top: 39%;
+  left: 119px;
+  opacity: 1;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  order: 34;
+  z-index: 34;
+}
+.emailpole {
+  /* width: 218px; */
+  position: absolute;
+  top: 593px;
+  left: 215px;
+  opacity: 1;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 2;
+  z-index: 2;
+  flex-grow: 0;
+  width: 21%;
+  height: 100%;
+  /* left: 100px;
+  top: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.email {
+  width: 400px;
+  height: 86px;
+  padding: 16px 16px;
+  margin: 104px;
+  opacity: 1;
+  order: 1;
+  z-index: 1;
+  position: absolute;
+  top: 472px;
+  left: 172px;
+  overflow: hidden;
+}
+.emailinput {
+  width: 400px;
+  height: 54px;
+  margin: 8px;
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  overflow: hidden;
+}
+.emailtext {
+  width: 39px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  opacity: 0.5;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.loginpole {
+  /* width: 218px; */
+  position: absolute;
+  top: 593px;
+  left: 648px;
+  opacity: 1;
+  z-index: 4;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  width: 21%;
+  height: 100%;
+  /* left: 100px;
+  top: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+}
+.ramka {
+  width: 400px;
+  height: 86px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+}
+.login {
+  width: 400px;
+  height: 86px;
+  padding: 16px 16px;
+  margin: 104px;
+  opacity: 1;
+  position: absolute;
+  top: 472px;
+  left: 604px;
+  order: 3;
+  z-index: 3;
+  overflow: hidden;
+}
+.logininput {
+  width: 400px;
+  height: 54px;
+  margin: 8px;
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  overflow: hidden;
+}
+.passwordpole {
+  /* width: 218px; */
+  position: absolute;
+  top: 707px;
+  left: 215px;
+  opacity: 1;
+  z-index: 6;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 6;
+  flex-grow: 0;
+  width: 21%;
+  height: 100%;
+  /* left: 100px;
+  top: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+}
+.password {
+  width: 400px;
+  height: 86px;
+  padding: 16px 16px;
+  margin: 104px;
+  opacity: 1;
+  z-index: 5;
+  order: 5;
+  position: absolute;
+  top: 582px;
+  left: 172px;
+  overflow: hidden;
+}
+.passwordinput {
+  width: 400px;
+  height: 54px;
+  margin: 8px;
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  overflow: hidden;
+}
+.repeatpole {
+  /* width: 218px; */
+  position: absolute;
+  top: 707px;
+  left: 648px;
+  opacity: 1;
+  z-index: 8;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 8;
+  flex-grow: 0;
+  width: 21%;
+  height: 100%;
+  /* left: 100px;
+  top: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+}
+.repeat {
+  z-index: 7;
+  order: 7;
+  width: 400px;
+  height: 86px;
+  padding: 16px 16px;
+  margin: 104px;
+  opacity: 1;
+  position: absolute;
+  top: 582px;
+  left: 604px;
+  overflow: hidden;
+}
+.repeatinput {
+  width: 400px;
+  height: 54px;
+  margin: 8px;
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  overflow: hidden;
+}
+.promopole {
+  /* width: 218px; */
+  position: absolute;
+  top: 814px;
+  left: 215px;
+  opacity: 1;
+  z-index: 10;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 10;
+  flex-grow: 0;
+  width: 21%;
+  height: 100%;
+  /* left: 100px;
+  top: 100px; */
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+}
+.promo {
+  width: 400px;
+  height: 86px;
+  padding: 16px 16px;
+  margin: 104px;
+  opacity: 1;
+  position: absolute;
+  top: 692px;
+  left: 172px;
+  z-index: 9s;
+  order: 9;
+  overflow: hidden;
+}
+.promoinput {
+  width: 400px;
+  height: 54px;
+  margin: 8px;
+  opacity: 1;
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  overflow: hidden;
+}
+.regatext {
+  width: 533px;
+  height: 202px;
+  opacity: 1;
+  position: absolute;
+  top: 302px;
+  left: 278px;
+  order: 11;
+  z-index: 11;
+  overflow: hidden;
+}
+.regaakk {
+  width: 494px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-style: black;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 68px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.createpers {
+  width: 448px;
+  position: absolute;
+  top: 138px;
+  left: 0px;
+  opacity: 1;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.infernoproject {
+  width: 448px;
+  position: absolute;
+  top: 138px;
+  left: 70.5%;
+  opacity: 1;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: black;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #A00000;
+}
+.avtorizuites {
+  width: 392px;
+  position: absolute;
+  top: 178px;
+  left: 0px;
+  opacity: 1;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.esliest {
+  width: 392px;
+  position: absolute;
+  top: 86px;
+  left: 21%;
+  opacity: 1;
+  order: 12;
+  z-index: 12;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-style: black;
+  font-weight: 1000;
+  font-size: 17px;
+  line-height: 20px;
+  color: #A00000;
+}
+
+.emailico { 
+  width: 24px;
+  height: 24px;
+  background: url("./images/email.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 19px;
+  left: 338px;
+  overflow: hidden;
+}
+.loginico { 
+  width: 24px;
+  height: 24px;
+  background: url("./images/login.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 19px;
+  left: 338px;
+  overflow: hidden;
+}
+.passwordico { 
+  width: 24px;
+  height: 24px;
+  background: url("./images/password.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 19px;
+  left: 338px;
+  overflow: hidden;
+}
+.promoico { 
+  width: 24px;
+  height: 24px;
+  background: url("./images/promo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 19px;
+  left: 338px;
+  overflow: hidden;
+}

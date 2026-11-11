@@ -4,11 +4,11 @@
 		if (!loggedin || global.chatActive || global.isAdmin !== true) return;
 		if(global.esptoggle == 4) global.esptoggle = 0;
 		else global.esptoggle++;
-		if(global.esptoggle == 0) mp.game.graphics.notify('ESP: ~r~Disabled');
-		else if (global.esptoggle == 1) mp.game.graphics.notify('ESP: ~g~Only Players');
-		else if (global.esptoggle == 2) mp.game.graphics.notify('ESP: ~g~Only Vehicles');
-		else if (global.esptoggle == 3) mp.game.graphics.notify('ESP: ~g~Players & Vehicles');
-		else if (global.esptoggle == 4) mp.game.graphics.notify('ESP: ~g~Furniture & Items');
+		if(global.esptoggle == 0) mp.game.graphics.notify('ESP: ~r~Выключено');
+		else if (global.esptoggle == 1) mp.game.graphics.notify('ESP: ~g~Только люди');
+		else if (global.esptoggle == 2) mp.game.graphics.notify('ESP: ~g~Только машины');
+		else if (global.esptoggle == 3) mp.game.graphics.notify('ESP: ~g~Люди и машины');
+		else if (global.esptoggle == 4) mp.game.graphics.notify('ESP: ~g~Фурнитура и предметы');
 		mp.events.callRemote('saveEspState', global.esptoggle);
 	}
 	catch (e) 
@@ -22,11 +22,11 @@ gm.events.add('setEspState', function (state) {
 	try
 	{
 		global.esptoggle = state;
-		if(state == 0) mp.game.graphics.notify('ESP: ~r~Disabled');
-		else if (state == 1) mp.game.graphics.notify('ESP: ~g~Only Players');
-		else if (state == 2) mp.game.graphics.notify('ESP: ~g~Only Vehicles');
-		else if (state == 3) mp.game.graphics.notify('ESP: ~g~Players & Vehicles');
-		else if (state == 4) mp.game.graphics.notify('ESP: ~g~Furniture & Items');
+		if(state == 0) mp.game.graphics.notify('ESP: ~r~Выключено');
+		else if (state == 1) mp.game.graphics.notify('ESP: ~g~Только люди');
+		else if (state == 2) mp.game.graphics.notify('ESP: ~g~Только машины');
+		else if (state == 3) mp.game.graphics.notify('ESP: ~g~Люди и машины');
+		else if (state == 4) mp.game.graphics.notify('ESP: ~g~Фурнитура и предметы');
 	}
 	catch (e) 
 	{

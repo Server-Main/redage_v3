@@ -318,6 +318,8 @@ export const ItemId = {
 	Giftcoin: 390,
 	CombatRifle: 391,
 	Glock: 392,
+	Hay: 393,
+	Seed: 394,
 	Bracelets: -15,
 	Watches: -14,
 	Glasses: -13,
@@ -527,7 +529,7 @@ export const itemsInfo = {
 	[ItemId.Case8]: {"Name":"Мужской кейс","Description":"Кейс с МУЖСКОЙ одеждой из донатного магазина одежды. Испытай удачу и будь стильным, или продай кому-то и будь богатым. А можешь и подарить...","Icon":"inv-item-case8","Type":"Особое","Stack":100,"functionType":9},
 	[ItemId.Case9]: {"Name":"Женский кейс","Description":"Кейс с ЖЕНСКОЙ одеждой из донатного магазина одежды. Отличный вариант, если хочется что-нибудь подарить.","Icon":"inv-item-case9","Type":"Особое","Stack":100,"functionType":9},
 	[ItemId.Case10]: {"Name":"Экзотический кейс","Description":"Кейс с автомобилями из Exotic DonateRoom. Доната Редбаксовна одобряет!","Icon":"inv-item-case10","Type":"Особое","Stack":100,"functionType":9},
-	[ItemId.Case11]: {"Name":"Легендарный кейс","Description":"Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты BRILL RP - GOLD LUXURY? Тогда крути кейс!","Icon":"inv-item-case11","Type":"Особое","Stack":100,"functionType":9},
+	[ItemId.Case11]: {"Name":"Легендарный кейс","Description":"Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты RedAge? Тогда крути кейс!","Icon":"inv-item-case11","Type":"Особое","Stack":100,"functionType":9},
 	[ItemId.Case12]: {"Name":"Интересный кейс","Description":"Давно хочешь себе уникальную машину которая нигде не продается? Dodge Charger в этом кейсике!","Icon":"inv-item-case12","Type":"Особое","Stack":100,"functionType":9},
 	[ItemId.Case13]: {"Name":"Вертолетный кейс","Description":"Любишь смотреть на людей свысока? Пожалуй, для этого идеально подойдет вертолёт!","Icon":"inv-item-case13","Type":"Особое","Stack":100,"functionType":9},
 	[ItemId.Case14]: {"Name":"Бронированный кейс","Description":"Классный новый кейс с модными бронированными тачками!","Icon":"inv-item-case14","Type":"Особое","Stack":100,"functionType":9},
@@ -656,5 +658,7 @@ export const itemsInfo = {
 	[ItemId.GlowStick]: {"Name":"Светящиеся палочки","Description":"Красивые светящиеся палочки, которые можно держать в руках.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":1,"functionType":0},
 	[ItemId.Giftcoin]: {"Name":"Подарок","Description":"Коробка с подарком, которую запрятал для тебя Санта!","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":999,"functionType":0},
 	[ItemId.CombatRifle]: {"Name":"Combat Rifle","Description":"Сносящая все на своем пути винтовка","Icon":"inv-item-Carbine-Rifle","Type":"Оружие","Stack":1,"functionType":2},
-	[ItemId.Glock]: {"Name":"Banana Glock","Description":"Банана Глок топ","Icon":"inv-item-Carbine-Rifle","Type":"Оружие","Stack":1,"functionType":2}
+	[ItemId.Glock]: {"Name":"Banana Glock","Description":"Банана Глок топ","Icon":"inv-item-Carbine-Rifle","Type":"Оружие","Stack":1,"functionType":2},
+	[ItemId.Hay]: {"Name":"Урожай","Description":"Используемое в дальнейшем для посадки на постоянное место","Icon":"prop_haybale_01","Type":"Ферма","Stack":1,"functionType":0},
+	[ItemId.Seed]: {"Name":"Семена","Description":"Семена для рассады","Icon":"ch_prop_ch_moneybag_01a","Type":"Ферма","Stack":1,"functionType":0}
 }

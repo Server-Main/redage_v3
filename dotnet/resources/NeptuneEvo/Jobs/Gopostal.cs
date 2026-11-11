@@ -9,12 +9,16 @@ using Redage.SDK;
 using NeptuneEvo.Houses;
 using NeptuneEvo.Functions;
 using NeptuneEvo.Accounts;
+using NeptuneEvo.Players.Models;
 using NeptuneEvo.Players;
+using NeptuneEvo.Character.Models;
 using NeptuneEvo.Character;
 using NeptuneEvo.Jobs.Models;
 using NeptuneEvo.Chars;
 using NeptuneEvo.Players.Popup.List.Models;
 using NeptuneEvo.Quests;
+using NeptuneEvo.VehicleData.LocalData;
+using NeptuneEvo.VehicleData.LocalData.Models;
 
 namespace NeptuneEvo.Jobs
 {
@@ -44,8 +48,8 @@ namespace NeptuneEvo.Jobs
 
         public static List<Vector3> Coords = new List<Vector3>()
         {
-            new Vector3(132.97247, 95.9493, 83.50764), // start work
-            //new Vector3(117.6746, 100.341, 80.98235), // get car
+            new Vector3(437.70697, -624.46344, 27.608513 + 1.12f), // start work
+            new Vector3(117.6746, 100.341, 80.98235), // get car
         };
 
 
@@ -84,7 +88,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"openGoPostalStart Exception: {e}");
+                Log.Write($"openGoPostalStart Exception: {e.ToString()}");
             }
         }
 
@@ -100,7 +104,7 @@ namespace NeptuneEvo.Jobs
                 var characterData = player.GetCharacterData();
                 if (characterData == null) return;
 
-                if (player.Position.DistanceTo(Coords[0]) > 15)
+                if (player.Position.DistanceTo(Gopostal.Coords[0]) > 15)
                     return;
                 
                 switch (listItem)
@@ -143,7 +147,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"callback_gpStartMenu Exception: {e}");
+                Log.Write($"callback_gpStartMenu Exception: {e.ToString()}");
             }
         }
         public static void StartWork(ExtPlayer player)
@@ -156,7 +160,7 @@ namespace NeptuneEvo.Jobs
             if (characterData == null) 
                 return;
             
-            if (HouseManager.Houses.Count == 0) return;
+            if (Houses.HouseManager.Houses.Count == 0) return;
 
             byte count = 10;
             (byte, float) jobLevelInfo = characterData.JobSkills.ContainsKey((int)JobsId.Postman) ? Main.GetPlayerJobLevelBonus((int)JobsId.Postman, characterData.JobSkills[(int)JobsId.Postman]) : (0, 1);
@@ -356,7 +360,7 @@ namespace NeptuneEvo.Jobs
                 {
                     Trigger.ClientEvent(player, "deleteCheckpoint", 1, 0);
                     Trigger.ClientEvent(player, "deleteWorkBlip");
-                    Trigger.ClientEvent(player, "createWaypoint", Coords[0].X, Coords[0].Y); //
+                    Trigger.ClientEvent(player, "createWaypoint", 436.5074f, -627.4617f);
                     
                     Trigger.PlayAnimation(player, "anim@heists@narcotics@trash", "drop_side", -1, false);
                     sessionData.WorkData.Packages = 0;
@@ -393,7 +397,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"GoPostal_onEntityEnterColShape Exception: {e}");
+                Log.Write($"GoPostal_onEntityEnterColShape Exception: {e.ToString()}");
             }
         }
     }

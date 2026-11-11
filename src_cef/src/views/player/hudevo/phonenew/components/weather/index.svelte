@@ -39,7 +39,7 @@
             <div class="newphone__weather_image {getWeatherIdToName(currentWeather.weatherId, currentWeather.hour)}"></div>
         </div>
         <div class="newphone__weather_temp">
-            <div class="newphone__weather_number">-{currentWeather.temp}</div>
+            <div class="newphone__weather_number">{currentWeather.temp}</div>
             <div class="box-column">
                 <div class="newphone__weather_gr">&#176;</div>
                 <div class="newphone__weather_type">{weatherName[getWeatherIdToName(currentWeather.weatherId, currentWeather.hour)]}</div>

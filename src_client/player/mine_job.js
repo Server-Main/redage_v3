@@ -19,19 +19,19 @@ const mine_job = {
 };
 
 const mine_places = [
-    { x: 135, y: -365, z: 42 },
-    { x: 138, y: -353, z: 42 },
-    { x: 144, y: -358, z: 42 },
-    { x: 118, y: -443, z: 40 },
-    { x: 113, y: -434, z: 40 },
-    { x: 120, y: -434, z: 40 },
-    { x: 99, y: -388, z: 40 },
-    { x: 107, y: -387, z: 40 },
-    { x: 102, y: -393, z: 40 }
+    // { x: 135, y: -365, z: 42 },
+    // { x: 138, y: -353, z: 42 },
+    // { x: 144, y: -358, z: 42 },
+    // { x: 118, y: -443, z: 40 },
+    // { x: 113, y: -434, z: 40 },
+    // { x: 120, y: -434, z: 40 },
+    // { x: 99, y: -388, z: 40 },
+    // { x: 107, y: -387, z: 40 },
+    // { x: 102, y: -393, z: 40 }
 
 ];
 const gov_mine_place = [
-    { x: -588.0355, y: 2058.172, z: 130.7677 }
+    // { x: -588.0355, y: 2058.172, z: 130.7677 }
 ];
 
 for (let i = 0; i < mine_places.length; i++) {
@@ -342,6 +342,7 @@ gm.events.add('client.inventory.GetItem', (rItemId, toggled) => {
             else {
                 return mp.events.call('notify', 1, 9, translateText("У Вас нет кирки."), 3000);
             }
+            
             mp.events.callRemote('PlayerStartedMining');
         }
         else {

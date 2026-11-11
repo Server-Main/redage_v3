@@ -8,7 +8,9 @@ using NeptuneEvo.Core;
 using Redage.SDK;
 using NeptuneEvo.Functions;
 using NeptuneEvo.Accounts;
+using NeptuneEvo.Players.Models;
 using NeptuneEvo.Players;
+using NeptuneEvo.Character.Models;
 using NeptuneEvo.Character;
 using NeptuneEvo.Chars.Models;
 using NeptuneEvo.Jobs.Models;
@@ -27,7 +29,6 @@ namespace NeptuneEvo.Jobs
         {
             for (int i = 0; i < GetProduct.Count; i++)
             {
-                Main.CreateBlip(new Main.BlipData(557, LangFunc.GetText(LangType.Ru, DataName.ZagruzkaTovara), GetProduct[i], 84, true));
                 CustomColShape.CreateCylinderColShape(GetProduct[i], 50F, 2F, 0, ColShapeEnums.GetProductTrucker);
             }
         }
@@ -82,7 +83,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"OnCancel Exception: {e}");
+                Log.Write($"OnCancel Exception: {e.ToString()}");
             }
         }
         public static void StartWork(ExtPlayer player)
@@ -98,7 +99,7 @@ namespace NeptuneEvo.Jobs
             sessionData.WorkData.OnWork = true;
             sessionData.OrderData.WayPoint = null;
             Notify.Send(player, NotifyType.Info, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.GoToZagruz), 10000);
-            var pos = GetNearestGetProduct(player.Position);
+            var pos = Truckers.GetNearestGetProduct(player.Position);
             Trigger.ClientEvent(player, "createWaypoint", pos.X, pos.Y);
         }
         
@@ -192,7 +193,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"playerGotProducts1 Exception: {e}");
+                Log.Write($"playerGotProducts1 Exception: {e.ToString()}");
             }
         }
         [Interaction(ColShapeEnums.Trucker, In: true)]
@@ -292,7 +293,7 @@ namespace NeptuneEvo.Jobs
             }
             catch (Exception e)
             {
-                Log.Write($"onEntityEnterDropTrailer Exception: {e}");
+                Log.Write($"onEntityEnterDropTrailer Exception: {e.ToString()}");
             }
         }
     }

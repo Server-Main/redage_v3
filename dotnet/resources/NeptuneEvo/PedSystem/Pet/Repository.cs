@@ -36,8 +36,8 @@ namespace NeptuneEvo.PedSystem.Pet
         {
             Timers.Start("PetHealth", 1000 * 60 * 8, () => PetHealth(), true);
             
-            PedSystem.Repository.CreateQuest("a_m_y_soucent_03", new Vector3(268.109, -641.3529, 42.01984), 60.41674f, title: "~y~NPC~w~ Виталий\nПродавец питомцев", colShapeEnums: ColShapeEnums.PetShop);
-            Main.CreateBlip(new Main.BlipData(141, LangFunc.GetText(LangType.Ru, DataName.PetSeller), new Vector3(268.109, -641.3529, 42.01984), 9, true));
+            PedSystem.Repository.CreateQuest("a_m_y_soucent_03", new Vector3(-167.44643, 6387.4604, 31.87755), -108.483406f, title: "~y~NPC~w~ Виталий\nПродавец питомцев", colShapeEnums: ColShapeEnums.PetShop);
+            Main.CreateBlip(new Main.BlipData(141, "Магазин питомцев", new Vector3(-167.44643, 6387.4604, 31.877552), 9, true));
 
             /*await using var db = new ServerBD("MainDB");//При старте сервера
 

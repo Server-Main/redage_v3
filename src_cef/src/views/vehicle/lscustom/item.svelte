@@ -17,8 +17,10 @@
     const onBuy = () => {
         executeClient ('client.custom.buy')
     }
+    const onBuyes = () => {
+        executeClient ('client.custom.repair')
+    }
 </script>
-
 <li class={"listitems " + (selectItem !== id || "active")} id={id} on:click={onBuy} on:mouseenter={e => onSelect (id)}>
     <i class={'icon ilsc-' + icon}></i>
     <div class="flex un">
@@ -33,7 +35,7 @@
             
         </div>
         {/if}
-    
+
         <div class="desc">{@html text}</div>
         <div class="price">{price} <span>$</span></div>                        
     </div>                        

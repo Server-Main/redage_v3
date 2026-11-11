@@ -1,9 +1,9 @@
 <script>
     import { translateText } from 'lang'
-    import InputCustom from 'components/input/index.svelte'
+    import InputCustom from 'components/input/inputrega.svelte'
     import { accountLogin } from 'store/account'
-    
     import { executeClient } from 'api/rage'
+    import "./mainregister.css";
 
     let regusername = "",
         regemail = "",
@@ -28,43 +28,34 @@
             onRegister ();
     }
     let language = "?";
+
 </script>
+<link href="https://fonts.googleapis.com/css?family=Uni+Neue-Trial&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 <svelte:window on:keyup={onKeyUp} />
-<div class="main">
-    <div class="main__box">
-        <div class="main__forms">
-            <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regusername = value} value={regusername} placeholder={translateText('player2', 'Логин..')} type="text" icon="auth-user"/>
-            <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regemail = value} value={regemail} placeholder={translateText('player2', 'Почта..')} type="email" icon="auth-mail"/>
-            <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpass1 = value} value={regpass1} placeholder={translateText('player2', 'Пароль..')} type="password" icon="auth-lock"/>
-            <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpass2 = value} value={regpass2} placeholder={translateText('player2', 'Повторите пароль..')} type="password" icon="auth-pass-repeat"/>
-            <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpromo = value} value={regpromo} placeholder={translateText('player2', 'Промокод..')} type="text" icon="auth-gift"/>
-            <!--<div class="main__buttons_box main__buttons_registration">
-                <InputCustom setValue={(value) => regpromo = value} value={regpromo} placeholder="Промокод.." type="text" icon="auth-gift"/>
-                <div class="main__button main_button_size_small">
-                    <div class="main__button_top box-center">
-                        <span class="auth-lock"/>
-                    </div>
-                    <div class="main__button_bottom box-center">
-                        <div class="main__button_rectangle box-center">ALT</div>
-                    </div>
-                </div>
-            </div>-->
-            <div class="box-flex">
-                <div class="main__button main_button_size_large" on:click={onRegister}>
-                    <div class="main__button_left box-center">{translateText('player2', 'Создать')}</div>
-                    <div class="main__button_right box-center">
-                        <div class="main__button_square box-center">
-                            <span class="auth-arrow"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="main__button main_button_size_small box-center">
-                    <div class="main__button_bottom box-center">
-                        <div class="main__button_rectangle box-center">{language}</div>
-                    </div>
-                </div>
+
+
+<div id="auth">
+    <div class="auth">
+        <div class="auth-left" style="margin-top: -5vh;">
+            <div class="auth-left-texted">
+                <h1>РЕГИСТРАЦИЯ</h1>
+                <h2>Зарегистрируйтесь, и начните творить чудеса на RAGECODE V3!</h2>
+            </div>
+            <div class="auth-left-inputs">
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regemail = value} placeholder="Почта" value={regemail}  type="email"/>
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regusername = value} placeholder="Логин" value={regusername}  type="text"/>
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpass1 = value} placeholder="Пароль" value={regpass1} type="password"/>
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpass2 = value} placeholder="Повторите пароль" value={regpass2} type="password"/>
+                <InputCustom updateLang={(lang) => language = lang} setValue={(value) => regpromo = value} placeholder="Реферал" value={regpromo} type="text"/>
+            </div>
+            <div class="auth-left-buttons">
+                <div class="auth-left-buttons-button" on:click={onRegister}>{translateText('player2', 'Создать')}</div>
             </div>
         </div>
-        <div class="main__scroll"/>
     </div>
 </div>

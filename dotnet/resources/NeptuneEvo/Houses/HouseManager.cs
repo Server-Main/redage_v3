@@ -158,7 +158,9 @@ namespace NeptuneEvo.Houses
             UpdateLabel();
             UpdateColShapeHealkit();
             UpdateGarage();
-            
+            if (Type == 10)
+                blip = (ExtBlip)NAPI.Blip.CreateBlip(181, position, 0.45f, 82, "Особняк", shortRange: true);
+                NAPI.Marker.CreateMarker(1, position - new Vector3(0, 0, 0.7), new Vector3(), new Vector3(), 1, new Color(255, 255, 255, 220));
             if (Main.ServerSettings.IsHouseBlips)
                 blip = (ExtBlip) NAPI.Blip.CreateBlip(374, position, 0.45f, 82, "Дом", shortRange: true);
         }
@@ -746,7 +748,7 @@ namespace NeptuneEvo.Houses
 
         public static List<House> Houses = new List<House>();
 
-        public static double HouseTax = 0.026;
+        public static double HouseTax = 2;
         
         public static List<HouseType> HouseTypeList = new List<HouseType>
         {
@@ -761,11 +763,12 @@ namespace NeptuneEvo.Houses
             new HouseType(LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(), new Vector3(), 0.0f, ""),
             new HouseType(LangFunc.GetText(LangType.Ru, DataName.PremiumPlusPlus), new Vector3(373.53, 423.47, 145.05), new Vector3(373.5995, 404.09, 145.407), 234.0f, ""),
             new HouseType(LangFunc.GetText(LangType.Ru, DataName.Lux), new Vector3(-774.0425, 342.072, 195.7), new Vector3(-778.88, 320.96, 195.32), 255.0f, "apa_v_mp_h_05_b"),
+            new HouseType(LangFunc.GetText(LangType.Ru, DataName.Mansion), new Vector3(-78.699524, -832.5818, 243.38577), new Vector3(-78.699524, -832.5818, 243.38577), -16.36326f, "apa_v_mp_h_05_b"),
         };
 
 
 
-        public static Vector3[] HouseHealkitPos = new Vector3[9]
+        public static Vector3[] HouseHealkitPos = new Vector3[11]
         {
             new Vector3(154.0405, -1000.846, -100.1333 + 1.12f),
             new Vector3(255.6072, -1000.668, -100.1422 + 1.12f),
@@ -775,6 +778,8 @@ namespace NeptuneEvo.Houses
             new Vector3(-165.624, 495.3055, 132.7345 + 1.12f),
             new Vector3(-165.624, 495.3055, 132.7345 + 1.12f),
             new Vector3(379.2031, 417.466, 140.98 + 1.12f),
+            new Vector3(-754.38, 325.07, 198.91 + 1.12f),
+            new Vector3(-754.38, 325.07, 198.91 + 1.12f),
             new Vector3(-754.38, 325.07, 198.91 + 1.12f),
         };
 
@@ -2718,15 +2723,11 @@ namespace NeptuneEvo.Houses
                 }
                 int bankId = await MoneySystem.Bank.Create(string.Empty, 2, 0);
                 DimensionID++;
-
-                NAPI.Task.Run(() =>
-                {
-                    House new_house = new House(GetUID(), string.Empty, type, player.Position - new Vector3(0, 0, 1.12), price, false, 0, bankId, new Dictionary<string, ResidentData>(), DimensionID, false, false);
-                    new_house.Create();
-                    FurnitureManager.Create(new_house.ID);
-                    new_house.CreateInterior();
-                    Houses.Add(new_house);
-                });
+                House new_house = new House(GetUID(), string.Empty, type, player.Position - new Vector3(0, 0, 1.12), price, false, 0, bankId, new Dictionary<string, ResidentData>(), DimensionID, false, false);
+                new_house.Create();
+                FurnitureManager.Create(new_house.ID);
+                new_house.CreateInterior();
+                Houses.Add(new_house);
             }
             catch (Exception e)
             {

@@ -33,5 +33,13 @@
 	"32": {"Id":32,"Name":"Broken Skull","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_039","FemaleHash":"FM_Tat_F_039","Slots":[0],"Price":2500,"Donate":0},
 	"33": {"Id":33,"Name":"Flaming Skull","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_040","FemaleHash":"FM_Tat_F_040","Slots":[0,1],"Price":2500,"Donate":0},
 	"34": {"Id":34,"Name":"Flaming Scorpion","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_042","FemaleHash":"FM_Tat_F_042","Slots":[0],"Price":2500,"Donate":0},
-	"35": {"Id":35,"Name":"Indian Ram","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_043","FemaleHash":"FM_Tat_F_043","Slots":[0],"Price":2500,"Donate":0}
+	"35": {"Id":35,"Name":"Indian Ram","Dictionary":"multiplayer_overlays","MaleHash":"FM_Tat_M_043","FemaleHash":"FM_Tat_F_043","Slots":[0],"Price":2500,"Donate":0},
+	"36": {"Id":36,"Name":"Black Work LL 1","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_162_M","FemaleHash":"MP_Gta5rptattoo_Tat_162_F","Slots":[1],"Price":50000,"Donate":0},
+	"37": {"Id":37,"Name":"Black Work LL 2","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_163_M","FemaleHash":"MP_Gta5rptattoo_Tat_163_F","Slots":[0,1],"Price":50000,"Donate":0},
+	"38": {"Id":38,"Name":"Black Work LL 3","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_164_M","FemaleHash":"MP_Gta5rptattoo_Tat_164_F","Slots":[1],"Price":50000,"Donate":0},
+	"39": {"Id":39,"Name":"Black Work LL 4","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_165_M","FemaleHash":"MP_Gta5rptattoo_Tat_165_F","Slots":[1],"Price":50000,"Donate":0},
+	"40": {"Id":40,"Name":"Black Work LL 5","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_166_M","FemaleHash":"MP_Gta5rptattoo_Tat_166_F","Slots":[0],"Price":50000,"Donate":0},
+	"41": {"Id":41,"Name":"Black Work LL 6","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_167_M","FemaleHash":"MP_Gta5rptattoo_Tat_167_F","Slots":[0],"Price":50000,"Donate":0},
+	"42": {"Id":42,"Name":"Black Work LL 7","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_168_M","FemaleHash":"MP_Gta5rptattoo_Tat_168_F","Slots":[0],"Price":50000,"Donate":0},
+	"43": {"Id":43,"Name":"Black Work LL 8","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_169_M","FemaleHash":"MP_Gta5rptattoo_Tat_169_F","Slots":[0,1],"Price":50000,"Donate":0}
 }

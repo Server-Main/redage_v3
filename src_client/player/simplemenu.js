@@ -112,7 +112,12 @@ gm.events.add('client.sm.click', (id) => {
     }
 });
 
+
 gm.events.add('client.sm.exit', () => {
-    mp.gui.emmit(`window.router.setHud();`);
-    global.menuClose();
-})
+    global.closeSM();
+});
+
+global.closeSM = () => {
+    global.mp.gui.emmit(`window.router.setHud();`)
+    global.menuClose()
+}

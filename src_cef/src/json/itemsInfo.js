@@ -318,6 +318,8 @@ export const ItemId = {
 	Giftcoin: 390,
 	CombatRifle: 391,
 	Glock: 392,
+	Hay: 393,
+	Seed: 394,
 	Bracelets: -15,
 	Watches: -14,
 	Glasses: -13,
@@ -656,6 +658,8 @@ export const itemsInfo = {
 	[ItemId.Glowstick]: {"Name":"Светящиеся палочки","Description":"Красивые светящиеся палочки, которые можно держать в руках.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":1,"functionType":0},
 	[ItemId.Giftcoin]: {"Name":"Подарок","Description":"Подарок, который для тебя подготовил Санта!.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":2000,"functionType":0},
 	[ItemId.CombatRifle]: {"Name":"Combat Rifle","Description":"Оружие.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":1,"functionType":2},
-	[ItemId.Glock]: {"Name":"Glock","Description":"Оружие.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":1,"functionType":2}
+	[ItemId.Glock]: {"Name":"Glock","Description":"Оружие.","Icon":"inv-item-Assault-Rifle","Type":"Особое","Stack":1,"functionType":2},
+	[ItemId.Hay]: {"Name":"Урожай","Description":"Используемое в дальнейшем для посадки на постоянное место","Icon":"prop_haybale_01","Type":"Ферма","Stack":1,"functionType":0},
+	[ItemId.Seed]: {"Name":"Семена","Description":"Семена для рассады","Icon":"ch_prop_ch_moneybag_01a","Type":"Ферма","Stack":1,"functionType":0}
 
 }

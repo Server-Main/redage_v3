@@ -17,13 +17,22 @@ import npc_fracems from './fraction/npc_fracems.json';
 import npc_premium from './biz/npc_premium.json';
 import npc_huntingshop from './npc_huntingshop.json';
 import npc_treessell from './npc_treessell.json';
+import npc_aero from './npc_aero.json';
+
+import npc_yborka from './npc_yborka.json';
+
+import npc_doroga from './npc_doroga.json'
+import npc_driveschool from './npc_driveschool.json';
+import npc_drivetest from './npc_drivetest.json';
 
 import npc_stock from './npc_stock.json';
+import npc_ovoshi from './npc_ovoshi.json';
+import npc_vinograd from './npc_vinograd.json';
 
 import npc_donateautoroom from './npc_donateautoroom.json';
 import npc_cityhall from './npc_cityhall.json';
 import npc_wedding from './npc_wedding.json';
-
+import npc_mechanic from './npc_mechanic.json';
 import npc_pet from './biz/npc_pet.json';
 import npc_petshop from './biz/npc_petshop.json';
 import npc_rieltor from './biz/npc_rieltor.json';
@@ -43,6 +52,7 @@ import npc_lawnmower from './work/npc_lawnmower.json';
 import npc_taxi from './work/npc_taxi.json';
 import npc_truckers from './work/npc_truckers.json';
 import npc_org from './npc_org.json';
+import npc_aernda from './npc_aernda.json';
 import npc_birthday from './npc_birthday.json';
 
 /* type
@@ -57,8 +67,9 @@ const list = {
 
     npc_fd_dada: npc_fd_dadaJson,
     npc_fd_edward: npc_fd_edwardJson,
-    npc_fd_zak: npc_fd_zakJson,
 
+    npc_fd_zak: npc_fd_zakJson,
+    npc_aernda: npc_aernda,
     npc_airdrop: npc_airdrop,
     npc_oressale: npc_oressale,
     npc_fracpolic: npc_fracpolic,
@@ -67,11 +78,15 @@ const list = {
     npc_fracems: npc_fracems,
     
     npc_premium: npc_premium,
-
+    npc_mechanic: npc_mechanic,
+    npc_yborka: npc_yborka,
     npc_stock: npc_stock,
+    npc_ovoshi: npc_ovoshi,
+    npc_doroga: npc_doroga,
+    npc_vinograd: npc_vinograd,
     npc_huntingshop: npc_huntingshop,
     npc_treessell: npc_treessell,
-
+    npc_aero: npc_aero,
     npc_donateautoroom: npc_donateautoroom,
     npc_cityhall: npc_cityhall,
     npc_wedding: npc_wedding,
@@ -83,7 +98,8 @@ const list = {
     npc_carevac: npc_carevac,
     npc_airshop: npc_airshop,
     npc_eliteroom: npc_eliteroom,
-
+    npc_driveschool: npc_driveschool,
+    npc_drivetest: npc_drivetest,
     npc_zdobich: npc_zdobich,
 
     npc_automechanic: npc_automechanic,
@@ -115,6 +131,12 @@ const actorData = {
     npc_fd_edward: {
         name: "Эдвард"
     },
+    npc_yborka: {
+        name: "Устройщик"
+    },
+    npc_aernda: {
+        name: "Любой"
+    },
     npc_fd_zak: {
         name: "Зак Цукерберг"
     },
@@ -130,8 +152,14 @@ const actorData = {
     npc_fracsheriff: {
         name: "Шериф"
     },
+    npc_mechanic: {
+        name: "Механик"
+    },
     npc_fracnews: {
         name: "Дженнифер"
+    },
+    npc_aero: {
+        name: "Аэропорт"
     },
     npc_fracems: {
         name: "Эммануэль"
@@ -141,6 +169,15 @@ const actorData = {
     },
     npc_stock: {
         name: "Александр"
+    },
+    npc_ovoshi: {
+        name: "Геннадий"
+    },
+    npc_doroga: {
+        name: "Дорога"
+    },
+    npc_vinograd: {
+        name: "Инокентий"
     },
     npc_huntingshop: {
         name: "Беар Гриллс"
@@ -180,6 +217,14 @@ const actorData = {
     },
     npc_eliteroom: {
         name: "Продавец элитного транспорта"
+    },
+    npc_driveschool: 
+    { 
+        name: "Алекс"
+    },
+    npc_drivetest:
+    {
+        name: "Макс"
     },
     npc_automechanic: {
         name: "Главный механик"

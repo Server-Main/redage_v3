@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.clothesselect_main {
+  width: 100%;
+  height: 1080px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.clothesselect_main_background {
+  width: 1920px;
+  height: 1080px;
+  background: url("./images/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select {
+  width: 495px;
+  height: 773px;
+  opacity: 1;
+  position: absolute;
+  top: 143px;
+  left: 58px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_box {
+  width: 490px;
+  height: 773px;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  background: rgba(17, 18, 21, 0.85);
+  backdrop-filter: blur(33px);
+  overflow: hidden;
+}
+
+.clothesselect_main_select_upheader {
+  width: 449px;
+  height: 75px;
+  opacity: 1;
+  position: absolute;
+  top: 24px;
+  left: 23px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_upheader_box {
+  width: 449px;
+  height: 75px;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 10px;
+  background: linear-gradient(60deg, #375BDE 0%, #18328F 100%);
+
+  /* BG SHADOW BLUE */
+  box-shadow: 0px 0px 31px 0px rgba(34, 51, 112, 0.37);
+  overflow: hidden;
+}
+
+.clothesselect_main_select_upheader_text {
+  width: 257px;
+  height: 50px;
+  opacity: 1;
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_upheader_text_icon {
+  width: 77px;
+  height: 68px;
+  background: url("./images/clothesicon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: -6px;
+  left: -9px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_upheader_text_title {
+  width: 176px;
+  position: absolute;
+  top: 12px;
+  left: 81px;
+  color: #FFF;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  opacity: 1;
+  text-align: left;
+}
+
+.clothesselect_main_select_content {
+  width: 449px;
+  height: 406px;
+  opacity: 1;
+  position: absolute;
+  top: 123px;
+  left: 23px;
+  overflow-y: scroll;
+}
+
+.clothesselect_main_select_content_content {
+  width: 424px;
+  height: 83px;
+  flex-shrink: 0;
+  padding: 10px;
+  position: relative;
+  left: -1%;
+  margin-bottom: 30px;
+}
+
+.clothesselect_main_select_content_content_line {
+  width: 398px;
+  height: 1px;
+  opacity: 1;
+  overflow: hidden;
+  border-radius: 5px;
+  /* margin-top: -2%; */
+  position: relative;
+  top: 156%;
+  left: 3%;
+  background: #48494D;
+}
+
+.clothesselect_main_select_content_content_block {
+  width: 424px;
+  height: 83px;
+}
+
+.clothesselect_main_select_content_content_block_box {
+  width: 424px;
+  height: 83px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid #3F4044;
+  background: rgba(55, 56, 58, 0.18);
+}
+
+.clothesselect_main_select_content_content_block:hover .clothesselect_main_select_content_content_block_box {
+  width: 424px;
+  height: 83px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #3A5FE5;
+}
+
+.clothesselect_main_select_content_content_block_icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: url("./images/icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: -75%;
+  left: 4%;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_content_content_block_text {
+  width: 80%;
+  height: 40px;
+  flex-shrink: 0;
+  opacity: 1;
+  position: relative;
+  top: -109%;
+  left: 19%;
+  color: #FFF;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_content_content_block:hover .clothesselect_main_select_content_content_block_text {
+  top: -121%;
+  position: relative;
+}
+::-webkit-scrollbar {
+	display: block;
+	height:0;
+	width: 0;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+	display: block;
+}
+
+::-webkit-scrollbar-thumb {
+	background: transparent;
+	display: block;
+}
+.clothesselect_main_select_content_content_block:hover .clothesselect_main_select_content_content_block_icon {
+  width: 67px;
+  height: 50px;
+  left: 1%;
+  position: relative;
+  background: url("./images/iconactive.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* 
+.clothesselect_main_select_content_poloska_selector {
+} */
+.clothesselect_main_select_content::-webkit-scrollbar {
+  position: absolute;
+  left: 2vw;
+  width: 4px;
+  max-height: 2px;
+}
+.clothesselect_main_select_content::-webkit-scrollbar-track {
+  background: rgba(103, 103, 103, 0.15);
+   
+}
+.clothesselect_main_select_content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.13);
+  max-height: 2px;
+}
+.clothesselect_main_select_help {
+  width: 449px;
+  height: 109px;
+  opacity: 1;
+  position: absolute;
+  top: 659px;
+  left: 23px;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_help_background {
+  width: 497px;
+  height: 89px;
+  opacity: 1;
+  position: absolute;
+  top: 4px;
+  left: -26px;
+  background: url("./images/help.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.clothesselect_main_select_help_text {
+  display: flex;
+  width: 334px;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: absolute;
+  top: 16px;
+  left: 65px;
+  color: #FFF;
+  font-size: 13px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 152.4%;
+  letter-spacing: 0.13px;
+  opacity: 1;
+  text-align: left;
+}
+
+.clothesselect_main_select_button {
+  width: 424px;
+  height: 83px;
+  position: relative;
+  top: -28%;
+  left: 4%;
+}
+
+.clothesselect_main_select_button_box {
+  width: 449px;
+  height: 81px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #375BDE;
+}
+
+.clothesselect_main_select_button:hover .clothesselect_main_select_button_box {
+  background-color: #0037ff;
+}
+
+.clothesselect_main_select_button_text {
+  display: flex;
+  width: 449px;
+  height: 81px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFF;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  text-align: center;
+  font-size: 18px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 152.4%;
+  letter-spacing: 0.18px;
+}

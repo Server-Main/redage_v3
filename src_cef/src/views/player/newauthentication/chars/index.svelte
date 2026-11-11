@@ -19,7 +19,7 @@
     let SelectViews = "Chars";
 
 
-    let isMerger = true;
+    let isMerger = false;
 
     const SetMerger = (toggled) => {
         isMerger = toggled;
@@ -63,9 +63,9 @@
             return;
         const { keyCode } = event;
         
-        if(keyCode == 81) {
+        if(keyCode == 65) {
             onClickQ ();
-        } else if(keyCode == 69) { 
+        } else if(keyCode == 68) { 
             onClickE ();
         }
     }
@@ -89,9 +89,6 @@
     <div class="header box-center">
         <div class="header__logo"/>
         <div class="box-flex" on:mouseenter={() => MouseUse (false)} on:mouseleave={() => MouseUse (true)}>
-            <div class="header-key box-center" on:click={onClickQ}>
-                Q
-            </div>
             <div class="header__element" class:active={SelectViews === "News"} on:click={() => OnSelectViews("News")}>
                 {translateText('player2', 'Новости')}
             </div>
@@ -103,9 +100,6 @@
                 {translateText('player2', 'Перенести персонажей с White/Red')}
             </div>
             {/if}
-            <div class="header-key box-center" on:click={onClickE}>
-                E
-            </div>
         </div>
         <div class="header__money">
             {format("money", $accountRedbucks)} <span class="header__money_redbucks"></span>

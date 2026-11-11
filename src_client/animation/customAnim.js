@@ -52,11 +52,11 @@ gm.requestAnimDict = (animDictionary) => new Promise(async (resolve, reject) => 
     return resolve(true);
 });
 
-gm.playAnimation = function (entity, animDictionary, animName, speed, animFlag) {
+gm.playAnimation = (entity, animDictionary, animName, speed, animFlag, arguments) => {
 
-    const lockx = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : false;
-    const locky = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
-    const lockz = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+    const lockx = arguments > 5 && arguments[5] !== undefined ? arguments[5] : false;
+    const locky = arguments > 6 && arguments[6] !== undefined ? arguments[6] : false;
+    const lockz = arguments > 7 && arguments[7] !== undefined ? arguments[7] : false;
 
     try {
         gm.requestAnimDict(animDictionary).then(async () => {

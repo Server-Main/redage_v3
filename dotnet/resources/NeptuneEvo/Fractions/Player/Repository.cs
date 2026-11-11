@@ -55,7 +55,7 @@ namespace NeptuneEvo.Fractions.Player
                 //
                 
                 if (memberFractionData.Id == (int) Models.Fractions.ARMY){
-                    //player.Eval("mp.game.ui.setMinimapComponent(15, true, -1);");
+                    player.Eval("mp.game.ui.setMinimapComponent(15, true, -1);");
                 }
                 else if (memberFractionData.Id == (int) Models.Fractions.LSNEWS){
                     LsNewsSystem.onLSNPlayerLoad(player);

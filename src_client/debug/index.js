@@ -11,7 +11,7 @@ global.isDebug = false;
 
 global.debugLog = (text, _isDebug = false) => {
     if (global.isDebug || _isDebug) {
-        mp.console.logError(`[RedAge] DebugLog: ${text}`, true);
+        mp.console.logError(`[RAGECODE.PRO] DebugLog: ${text}`, true);
     }
 }
 

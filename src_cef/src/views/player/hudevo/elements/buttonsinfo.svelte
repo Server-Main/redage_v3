@@ -1,39 +1,20 @@
 <script>
-    import { translateText } from 'lang'
-    import { charIsPet } from 'store/chars'
-    import { fly } from 'svelte/transition';
-    import { isInputToggled, isHelp } from 'store/hud'
-    import keys from 'store/keys'
-    import keysName from 'json/keys.js'
-	import router from 'router';
-
-    let isHint = false;
-    window.hudStore.isHint = (value) => isHint = value;
+    import { charIsPet } from 'store/chars';
+    import { isHelp } from 'store/hud';
+    import keys from 'store/keys';
+    import keysName from 'json/keys.js';
+    
+    import hot_voice from '../img/hot_voice.2d110bcc.svg';
+    import hot_inter from '../img/hot_inter.4e156c63.svg';
+    import hot_menu from '../img/hot_menu.e8d85bb6.svg';
+    import hot_inv from '../img/hot_inv.35c7e83c.svg';
+    import hot_cursor from '../img/hot_cursor.881afa88.svg';
 
     let HideHelp = false;
     window.hudStore.HideHelp = (value) => HideHelp = value;
 </script>
+
 {#if !$charIsPet && $isHelp}
-    <div class="buttonsinfo" in:fly={{ x: -50, duration: 500 }} out:fly={{ x: -50, duration: 250 }} class:newhud__hide={HideHelp || !$isHelp}>
-        <div class="box-flex">
-            <div class="buttonsinfo__button">{keysName[$keys[8]]}</div>
-            <div class="buttonsinfo__element hudevo__elementparams">{translateText ('player2' , 'Анимации')}</div>
-        </div>
-        <div class="box-flex">
-            <div class="buttonsinfo__button">{keysName[$keys[43]]}</div>
-            <div class="buttonsinfo__element hudevo__elementparams">{translateText ('player2' , 'Биндер')}</div>
-        </div>
-        <div class="box-flex">
-            <div class="buttonsinfo__button">{keysName[$keys[45]]}</div>
-            <div class="buttonsinfo__element hudevo__elementparams">{translateText ('player2' , 'Указать пальцем')}</div>
-        </div>
-        <div class="box-flex">
-            <div class="buttonsinfo__button">{keysName[$keys[27]]}</div>
-            <div class="buttonsinfo__element hudevo__elementparams">{translateText ('player2' , 'Скрыть HUD')}</div>
-        </div>
-        <div class="box-flex">
-            <div class="buttonsinfo__button">{keysName[$keys[49]]}</div>
-            <div class="buttonsinfo__element hudevo__elementparams">{translateText ('player2' , 'Скрыть уведомление')}</div>
-        </div>
+    <div id="safezone" class:newhud__hide={HideHelp || !$isHelp}>
     </div>
 {/if}

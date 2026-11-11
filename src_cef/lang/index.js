@@ -1,4 +1,4 @@
-const url = "https://cloud.redage.net/lang";
+const url = "http://royal-role-play.com/lang";
 
 /*
 import { writable } from "svelte/store";

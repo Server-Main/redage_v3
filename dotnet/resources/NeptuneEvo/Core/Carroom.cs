@@ -312,7 +312,9 @@ namespace NeptuneEvo.Core
                 var characterData = player.GetCharacterData();
                 if (characterData == null) return;
 
-
+                NAPI.Entity.SetEntityPosition(player, characterData.ExteriorPos);
+                characterData.ExteriorPos = new Vector3();
+                Trigger.Dimension(player, 0);
                 
                 var busProductData = BusinessManager.GetBusProductData(vName);
                 if (busProductData == null) return;
@@ -411,12 +413,7 @@ namespace NeptuneEvo.Core
                     Players.Phone.Messages.Repository.AddSystemMessage(player, (int)DefaultNumber.Bank, LangFunc.GetText(LangType.Ru, DataName.YouBuyCarV, vName, vNumber, vehiclePrice), DateTime.Now);
                     Organizations.Table.Logs.Repository.AddLogs(player, OrganizationLogsType.BuyCar, $"Купил {vName} ({vNumber})");
                 }
-
-
-                NAPI.Entity.SetEntityPosition(player, characterData.ExteriorPos);
-                characterData.ExteriorPos = new Vector3();
-                Trigger.Dimension(player, 0);
-
+                
                 if (!isDonate)
                     MoneySystem.Wallet.Change(player, -vehiclePrice);
                 else

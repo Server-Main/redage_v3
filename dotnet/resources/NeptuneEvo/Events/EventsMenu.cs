@@ -20,10 +20,10 @@ namespace NeptuneEvo.Events
         {
             try
             {
-                CustomColShape.CreateSphereColShape(new Vector3(-488.47617, -401.0276, 34.79613), 7f, 0, ColShapeEnums.EventsMenu);
-                PedSystem.Repository.CreateQuest("a_m_m_afriamer_01", new Vector3(-486.10715, -399.39944, 34.546597), -47.65183f, title: "~y~NPC~w~ Саня\nПрофессиональный игроман");
-                //NAPI.Marker.CreateMarker(1, new Vector3(-478.86032, -395.27307, 34.027653 - 1.25), new Vector3(), new Vector3(), 1f, new Color(255, 255, 255, 220));
-                Main.CreateBlip(new Main.BlipData(491, LangFunc.GetText(LangType.Ru, DataName.Events), new Vector3(-483.149, -400.09946, 34.546608), 6, true));
+                CustomColShape.CreateSphereColShape(new Vector3(-261.00668, -2023.3601, 30.145601), 7f, 0, ColShapeEnums.EventsMenu);
+                PedSystem.Repository.CreateQuest("a_m_m_afriamer_01", new Vector3(-259.00668, -2023.3601, 30.145601), -47.65183f, title: "Мини-Игры");
+                //NAPI.Marker.CreateMarker(1, new Vector3(-256.08716, -2021.2599, 30.145578 - 1.25), new Vector3(), new Vector3(), 1f, new Color(255, 255, 255, 220));
+                Main.CreateBlip(new Main.BlipData(647, "Maze Bank Arena", new Vector3(-259.00668, -2023.3601, 30.145601), 1, true));
             }
             catch (Exception e)
             {

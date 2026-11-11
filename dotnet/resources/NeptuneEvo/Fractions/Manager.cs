@@ -48,22 +48,25 @@ namespace NeptuneEvo.Fractions
                
                 Main.CreateBlip(new Main.BlipData(459, "News", LsNewsSystem.LSNewsCoords[0], 4, true, 1.3f));
 
-                Main.CreateBlip(new Main.BlipData(621, LangFunc.GetText(LangType.Ru, DataName.Bolnica), Ems.emsCheckpoints[0], 1, true));
+                Main.CreateBlip(new Main.BlipData(61, LangFunc.GetText(LangType.Ru, DataName.Bolnica), Ems.emsCheckpoints[0], 1, true));
                 
-                Main.CreateBlip(new Main.BlipData(60, "FIB", Fbi.GpsPosition, 4, true));
+                Main.CreateBlip(new Main.BlipData(88, "FIB", Fbi.GpsPosition, 29, true));
                 
                 Main.CreateBlip(new Main.BlipData(478, LangFunc.GetText(LangType.Ru, DataName.WarPort), Army.ArmyCheckpoints[2], 52, true));
 
-                Main.CreateBlip(new Main.BlipData(437, "The Families", FractionSpawns[1], 25, true));
-                Main.CreateBlip(new Main.BlipData(437, "The Ballas Gang", FractionSpawns[2], 7, true));
-                Main.CreateBlip(new Main.BlipData(437, "Los Santos Vagos", FractionSpawns[3], 5, true));
-                Main.CreateBlip(new Main.BlipData(437, "Marabunta Grande", FractionSpawns[4], 3, true));
-                Main.CreateBlip(new Main.BlipData(437, "Blood Street", FractionSpawns[5], 1, true));
+                Main.CreateBlip(new Main.BlipData(630, "The Families", FractionSpawns[1], 25, true));
+                Main.CreateBlip(new Main.BlipData(630, "The Ballas Gang", FractionSpawns[2], 7, true));
+                Main.CreateBlip(new Main.BlipData(630, "Los Santos Vagos", FractionSpawns[3], 5, true));
+                Main.CreateBlip(new Main.BlipData(630, "Marabunta Grande 13", FractionSpawns[4], 3, true));
+                Main.CreateBlip(new Main.BlipData(630, "Blood Street Gang", FractionSpawns[5], 1, true));
 
-                Main.CreateBlip(new Main.BlipData(679, "La Cosa Nostra", FractionSpawns[10], 4, true));
-                Main.CreateBlip(new Main.BlipData(679, "Russian Mafia", FractionSpawns[11], 4, true));
-                Main.CreateBlip(new Main.BlipData(679, "Yakuza", FractionSpawns[12], 4, true));
-                Main.CreateBlip(new Main.BlipData(679, "Armenian Mafia", FractionSpawns[13], 4, true));
+                Main.CreateBlip(new Main.BlipData(685, "La Cosa Nostra", FractionSpawns[10], 40, true));
+                Main.CreateBlip(new Main.BlipData(685, "Russian Mafia", FractionSpawns[11], 4, true));           
+                Main.CreateBlip(new Main.BlipData(685, "Armenian Mafia", FractionSpawns[13], 76, true));
+                Main.CreateBlip(new Main.BlipData(556, "Army", new Vector3(-2344.7917, 3267.57, 40.84603), 45, true));
+                Main.CreateBlip(new Main.BlipData(61, "EMS", new Vector3(1837.2471, 3677.0852, 39.178818), 6, true));
+                //Main.CreateBlip(new Main.BlipData(556, "Army", FractionSpawns[13], 4, true));
+                //Main.CreateBlip(new Main.BlipData(685, "Yakuza", FractionSpawns[12], 64, true));
 
                 CreateGarageData();
 
@@ -470,7 +473,7 @@ namespace NeptuneEvo.Fractions
             {(int) Models.Fractions.RUSSIAN, new Vector3(-115.1648, 983.5231, 236.6358)},    // Russian Mafia
             {(int) Models.Fractions.YAKUZA, new Vector3( -1464.758, -34.101257, 55.20967)},    // Yakuza 
             {(int) Models.Fractions.ARMENIAN, new Vector3(-1809.738, 444.3138, 129.3889)},    // Armenian Mafia 
-            {(int) Models.Fractions.ARMY, new Vector3(-2361.488, 3208.3765, 29.224823)},    // Army
+            {(int) Models.Fractions.ARMY, new Vector3(-2344.7917, 3267.57, 40.84603)},    // Army
             {(int) Models.Fractions.LSNEWS, new Vector3(-563.7617, -934.2492, 23.866652)},    // LSNews -1063.046, -249.463, 44.0211
             {(int) Models.Fractions.THELOST, new Vector3(982.2743, -104.14917, 73.72877)},    // The Lost
             {(int) Models.Fractions.MERRYWEATHER, new Vector3(2154.641, 2921.034, -63.02243)},    // Merryweather
@@ -3132,22 +3135,22 @@ namespace NeptuneEvo.Fractions
         public static bool isWar = false;
         public static int matsLeft = 36000;
         private static ExtMarker warMarker = null;
-        private static Vector3 warPosition = new Vector3(-326.3168, -2701.9377, 0.9251);
+        private static Vector3 warPosition = new Vector3(2679.6187, 1640.828, 24.643122);
         private static ExtBlip warblip;
         
         public static int MatWarDropPositionIndex = 0;
         public static List<Vector3> MatWarDropsPositions = new List<Vector3>()
         {
-            new Vector3(-398.41837, -2485.873, 5.988623),
-            new Vector3(-394.79373, -2601.213, 13.642556),
-            new Vector3(-416.5059, -2705.3623, 6.000181),
+            new Vector3(2793.4067, 1509.3284, 24.524982),
+            new Vector3(2668.5542, 1708.3441, 24.480843),
+            new Vector3(2729.3088, 1367.225, 24.504948),
             new Vector3(-432.12888, -2812.5203, 17.454176),
-            new Vector3(-362.6888, -2765.538, 6.009338),
-            new Vector3(-321.4789, -2587.2744, 6.000203),
-            new Vector3(-294.9209, -2637.932, 6.0484986),
-            new Vector3(-349.32922, -2667.5186, 19.395124),
-            new Vector3(-442.72372, -2744.6716, 6.0000896),
-            new Vector3(-522.3989, -2825.25, 5.992627)
+            new Vector3(2860.0383, 1521.423, 24.56015),
+            new Vector3(2734.1665, 1652.8329, 24.5397),
+            new Vector3(2766.5417, 1653.2335, 24.522324),
+            new Vector3(2833.1755, 1584.6074, 24.55393),
+            new Vector3(2933.1755, 1584.6074, 24.55393),
+            new Vector3(2746.5405, 1552.366, 24.50093)
         };
         public static string MatWarDropTimer = null;
         public static int MatWarDropHealth = 100;
@@ -3160,7 +3163,7 @@ namespace NeptuneEvo.Fractions
             {
                 CustomColShape.CreateCylinderColShape(warPosition, 6, 2, 0, ColShapeEnums.War);
 
-                warblip = (ExtBlip) NAPI.Blip.CreateBlip(556, warPosition, 1, 4, Main.StringToU16("National Guard"), 255, 0, true, 0, 0);
+                //warblip = (ExtBlip) NAPI.Blip.CreateBlip(556, warPosition, 1, 4, Main.StringToU16("National Guard"), 255, 0, true, 0, 0);
             }
             catch (Exception e)
             {
@@ -3173,10 +3176,10 @@ namespace NeptuneEvo.Fractions
             try
             {
                 if (isWar) return;
-                NAPI.Chat.SendChatMessageToAll("~o~[MATWAR] \"Война за материалы\" была начата!");
+                NAPI.Chat.SendChatMessageToAll("~o~[ВЗХ] \"Война за хаммеры\" была начата!");
                 SafeZones.ChangeDamageState((int) SafeZones.ZoneName.MatWarZone, false);
                 matsLeft = 36000;
-                warMarker = (ExtMarker) NAPI.Marker.CreateMarker(1, warPosition - new Vector3(0, 0, 5), new Vector3(), new Vector3(), 6f, new Color(155, 0, 0, 255));
+                Main.CreateBlip(new Main.BlipData(556, "ВЗХ", new Vector3(2679.6187, 1640.828, 24.643122), 76, true));
                 isWar = true;
                 Manager.sendFractionMessage((int) Models.Fractions.FAMILY, LangFunc.GetText(LangType.Ru, DataName.WzmShipGoing));
                 Manager.sendFractionMessage((int) Models.Fractions.BALLAS, LangFunc.GetText(LangType.Ru, DataName.WzmShipGoing));
@@ -3224,7 +3227,7 @@ namespace NeptuneEvo.Fractions
                 
                 //
                 
-                warblip.Color = 49;
+                warblip.Color = 1;
                 
             }
             catch (Exception e)
@@ -3241,7 +3244,7 @@ namespace NeptuneEvo.Fractions
                 {
                     try
                     {
-                        NAPI.Chat.SendChatMessageToAll("~o~[MATWAR] \"Война за материалы\" была закончена!");
+                        NAPI.Chat.SendChatMessageToAll("~o~ВЗХ] \"Война за хаммеры\" была закончена!");
                         SafeZones.ChangeDamageState((int) SafeZones.ZoneName.MatWarZone, true);
                         if (warMarker != null && warMarker.Exists) 
                             warMarker.Delete();

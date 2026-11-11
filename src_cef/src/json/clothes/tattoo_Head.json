@@ -51,5 +51,8 @@
 	"50": {"Id":50,"Name":"Scorpion","Dictionary":"mpstunt_overlays","MaleHash":"MP_MP_Stunt_Tat_004_M","FemaleHash":"MP_MP_Stunt_Tat_004_F","Slots":[5],"Price":1750,"Donate":0},
 	"51": {"Id":51,"Name":"Toxic Spider","Dictionary":"mpstunt_overlays","MaleHash":"MP_MP_Stunt_Tat_006_M","FemaleHash":"MP_MP_Stunt_Tat_006_F","Slots":[2],"Price":1750,"Donate":0},
 	"52": {"Id":52,"Name":"Bat Wheel","Dictionary":"mpstunt_overlays","MaleHash":"MP_MP_Stunt_Tat_017_M","FemaleHash":"MP_MP_Stunt_Tat_017_F","Slots":[2],"Price":1750,"Donate":0},
-	"53": {"Id":53,"Name":"Flaming Quad","Dictionary":"mpstunt_overlays","MaleHash":"MP_MP_Stunt_Tat_042_M","FemaleHash":"MP_MP_Stunt_Tat_042_F","Slots":[2],"Price":1750,"Donate":0}
+	"53": {"Id":53,"Name":"Flaming Quad","Dictionary":"mpstunt_overlays","MaleHash":"MP_MP_Stunt_Tat_042_M","FemaleHash":"MP_MP_Stunt_Tat_042_F","Slots":[2],"Price":1750,"Donate":0},
+	"54": {"Id":54,"Name":"Blackwork 4","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_108_M","FemaleHash":"MP_Gta5rptattoo_Tat_108_F","Slots":[0,1,2,3],"Price":50000,"Donate":0},
+	"55": {"Id":55,"Name":"Blackwork 5","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_109_M","FemaleHash":"MP_Gta5rptattoo_Tat_109_F","Slots":[0,1,2,3],"Price":50000,"Donate":0},
+	"56": {"Id":56,"Name":"Blackwork 6","Dictionary":"gta5rptattoo_overlays","MaleHash":"MP_Gta5rptattoo_Tat_118_M","FemaleHash":"MP_Gta5rptattoo_Tat_118_F","Slots":[0,1,2,3],"Price":50000,"Donate":0}
 }

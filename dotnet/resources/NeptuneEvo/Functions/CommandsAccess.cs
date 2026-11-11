@@ -38,6 +38,8 @@ namespace NeptuneEvo.Functions
     {
         public const string Id = "id";
         public const string Admins = "admins";
+        public const string Players = "players";
+
         public const string A = "a";
         public const string Checkkill = "checkkill";
         public const string Sp = "sp";
@@ -320,6 +322,7 @@ namespace NeptuneEvo.Functions
         {
             { AdminCommands.Id, 1 },
             { AdminCommands.Admins, 1 },
+            { AdminCommands.Players, 1 },
             { AdminCommands.A, 1 },
             { AdminCommands.Sp, 1 },
             { AdminCommands.Inv, 1 },
@@ -455,7 +458,8 @@ namespace NeptuneEvo.Functions
             { AdminCommands.Nalog, 6 },
             { AdminCommands.Acancel, 6 },
             
-            { AdminCommands.Restart, 7 },
+            { AdminCommands.Restart, 10 },
+			{ AdminCommands.SaveServer, 7 },
             { AdminCommands.Save, 7 },
             { AdminCommands.Banlogin, 7 },
             { AdminCommands.Setadmin, 7 },

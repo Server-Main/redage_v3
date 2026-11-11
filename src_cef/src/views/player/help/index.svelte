@@ -50,7 +50,7 @@
     import AirDrop from './elements/events/AirDrop.svelte';
     import Azart from './elements/events/Azart.svelte';
     import BizCapt from './elements/events/BizCapt.svelte';
-    import Everyday from './elements/events/Everyday.svelte';
+    import Everyday from './elements/events/everyday.svelte';
     import GunGame from './elements/events/GunGame.svelte';
     import StreetCar from './elements/events/StreetCar.svelte';
     import HeliCrash from './elements/events/HeliCrash.svelte';
@@ -177,10 +177,15 @@
 </script>
 
 <div id="help">
+    <div class="main-bg-hosty"></div>
+    <div class="asdasd-exit" on:click={onExit}>
+        <a>ESC</a>
+        <p>Закрыть</p>
+    </div>
     <div class="help-card">
         <div class="nav">
             <div class="header">
-                {translateText('player', 'Помощь')} <div class="close" on:click={onExit}/>
+                {translateText('player', 'Помощь')}
             </div>
             <ul class="navigation">
                 {#each menu as content, index}
@@ -230,3 +235,56 @@
         </div>
     </div>
 </div>
+
+
+<style>
+.main-bg-hosty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url(./nes/asfdfa.png);
+}
+
+.asdasd-exit {
+    position: absolute;
+    bottom: 3vh;
+    right: 3vh;
+    width: 10vh;
+    background: #232424;
+
+    width: 15.9259vh;
+    height: 4.537vh;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 1vh;
+    color: #fff;
+    gap: 3vh;
+}
+
+.asdasd-exit a {
+    position: relative;
+    left: 1.3vh;
+    font-weight: 600;
+}
+
+.asdasd-exit p {
+    height: 100%;
+    width: 9.8148vh;
+    background: #353535;
+    border-radius: 1vh;
+    margin-right: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+}
+
+</style>

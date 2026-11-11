@@ -34,7 +34,7 @@ namespace NeptuneEvo.Events
     }
     class Festive : Script
     {
-        private static readonly nLog Log = new nLog("Events.Festive");
+        public static readonly nLog Log = new nLog("Events.Festive");
 
         
         public static DateTime DateTimeEnd = new DateTime(2023, 1, 30);
@@ -43,13 +43,10 @@ namespace NeptuneEvo.Events
         
         public static ItemId EventCoins = ItemId.Giftcoin;
         public static string EventCoinsName = Repository.ItemsInfo[EventCoins].Name;
-        
 
-        public static int MaxGiftsCount = 160;
-
-        private static GiftsListModel[] GiftsListData = new GiftsListModel[]
+        public static GiftsListModel[] GiftsListData = new GiftsListModel[]
         {
-                      new GiftsListModel(0, new Vector3(-2285.59131, 353.3171, 175.404083), new Vector3(0.00, 0.00, 0.00)),
+            new GiftsListModel(0, new Vector3(-2285.59131, 353.3171, 175.404083), new Vector3(0.00, 0.00, 0.00)),
             new GiftsListModel(1, new Vector3(-25.6684418, -1423.82117, 30.62255), new Vector3(0.00, 0.00, 0.00)),
             new GiftsListModel(2, new Vector3(5.11801147, 41.33201, 70.53516), new Vector3(0.00, 0.00, 0.00)),
             new GiftsListModel(3, new Vector3(-1360.6825, -757.5558, 21.3029785), new Vector3(0.00, 0.00, 0.00)),
@@ -254,12 +251,12 @@ namespace NeptuneEvo.Events
 
         public static void Init ()
         {
-            if (isEvent)
-            {
-                PedSystem.Repository.CreateQuest("dedmoroz", new Vector3(-1640.6166, -1096.9696, 13.024864), -42f, title: "~y~NPC~w~ Санта Клаус\nОбмен подарков", colShapeEnums: ColShapeEnums.Festive);
-                Main.CreateBlip(new Main.BlipData(607, "Санта Клаус", new Vector3(-1640.6166, -1096.9696, 13.024864), 0, true));
+            //if (isEvent)
+            //{
+                // PedSystem.Repository.CreateQuest("u_m_y_rsranger_01", new Vector3(-196.98267, -791.47235, 30.454006), -112f, title: "~y~NPC~w~ Адский Чертила\nОбмен тыкв", colShapeEnums: ColShapeEnums.Festive);
+                // Main.CreateBlip(new Main.BlipData(310, "Адский Чертила", new Vector3(-196.98267, -791.47235, 30.454006), 76, true));
 
-            }
+            //}
         }
 
         public static void InitPlayerData(ExtPlayer player)
@@ -274,8 +271,6 @@ namespace NeptuneEvo.Events
                     return;
 
                 var collectionGifts = accountData.CollectionGifts;
-                if (accountData.CollectionGifts.Count == MaxGiftsCount) 
-                    return;
 
                 var randomGiftsListData = GiftsListData.ToList();
                 foreach (int index in collectionGifts)
@@ -283,7 +278,6 @@ namespace NeptuneEvo.Events
                     randomGiftsListData.Remove(GiftsListData[index]);
                 }
                 randomGiftsListData = NewCasino.Horses.Shuffle(randomGiftsListData);
-                randomGiftsListData.RemoveRange(MaxGiftsCount - collectionGifts.Count, (randomGiftsListData.Count - MaxGiftsCount + collectionGifts.Count));
 
                 Trigger.ClientEvent(player, "client.events.open", JsonConvert.SerializeObject(randomGiftsListData));
             }
@@ -298,7 +292,7 @@ namespace NeptuneEvo.Events
             try
             {
                 if (!player.IsCharacterData()) return;
-                Trigger.ClientEvent(player, "openInput", $"Обмен {EventCoinsName} | 3 = 1 RB", "Вводите числа, кратные 3 - 3, 6, 9 и т.д.", 3, "sell_festive");
+                Trigger.ClientEvent(player, "openInput", $"Обмен тыкв | 3 = 1 RB", "Вводите числа, кратные 3 - 3, 6, 9 и т.д.", 3, "sell_festive");
             }
             catch (Exception e)
             {
@@ -341,7 +335,7 @@ namespace NeptuneEvo.Events
                         if (Repository.isFreeSlots(player, EventCoins, rand) != 0) return;
                         accountData.CollectionGifts.Add(index);
                         Repository.AddNewItem(player, $"char_{characterData.UUID}", "inventory", EventCoins, rand);
-                        Trigger.ClientEvent(player, "client.events.confirming", rand, accountData.CollectionGifts.Count, MaxGiftsCount);
+                        Trigger.ClientEvent(player, "client.events.confirming", rand, accountData.CollectionGifts.Count);
                     }
                     catch (Exception e)
                     {

@@ -751,17 +751,11 @@
     </div>
     <div class="newbarbershop__top">
         <div class="newbarbershop__top_header" on:mouseenter={() => MouseUse (false)} on:mouseleave={() => MouseUse (true)}>
-            <div class="newbarbershop__button">
-                Q
-            </div>
             {#each menuData as data, index}
                 <div class="newbarbershop__category" class:active={selectMenu == data} on:click={() => onSelectMenu (data)}>
                     <div class="{data.icon} newbarbershop__category_icon"></div>
                 </div>
             {/each}
-            <div class="newbarbershop__button">
-                E
-            </div>
         </div>
         <div class="newbarbershop__text">
             {translateText('business', 'Выбор категории')}
@@ -855,28 +849,6 @@
         <!--
             Нет функционал дальше
         -->
-        <div class="newbarbershop__help">
-            <div class="newbarbershop__help_img"></div>
-            <div class="newbarbershop__help_main">
-                <div class="newbarbershop__help_text">{translateText('business', 'Используйте горячие клавиши для быстрого перемещения по интерфейсу')}:</div>
-                <div class="box-between">
-                    <div class="newbarbershop__button">
-                        <span class="newbarbershopicons-leftright"></span>
-                    </div>
-                    <div class="newbarbershop__button">
-                        <div class="newbarbershop__button">
-                            <span class="newbarbershopicons-updown"></span>
-                        </div>
-                    </div>
-                    <div class="newbarbershop__button">
-                        Q
-                    </div>
-                    <div class="newbarbershop__button">
-                        E
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="newbarbershop__bottom">
         <div class="box-flex">

@@ -1038,9 +1038,9 @@ namespace NeptuneEvo.Chars
             Total   10000 - 100.00% 
             */ 
             new RouletteCaseData(ItemId.Case10, "Экзотический кейс", 7777, new List<RouletteItemData>(), "keys_8", "Кейс с автомобилями из DonateRoom Autoroom. Доната Редбаксовна одобряет!"),              
-            new RouletteCaseData(ItemId.Case11, "Легендарный кейс", 5555, new List<RouletteItemData>(), "keys_11", "Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты RedAge? Тогда крути кейс!"), 
+            new RouletteCaseData(ItemId.Case11, "Легендарный кейс", 5555, new List<RouletteItemData>(), "keys_11", "Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты? Тогда крути кейс!"), 
             new RouletteCaseData(ItemId.Case12, "Интересный кейс", 3999, new List<RouletteItemData>(), "keys_12", "Давно хочешь себе уникальную машину которая нигде не продается? Пожалуйста! Dodge Charger - стоит на вооружении у полиции, обладает довольно высокими характеристиками."), 
-            new RouletteCaseData(ItemId.Case13, "Вертолетный кейс", 8888, new List<RouletteItemData>(), "keys_13", "Любишь смотреть на людей свысока? Пожалуй, для этого идеально подойдет вертолёт!"), 
+            new RouletteCaseData(ItemId.Case13, "RAGECODE.PRO Case", 9999, new List<RouletteItemData>(), "keys_13", "Любишь эксклюзив? Кейс от руководства проекта для тебя!"), 
             new RouletteCaseData(ItemId.Case14, "Бронированный кейс", 5000, new List<RouletteItemData>(), "keys_14", "Классный новый кейс с модными бронированными тачками!"),
             new RouletteCaseData(ItemId.Case15, "Эксклюзивный кейс", 100, new List<RouletteItemData>(), "keys_15", "Классный новый с размещаемыми предметами!"),
             new RouletteCaseData(ItemId.Case16, "Снежный кейс [М]", 5000, new List<RouletteItemData>(), "keys_16", "Эксклюзивный кейс из Battle Pass, в нем находится несколько комплектов одежды с одинаковым шансов выпадения. Насколько быстро ты сможешь собрать свой сет?"),   
@@ -2092,10 +2092,6 @@ namespace NeptuneEvo.Chars
 
         public static void ChangeAutoNumberInit()
         {
-            //Main.CreateBlip(new Main.BlipData(811, "Смена номеров", new Vector3(-2286.025, 354.21, 174.6016), 47, true, 1.5f));
-            //NAPI.Marker.CreateMarker(1, new Vector3(-2286.025, 354.21, 172.2016), new Vector3(), new Vector3(), 3f, new Color(255, 255, 255, 220), false, 0);
-            //NAPI.TextLabel.CreateTextLabel("~w~Смена номеров", new Vector3(-2286.025, 354.21, 174.6016), 8f, 0.3f, 0, new Color(255, 255, 255), true, 0);
-            //CustomColShape.CreateSphereColShape(new Vector3(-1288.142, -579.7515, 30.573048), 2f, 0, ColShapeEnums.ChangeAutoNumber); // Смена номеров
             PedSystem.Repository.CreateQuest("s_m_m_fiboffice_02", new Vector3(-1288.142, -579.7515, 30.573048), 27.65183f, title: "~y~NPC~w~ Эдвард Дэниелс\nСмена номеров", colShapeEnums: ColShapeEnums.ChangeAutoNumber);
 
         }
@@ -2597,7 +2593,7 @@ public static IReadOnlyDictionary<ClothesComponent, ItemId> ClothesComponentToIt
             { ItemId.Case8, new ItemsInfo(RouletteCasesData[8].Name, "Кейс с МУЖСКОЙ одеждой из донатного магазина одежды. Испытай удачу и будь стильным, или продай кому-то и будь богатым. А можешь и подарить...", "inv-item-case8", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
             { ItemId.Case9, new ItemsInfo(RouletteCasesData[9].Name, "Кейс с ЖЕНСКОЙ одеждой из донатного магазина одежды. Отличный вариант, если хочется что-нибудь подарить.", "inv-item-case9", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
             { ItemId.Case10, new ItemsInfo(RouletteCasesData[10].Name, "Кейс с автомобилями из Exotic DonateRoom. Доната Редбаксовна одобряет!", "inv-item-case10", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
-            { ItemId.Case11, new ItemsInfo(RouletteCasesData[11].Name, "Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты RedAge? Тогда крути кейс!", "inv-item-case11", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
+            { ItemId.Case11, new ItemsInfo(RouletteCasesData[11].Name, "Все или ничего! Хочешь рискнуть и стать обладателем легендарной кофты? Тогда крути кейс!", "inv-item-case11", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
             { ItemId.Case12, new ItemsInfo(RouletteCasesData[12].Name, "Давно хочешь себе уникальную машину которая нигде не продается? Dodge Charger в этом кейсике!", "inv-item-case12", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
             { ItemId.Case13, new ItemsInfo(RouletteCasesData[13].Name, "Любишь смотреть на людей свысока? Пожалуй, для этого идеально подойдет вертолёт!", "inv-item-case13", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
             { ItemId.Case14, new ItemsInfo(RouletteCasesData[14].Name, "Классный новый кейс с модными бронированными тачками!", "inv-item-case14", "Особое", NAPI.Util.GetHashKey("prop_idol_case_02"), 100, new Vector3(0.0,0.0,-1.0), new Vector3(90, 0, 0), newItemType.Cases) },
@@ -2746,6 +2742,9 @@ public static IReadOnlyDictionary<ClothesComponent, ItemId> ClothesComponentToIt
             { ItemId.CombatRifle, new ItemsInfo("Combat Rifle", "Сносящая все на своем пути винтовка","inv-item-Carbine-Rifle", "Оружие", 2379721761, 1, new Vector3(0.0,0.0,-0.99), new Vector3(90, 0, 0), newItemType.Weapons) },
 
             { ItemId.Glock, new ItemsInfo("Banana Glock", "Банана Глок топ","inv-item-Carbine-Rifle", "Оружие", 651271362, 1, new Vector3(0.0,0.0,-0.99), new Vector3(90, 0, 0), newItemType.Weapons) },
+            
+            { ItemId.Hay, new ItemsInfo("Урожай", "Используемое в дальнейшем для посадки на постоянное место","prop_haybale_01", "Размещаемые предметы", NAPI.Util.GetHashKey("prop_haybale_01"), 1, new Vector3(0.0,0.0,-0.9), new Vector3(0,0,0), newItemType.None) },
+            { ItemId.Seed, new ItemsInfo("Семена", "Семена для рассады","ch_prop_ch_moneybag_01a", "Размещаемые предметы", NAPI.Util.GetHashKey("ch_prop_ch_moneybag_01a"), 1, new Vector3(0.0,0.0,-0.9), new Vector3(0,0,0), newItemType.None) },
 
         };
 
@@ -5052,13 +5051,6 @@ public static IReadOnlyDictionary<ClothesComponent, ItemId> ClothesComponentToIt
                 var characterData = player.GetCharacterData();
                 var sessionData = player.GetSessionData();
                 if (sessionData == null) return;
-                //if (!toggled && characterData != null && SlotId != 7 && SlotId != 8 && SlotId != 1 && ((sessionData.WorkData.OnDuty && Manager.FractionTypes[memberFractionData.Id] == FractionsType.Gov && memberFractionData.Id != (int)Fractions.Models.Fractions.FIB) || sessionData.WorkData.OnWork)) return;
-
-                //if (!toggled && characterData != null && SlotId != 7 && player.Accessories != null && player.Accessories.ContainsKey(SlotId))
-                //    return;
-
-                //if (characterData != null && SlotId == 7 && player.Accessories != null && player.Accessories.ContainsKey(SlotId))
-                //    Item = ClothesComponents.GetItemData(player, "accessories", 7);
                 
                 if (characterData != null)
                 {
@@ -5373,8 +5365,6 @@ public static IReadOnlyDictionary<ClothesComponent, ItemId> ClothesComponentToIt
                     Sounds.PlayPlayer3d(player, "inventory/drink");
                     BattlePass.Repository.UpdateReward(player, 66);
 
-                    //Attachments.AddAttachment(player, Attachments.AttachmentsName.Beer);
-                    //Trigger.PlayAnimation(player, "amb@world_human_drinking@beer@male@idle_a", "idle_c", 49);
                     NAPI.Task.Run(() =>
                     {
                         try

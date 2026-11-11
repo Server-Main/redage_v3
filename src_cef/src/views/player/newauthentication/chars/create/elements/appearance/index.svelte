@@ -211,7 +211,7 @@
     {/if}
 
     {#if componentsDataToGender[activeItem].colorSelector}
-    <div class="auth__customization_element column">
+    <div style="background: none; border: none" class="auth__customization_element column">
         <div class="auth__customization_leftside">Цвет</div>
         
         <div class="auth__customization_colors" style={`grid-template-rows: repeat(${Math.ceil(componentsDataToGender[activeItem].colorSelector.length / 9)}, 1fr)`}>

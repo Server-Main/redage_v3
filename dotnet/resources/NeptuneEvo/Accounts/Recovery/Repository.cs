@@ -11,13 +11,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Localization;
+using System.Net.Mail;
+using System.Net;
 
 namespace NeptuneEvo.Accounts.Recovery
 {
     class Repository
     {
         private static readonly nLog Log = new nLog("Accounts.Repository.Events");
+        private static string mailFrom = "RAGECODE.PRO@gmail.com";
+        private static string mailTitle1 = "Password Restore";
+        private static string mailBody2 = "<p>Помимо этого Вы можете изменить его прямо сейчас из игры введя /password и новый желаемый пароль через пробел.Пример[/ password 123] без скобок.</p>";
 
+        private static string Server = "smtp.gmail.com";
+        private static string Password = "mvxpnlyjayqyjkax";
+        private static int Port = 587;
         public static void SendEmail(ExtPlayer player, string login)
         {
             try
@@ -53,7 +61,27 @@ namespace NeptuneEvo.Accounts.Recovery
                     Trigger.ClientEvent(player, "restorepassstep", 2);
                     return;
                 }
-                Utils.Analytics.HelperThread.AddUrl($"recovery?email={auntificationData.Email}&name={login}&code={sessionData.RecoveryCode}&ip={sessionData.Address}");
+
+                //Console.WriteLine("TEST" + " " + auntificationData.Email);
+
+                MailMessage msg;
+                msg = new MailMessage(mailFrom, auntificationData.Email, mailTitle1, $"Код для восстановления пароля: {sessionData.RecoveryCode}");
+                msg.IsBodyHtml = true;
+
+               // System.Security.SecureString secureString = new System.Security.SecureString();
+               // Password.ToCharArray().ToList().ForEach(p => secureString.AppendChar(p));
+               // NetworkCredential mailAuthentication = new NetworkCredential(Password, secureString);
+
+                SmtpClient smtpClient = new SmtpClient(Server, Port)
+                {
+                    UseDefaultCredentials = false,
+                    Credentials =  new NetworkCredential(mailFrom, Password), //mailAuthentication,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network
+                };
+
+                smtpClient.Send(msg);
+                //Utils.Analytics.HelperThread.AddUrl($"recovery?email={auntificationData.Email}&name={login}&code={sessionData.RecoveryCode}&ip={sessionData.Address}");
                 Notify.Send(player, NotifyType.Success, NotifyPosition.BottomCenter, $"Сообщение с кодом для восстановления пароля успешно выслано на {Generate.ObfuscateEmail(auntificationData.Email)}.", 5000);
                 Trigger.ClientEvent(player, "restorepassstep", 1);
             }
@@ -87,8 +115,26 @@ namespace NeptuneEvo.Accounts.Recovery
                         Trigger.ClientEvent(player, "restorepassstep", 2);
                         return;
                     }
-                    
-                    Utils.Analytics.HelperThread.AddUrl($"newpassword?email={auntificationData.Email}&name={auntificationData.Login}&pass={newPassword}&ip={sessionData.Address}");
+
+
+
+                    MailMessage msg;
+                    msg = new MailMessage(mailFrom, auntificationData.Email, mailTitle1, $"Ваш новый пароль: {newPassword} , {mailBody2}");
+                    msg.IsBodyHtml = true;
+
+
+                    SmtpClient smtpClient = new SmtpClient(Server, Port)
+                    {
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(mailFrom, Password),
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network
+                    };
+
+
+                    smtpClient.Send(msg);
+
+                   // Utils.Analytics.HelperThread.AddUrl($"newpassword?email={auntificationData.Email}&name={auntificationData.Login}&pass={newPassword}&ip={sessionData.Address}");
                     
                     auntificationData.Password = Accounts.Repository.GetSha256(newPassword.ToString());
 

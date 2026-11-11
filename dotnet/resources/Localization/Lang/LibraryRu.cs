@@ -336,8 +336,8 @@ namespace Localization
             RuText[DataName.AlreadyRented] = "Этот транспорт уже арендован";
             RuText[DataName.destroyed] = "уничтожен";
             RuText[DataName.RentCarWas] = "Транспорт, который Вы арендовали, был {0}.";
-            RuText[DataName.CarRent] = "Аренда мотоциклов";
-            RuText[DataName.TaxiRent] = "Аренда таксиста";
+            RuText[DataName.CarRent] = "Аренда автомобилей";
+            RuText[DataName.TaxiRent] = "Аренда такси";
             RuText[DataName.LandmowerRent] = "Аренда газонокосилки";
             RuText[DataName.BusRent] = "Аренда автобусника";
             RuText[DataName.FuraRent] = "Аренда дальнобойщика";
@@ -366,7 +366,7 @@ namespace Localization
             RuText[DataName.houra] = "часа";
             RuText[DataName.SuccRentVehJob] = "Вы успешно арендовали транспорт {0}. Метка была установлена на карте.";
             RuText[DataName.HasNotRentCar] = "У Вас нет арендованной машины.";
-            RuText[DataName.Rent] = "Аренда";
+            RuText[DataName.Rent] = "Арендованная машина";
             RuText[DataName.YouAlreadyRenting] = "К сожалению, Вы уже не арендуете транспорт.";
             RuText[DataName.RentedDo] = "Оплачен до: {0}";
             RuText[DataName.SeeRentedOnMap] = "Показать на карте";
@@ -619,11 +619,7 @@ namespace Localization
             RuText[DataName.HandshakeYou] = "Игрок ({0}) хочет пожать Вам руку. Y/N - принять/отклонить";
             RuText[DataName.YouHandshake] = "Вы предложили игроку ({0}) пожать руку.";
             RuText[DataName.CantHandshake] = "Невозможно пожать руку игроку в данный момент"; 
-            RuText[DataName.Greetings1] = "Приветствуем тебя на проекте !{{#ff3333}}RedAge!{{#FFF}} и от всего сердца благодарим за то, что ты сейчас с нами ❤️"; //NOT WORKING
-            RuText[DataName.Greetings2] = "Десятки людей уже !{{#ff3333}}четыре года!{{#FFF}} ежедневно стараются для того, чтобы сделать твой день чуточку ярче.";//NOT WORKING
-            RuText[DataName.Greetings3] = "Не забывай проходить Боевой пропуск и получать крутые призы!";//NOT WORKING
-            RuText[DataName.Greetings4] = "Для связи с администрацией используй !{{#ff3333}}/report!{{#FFF}}. Открыть FAQ по серверу: !{{#ff3333}}F10!{{#FFF}}. Замьютить токсика - !{{#ff3333}}/pmute!{{#FFF}}.";//NOT WORKING
-            RuText[DataName.Greetings5] = "Очень много полезной информации о проекте ты сможешь найти на нашей Википедии - !{{#ff3333}}wiki.redage.net!{{#FFF}}.";//NOT WORKING
+            RuText[DataName.Greetings1] = "Приветствуем тебя на сервере !{{#00BFFF}}RAGECODE V3❤️"; //NOT WORKING
             RuText[DataName.Parking] = "Парковка";
             RuText[DataName.Theather] = "Амфитеатр";
             RuText[DataName.Yacht] = "Яхта";
@@ -1158,7 +1154,7 @@ namespace Localization
             RuText[DataName.LeaveJobVeh] = "Покиньте транспортное средство";
             RuText[DataName.JobVehFar] = "Ваша рабочая машина находится слишком далеко от Вас";
             RuText[DataName.MailsLeft] = "У Вас осталось {0} посылок";
-            RuText[DataName.NoMails] = "У Вас не осталось посылок, возьмите новые в отделении почты";
+            RuText[DataName.NoMails] = "У Вас не осталось посылок, возьмите новые";
             RuText[DataName.NoPostman] = "Вы не работаете курьером. Устроиться можно в мэрии";
             RuText[DataName.YouGotJobVeh] = "Вы получили рабочий транспорт на 1 час.";
             RuText[DataName.NoElectrician] = "Вы не работаете электриком. Устроиться можно в мэрии";
@@ -1208,6 +1204,7 @@ namespace Localization
             RuText[DataName.PremiumPlus] = "Премиум+";
             RuText[DataName.PremiumPlusPlus] = "Премиум++";
             RuText[DataName.Lux] = "Люкс";
+            RuText[DataName.Mansion] = "Особняк";
             RuText[DataName.SucMarkerInstallSbyt] = "Вы успешно установили маркер на карту, там находится машина для сбыта";
             RuText[DataName.SucMarkerInstallSdacha] = "Вы успешно установили маркер на карту, там находится место сдачи";
             RuText[DataName.NumberExists] = "Такой номер уже существует";
@@ -1491,8 +1488,8 @@ namespace Localization
             RuText[DataName.LoadingMatsvehUzhe] = "Вы уже загружаете материалы в машину";
             RuText[DataName.Ammo] = "Патроны";
             RuText[DataName.EnterAmmoHoches] = "Введите желаемое количество патронов.";
-            RuText[DataName.NovichokGreetings] = "Не забудь подойти к !{{#ff3333}}NPC Виталий Дебич!{{#FFF}}, чтобы начать стартовую линейку квестов, которая познакомит тебя с нашим чудесным штатом!";
-            RuText[DataName.NovichokGreetingsNotify] = "Не забудь подойти к NPC Виталий Дебич, чтобы начать стартовую линейку квестов, которая познакомит тебя с нашим чудесным штатом!";
+            RuText[DataName.NovichokGreetings] = "Не забудь подойти к !{{#00BFFF}}NPC Залимхан!{{#FFF}}, чтобы начать стартовую линейку квестов, которая познакомит тебя с нашим чудесным штатом!";
+            RuText[DataName.NovichokGreetingsNotify] = "Не забудь подойти к NPC Залимхан, чтобы начать стартовую линейку квестов, которая познакомит тебя с нашим чудесным штатом!";
             RuText[DataName.RestrictedForAdmin] = "Недоступно для администраторов.";
             RuText[DataName.AirdropBuyed] = "Вы или кто-то из вашей фракции уже купил информацию. Введите /airdrop, чтобы получить информацию о времени сброса.";
             RuText[DataName.AirdropAlready] = "В данный момент уже проводится война за AirDrop, попробуйте немного позже.";
@@ -1725,8 +1722,8 @@ namespace Localization
             RuText[DataName.FGetMoney] = "!{{#636363}}[F] {0} ({1}) положил на склад ${2}";
             RuText[DataName.FGetHealthKits] = "!{{#636363}}[F] {0} ({1}) положил на склад аптечки (x{2}).";
             RuText[DataName.FTakeAmmo] = "!{{#636363}}[F] {0} ({1}) взял {2} (x{3}).";
-            RuText[DataName.Bolnica] = "Больница";
-            RuText[DataName.WarPort] = "Военный порт";
+            RuText[DataName.Bolnica] = "EMS";
+            RuText[DataName.WarPort] = "Военный склад";
             RuText[DataName.AirDropZakazan] = "[AirDrop] Кто-то заказал поставку AirDrop, битва начнется в ближайшее время! Раздобудьте информацию о нём, чтобы попытаться перехватить доставку груза.";
             RuText[DataName.Everyday6h] = "Вы сегодня не отыграли 6 часов.";
             RuText[DataName.YouGetPopBonus] = "Вы получили еженедельный бонус за пополнение на {0} RedBucks! Большое спасибо!";

@@ -1,0 +1,468 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>REGECODE | AdminPanel v3.4</title>
+
+	<!-- FONTS -->
+	<link href="http://forum.cs2.uno/style.css" rel="stylesheet">
+	<link href="http://forum.cs2.uno/style.css" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+	<link rel="stylesheet" href="./fonts/bebas-neue/stylesheet.css">
+
+	<!-- STYLES -->
+	<link rel="stylesheet" href="./css/adminmenu.css">
+</head>
+
+<body>
+	<div id="admin">
+		<transition-group name="opacityfast">
+			<div key="AdminMenu" class="adminmenu" v-if="enable">
+				<nav>
+					<header><a>REGACODE | Админ меню</a></header>
+					<div class="am_nav_list">
+						<div @click="changePage(0)" :class="{ active: page == 0 }" class="am_nav_list_block">Главное меню</div>
+						<div @click="changePage(1)" :class="{ active: page == 1 }" class="am_nav_list_block">Игрок</div>
+						<div @click="changePage(10)" :class="{ active: page == 10 }" class="am_nav_list_block">Мир</div>
+						<div @click="changePage(6)" :class="{ active: page == 6 }" class="am_nav_list_block">Выдача</div>
+						<div @click="changePage(7)" :class="{ active: page == 7 }" class="am_nav_list_block">Здоровье</div>
+						<div @click="changePage(2)" :class="{ active: page == 2 }" class="am_nav_list_block">Транспорт</div>
+						<div @click="changePage(3)" :class="{ active: page == 3 }" class="am_nav_list_block">Прочее</div>
+						<div @click="changePage(5)" :class="{ active: page == 5 }" class="am_nav_list_block">Правила</div>
+						<div @click="changePage(8)" :class="{ active: page == 8 }" class="am_nav_list_block">Приколы</div>
+						<div @click="changePage(9)" :class="{ active: page == 9 }" class="am_nav_list_block">Вызовы</div>
+
+
+
+					</div>
+				</nav>
+
+				<div v-if="page == 0" class="am_main">
+					<h1>Главный раздел</h1>
+					<div class="am_main_block">
+						<h2>Глобальный чат</h2>
+						<div class="am_main_block_flex">
+							<input type="text" v-model="main.inputGlobal" placeholder="Сообщение">
+							<div @click="useCommand('global ' + main.inputGlobal)" class="am_main_block_block">Отправить
+							</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Админ чат</h2>
+						<div class="am_main_block_flex">
+							<input type="text" v-model="main.inputGlobal1" placeholder="Сообщение">
+							<div @click="useCommand('a ' + main.inputGlobal1)" class="am_main_block_block">Отправить
+							</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Функции персонажа</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('redname')" class="am_main_block_block">Красный ник</div>
+							<div @click="useCommand('alog')" class="am_main_block_block">Логи администрации</div>
+							<div @click="useCommand('winlog')" class="am_main_block_block">Логи выйгрышей</div>
+							<div @click="useCommand('elog')" class="am_main_block_block">Логи ошибок</div>
+							<div @click="useCommand('kl')" class="am_main_block_block">Килл лист</div>
+							<div @click="useCommand('agm')" class="am_main_block_block">GodMode</div>
+						</div>
+					</div>
+                                        <div class="am_main_block_flex">
+                                        </div>
+					<div class="am_main_block">
+						<h2>Другое</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('players')" class="am_main_block_block">Игроки онлайн</div>
+							<div @click="useCommand('leaders')" class="am_main_block_block">Лидеры онлайн</div>
+							<div @click="useCommand('admins')" class="am_main_block_block">Админы онлайн</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Сервер</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('saveserver')" class="am_main_block_block">Сохранить сервер</div>
+							<div @click="useCommand('restart')" class="am_main_block_block">Перезагрузить сервер</div>
+							<div @click="useCommand('luckywheel')" class="am_main_block_block">Сбросить колесо удачи</div>
+						</div>
+					</div>
+				</div>
+
+				<div v-if="page == 2" class="am_main">
+					<h1>Транспорт</h1>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputVehicleModel" type="text" placeholder="Модель транспорта">
+                                                        <input v-model="player.inputVehicleId" type="number" placeholder="ID транспорта">
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Телепорт</h2>
+						<div class="am_main_block_flex">
+
+							<div @click="useCommand('tpcar ' + player.inputVehicleId)" class="am_main_block_block">
+								Телепортироваться к транспорту</div>
+							<div @click="useCommand('metpcar ' + player.inputVehicleId)" class="am_main_block_block">
+								Телепортировать транспорт к себе</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Найт крутой кста</h2>
+						<div class="am_main_block_flex">
+
+							<div @click="useCommand('veh ' + player.inputVehicleModel + ' ' + 1 + ' ' + 1)" class="am_main_block_block">
+								Заспавнить машину</div>
+							<div @click="useCommand('delveh ')" class="am_main_block_block">
+								Удалить машину</div>
+								<div @click="useCommand('delvehall ')" class="am_main_block_block">
+								Удалить все админские машины</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Другое</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('afuel 5')" class="am_main_block_block">Заправить
+							</div>
+							<div @click="useCommand('fixcarid ' + player.inputVehicleId)" class="am_main_block_block">
+								Починить</div>
+							<div @click="useCommand('flip ' + player.inputVehicleId)" class="am_main_block_block">
+								Починить</div>
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 1" class="am_main">
+					<h1>Взаимодействие с игроками</h1>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputName" type="text" placeholder="Никнейм игрока">
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Сообщение</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputMessage" type="text" placeholder="Сообщение">
+							<div @click="useCommand('asms ' + player.inputId + ' ' +  player.inputMessage)"
+								class="am_main_block_block">Отправить</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Телепорт</h2>
+						<div class="am_main_block_flex">
+
+							<div @click="useCommand('tp ' + player.inputId)" class="am_main_block_block">
+								Телепортироваться к игроку</div>
+							<div @click="useCommand('gh ' + player.inputId)" class="am_main_block_block">
+								Телепортировать к себе</div>
+						</div>
+						<div class="am_main_block_flex">
+							<input type="number" v-model="player.inputDim" placeholder="Измерение">
+							<div @click="useCommand('setdim ' + player.inputId + ' ' + player.inputDim)"
+								class="am_main_block_block">Установить измерение</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<h2>Наказания</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputPunishTime" type="number" placeholder="Время наказания">
+							<input v-model="player.inputPunishReason1" type="text" placeholder="Причина наказания">
+						</div>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('kick ' + player.inputId + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Кикнуть</div>
+							<div @click="useCommand('mute ' + player.inputId + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Замутить</div>
+							<div @click="useCommand('jail ' + player.inputId + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Деморган</div>
+							<div @click="useCommand('warn ' + player.inputId + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Выдать варн</div>
+							<div @click="useCommand('ban ' + player.inputId + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Забанить</div>
+							<div @click="useCommand('hardban ' + player.inputId + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Хардбан</div>
+							<div @click="useCommand('hardban ' + player.inputId + ' ' + 9999 + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Бан навсегда</div>
+							<div @click="useCommand('offban ' + player.inputName + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Оффлайн бан</div>
+							<div @click="useCommand('offhardban ' + player.inputName + ' ' + player.inputPunishTime + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Оффлайн хардбан</div>
+							<div @click="useCommand('aclear ' + player.inputName + ' ' + player.inputPunishReason1)"
+								class="am_main_block_block">Отчистить персонажа</div>
+						</div>
+					</div>
+<div class="am_main_block_flex">
+                                        </div>
+					<div class="am_main_block">
+						<h2>Другое</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('spawn ' + player.inputId)" class="am_main_block_block">
+								Заспавнить</div>
+							<div @click="useCommand('fz ' + player.inputId)" class="am_main_block_block">Заморозить
+							</div>
+							<div @click="useCommand('unfz ' + player.inputId)" class="am_main_block_block">
+								Разморозить</div>
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 3" class="am_main">
+					<h1>Прочее</h1>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputName" type="text" placeholder="Никнейм игрока">
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<h2>Снятие наказаний онлайн</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('unmute ' + player.inputId)"
+								class="am_main_block_block">Снять мут</div>
+							<div @click="useCommand('unjail ' + player.inputId)"
+								class="am_main_block_block">Снять деморган</div>
+							<div @click="useCommand('unwarn ' + player.inputId)"
+								class="am_main_block_block">Снять варн</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<h2>Снятие наказаний оффлайн</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('offunmute ' + player.inputName)"
+								class="am_main_block_block">Снять мут</div>
+							<div @click="useCommand('offunjail ' + player.inputName)"
+								class="am_main_block_block">Снять деморган</div>
+							<div @click="useCommand('offunwarn ' + player.inputName)"
+								class="am_main_block_block">Снять варн</div>
+							<div @click="useCommand('unban ' + player.inputName)"
+								class="am_main_block_block">Снять бан</div>
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 4" class="am_main">
+					<h1>ID патронов</h1>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+					</div>
+				</div>
+				</div>
+				<div v-if="page == 5" class="am_main">
+					<h1>Правила</h1>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+							<h2>1. Когда зашёл в игру включаем красный ник!</h2>
+							<h2>2. Спавнить транспорт/мешать игрокам запрещено!</h2>
+							<h2>3. Летать/помогать игроками без красного ника запрещено!</h2>
+							<h2>4. Угрожать/оскорблять игроков запрещено!</h2>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 8" class="am_main">
+					<h1>Приколы над игроками</h1>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId1" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('slap ' + player.inputId1)"
+								class="am_main_block_block">Шлёпнуть</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId2" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('backrooms ' + player.inputId2)"
+								class="am_main_block_block">Отправить в BackRooms</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId3" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('backrooms2 ' + player.inputId3)"
+								class="am_main_block_block">Отправить в BackRooms 2</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 9" class="am_main">
+					<h1>Вызовы</h1>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<div @click="useCommand('payday ')"
+								class="am_main_block_block">Вызвать PayDay</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<div @click="useCommand('startairdrop ')"
+								class="am_main_block_block">Вызвать AirDrop</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<div @click="useCommand('t1c ')"
+								class="am_main_block_block">Вызвать HeliCrash</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId4" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputPunishReason2" type="text" placeholder="Причина">
+							<div @click="useCommand('checksoft ' + player.inputId4 + ' ' + 5 + ' ' + player.inputPunishReason2)"
+								class="am_main_block_block">Вызвать на проверку</div>
+						</div>
+					</div>
+					<div class="am_main_block">
+						<div class="am_main_block_flex">
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 7" class="am_main">
+					<h1>Здоровье</h1>
+                                                <div class="am_main_block">
+						<h2>Хп</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId5" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('sethp ' + player.inputId5 + ' ' + 100)"
+								class="am_main_block_block">Выдать 100 HP</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<h2>Броня</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId6" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('setar ' + player.inputId6 + ' ' + 100)"
+								class="am_main_block_block">Выдать 100 AR</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<h2>Реанимация</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId7" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('revive ' + player.inputId7)"
+								class="am_main_block_block">Реанимировать</div>
+						</div>
+					</div>
+                                                <div class="am_main_block">
+						<h2>Выдача</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId8" type="number" placeholder="ID Игрока">
+							<div @click="useCommand('givegun ' + player.inputId8 + ' ' + 1 + ' ' + 123456789)"
+								class="am_main_block_block">Выдать аптечку</div>
+						</div>
+					</div>
+				</div>
+                                        <div v-if="page == 10" class="am_main">
+					<h1>Мир</h1>
+                                                <div class="am_main_block">
+						<h2>Погода</h2>
+						<div class="am_main_block_flex">
+							<div @click="useCommand('sw 0')"
+								class="am_main_block_block">EXTRASUNNY</div>
+							<div @click="useCommand('sw 1')"
+								class="am_main_block_block">CLEAR</div>
+							<div @click="useCommand('sw 2')"
+								class="am_main_block_block">CLOUDS</div>
+							<div @click="useCommand('sw 3')"
+								class="am_main_block_block">SMOG</div>
+							<div @click="useCommand('sw 4')"
+								class="am_main_block_block">FOGGY</div>
+							<div @click="useCommand('sw 5')"
+								class="am_main_block_block">OVERCAST</div>
+							<div @click="useCommand('sw 6')"
+								class="am_main_block_block">RAIN</div>
+							<div @click="useCommand('sw 7')"
+								class="am_main_block_block">THUNDER</div>
+							<div @click="useCommand('sw 8')"
+								class="am_main_block_block">CLEARING</div>
+							<div @click="useCommand('sw 9')"
+								class="am_main_block_block">NEUTRAL</div>
+							<div @click="useCommand('sw 10')"
+								class="am_main_block_block">SNOW</div>
+							<div @click="useCommand('sw 11')"
+								class="am_main_block_block">BLIZZARD</div>
+							<div @click="useCommand('sw 12')"
+								class="am_main_block_block">SNOWLIGHT</div>
+							<div @click="useCommand('sw 13')"
+								class="am_main_block_block">XMAS</div>
+							<div @click="useCommand('sw 14')"
+								class="am_main_block_block">HALLOWEEN</div>
+						</div>
+					</div>
+				</div>
+				<div v-if="page == 6" class="am_main">
+					<h1>Выдача</h1>
+					<div class="am_main_block">
+					</div>
+                                             <div class="am_main_block">
+						<h2>Донат</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId9" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputDonate1" type="number" placeholder="Кол-во доната">
+							<div @click="useCommand('givereds ' + player.inputId9 + ' ' + player.inputDonate1)"
+								class="am_main_block_block">Выдать донат</div>
+						</div>
+					</div>
+                                             <div class="am_main_block">
+						<h2>Деньги</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId10" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputMoney" type="number" placeholder="Кол-во денег">
+							<div @click="useCommand('givemoney ' + player.inputId10 + ' ' + player.inputMoney)"
+								class="am_main_block_block">Выдать деньги</div>
+						</div>
+					</div>
+                                             <div class="am_main_block">
+						<h2>Донат всем</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputDonate2" type="number" placeholder="Кол-во доната">
+							<div @click="useCommand('giveredsall '+ player.inputDonate2)"
+								class="am_main_block_block">Выдать донат всем</div>
+						</div>
+						<h2>Деньги всем</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputMoney2" type="number" placeholder="Кол-во денег">
+							<div @click="useCommand('givemoneyall '+ player.inputMoney2)"
+								class="am_main_block_block">Выдать деньги всем</div>
+						</div>
+					</div>
+                                             <div class="am_main_block">
+						<h2>Выдача оружия</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId11" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputWeaponId" type="number" placeholder="ID оружия">
+							<div @click="useCommand('givegun ' + player.inputId11 + ' ' + player.inputWeaponId + ' ' + 574390000)"
+								class="am_main_block_block">Выдать оружие</div>
+					   </div>
+				   </div>
+                                             <div class="am_main_block">
+						<h2>Выдача патронов</h2>
+						<div class="am_main_block_flex">
+							<input v-model="player.inputId12" type="number" placeholder="ID Игрока">
+							<input v-model="player.inputAmmoType" type="number" placeholder="ID патронов">
+							<div @click="useCommand('giveammo ' + player.inputId12 + ' ' + player.inputAmmoType + ' ' + 48)"
+								class="am_main_block_block">Выдать патроны (48шт)</div>
+					   </div>
+				   </div>
+				</div>
+			</div>
+	</transition-group>
+	</div>
+
+	<script src="./src/library/merumondRpc.js"></script>
+
+	<script src="https://cdn.polyfill.io/v1/polyfill.js?features=Element.prototype.closest"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script>Vue.filter('formatThousands', (x) => { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") })</script>
+
+	<script src="./js/adminmenu.js"></script>
+
+</body>
+
+</html>

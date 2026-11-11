@@ -1,5 +1,3 @@
-// credits to ragempdev
-
 const controlsIds = {
     F11: 0x7A,
     W: 32,
@@ -8,8 +6,8 @@ const controlsIds = {
     D: 35, 
     Space: 321,
     LCtrl: 326,
-    LMB: 24,
-	RMB: 25
+    E: 24,
+	Q: 25
 };
 
 global.fly = {
@@ -104,8 +102,8 @@ gm.events.add("render", () => {
 
 		const position = global.localplayer.position;
 		let speed;
-		if(controls.isControlPressed(0, controlsIds.LMB)) speed = 1.0
-		else if(controls.isControlPressed(0, controlsIds.RMB)) speed = 0.02
+		if(controls.isControlPressed(0, controlsIds.E)) speed = 3.0
+		else if(controls.isControlPressed(0, controlsIds.Q)) speed = 0.02
 		else speed = 0.2
 		if (controls.isControlPressed(0, controlsIds.W)) {
 			if (fly.f < 8.0) fly.f *= 1.025;

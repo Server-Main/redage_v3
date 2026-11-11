@@ -8,6 +8,9 @@
     import { executeClient } from 'api/rage'
     import { isHelp } from 'store/hud'
 
+    import quest_icon from '../img/quest_icon.svg';
+    import quest_icon2 from '../img/quest_icon2.svg';
+
     let QuestsList = [];
     let OldQuest = [];
 
@@ -58,35 +61,20 @@
         onSelectQuest (value);
     });
 </script>
-{#if quest && quest.Title && $isHelp}
-    <div class="hudevo__quests" in:fly={{ y: 50, duration: 500 }} out:fly={{ y: 50, duration: 250 }}>
-        <div class="hudevo__quest">
-            <div class="box-flex mb-6">
-                <div class="hudevo__quest_circle"><div class="questcircle"></div></div>
-                <div class="hudevo__quest_title">{@html quest.Title}</div>
+<!-- {#if quest && quest.Title && $isHelp}
+    <div class="kvest">
+        <div class="kvestitem" style="top: .5vw;position: absolute;">
+            <div class="kvestitem_romb">
+                <div class="kvestitem_romb1">
+                    <div class="kvestitem_romb2"></div>
+                </div>
             </div>
-            <div class="box-flex ml-13 mb-6">
-                <div class="hudevo__quest_square"></div>
-                <div class="hudevo__quest_subtitle">{@html quest.Text}</div>
-            </div>
-            <div class="box-flex ml-13">
-                <div class="hudevo__quest_button">{keysName[$keys[12]]}</div>
-                <div class="hudevo__quest_info">Информация</div>
-            </div>
+            <span class="kvestitem_tilte">{@html quest.Title}</span>
         </div>
-    <!--     <div class="hudevo__quest">
-            <div class="box-flex mb-6">
-                <div class="hudevo__quest_circle"><div class="questcircle purple"></div></div>
-                <div class="hudevo__quest_title">Боевой пропуск</div>
-            </div>
-            <div class="box-flex ml-13 mb-6">
-                <div class="hudevo__quest_square"></div>
-                <div class="hudevo__quest_subtitle">Доберись до Виталия Дебича</div>
-            </div>
-            <div class="box-flex ml-13">
-                <div class="hudevo__quest_button purple">F2</div>
-                <div class="hudevo__quest_info">Информация</div>
-            </div>
-        </div> -->
+        <div class="kvestitem">
+            <div class="kvestitem_krug"></div>
+            <span class="kvestitem_subtilte">{@html quest.Text}</span>
+        </div>
     </div>
-{/if}
+{/if} -->
+

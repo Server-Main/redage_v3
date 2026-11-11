@@ -24,9 +24,4 @@
     }
 </script>
 {#if isCase}
-    <div class="gift" in:fly={{ y: 50, duration: 500 }} out:fly={{ y: -50, duration: 250 }} style="margin-top: -{SafeSone.y}px">
-        <div class="gift__image" style="background-image: url('{document.cloud}inventoryItems/items/{caseData [caseId].image}.png')"></div>
-        <div class="gift__text">Бесплатный кейс</div>
-        <div class="gift__subtitle">За {caseData [caseId].hour}</div>
-    </div>
 {/if}

@@ -619,11 +619,11 @@ namespace Localization
  EnText[DataName.HandshakeYou] = "The player ({player.Value}) wants to shake your hand. Y / N - accept / reject";
  EnText[DataName.YouHandshake] = "You asked the player ({target.Value}) to shake hands.";
  EnText[DataName.CantHandshake] = "Unable to shake the player's hand at the moment"; 
-EnText[DataName.Greetings1] = "Welcome to the project !{{#ff3333}}RedAge!{{#FFF}} and thank you from the bottom of our hearts for being with us now ❤️"; // NOT WORKING
+EnText[DataName.Greetings1] = "Welcome to the project !{{#ff3333}}RAGECODE.PRO!{{#FFF}} and thank you from the bottom of our hearts for being with us now ❤️"; // NOT WORKING
  EnText[DataName.Greetings2] = "Dozens of people have been trying every day for the third year to make your day a little brighter."; // NOT WORKING
  EnText[DataName.Greetings3] = "Follow the rules, be friendly and provide general comfort. Remember, this is just a game."; // NOT WORKING
  EnText[DataName.Greetings4] = "To contact the administration use / report. Open the FAQ on the server: F10. Mute toxic - /pmute.";//NOT WORKING
- EnText[DataName.Greetings5] = "You can find a lot of useful information about the project on our Wikipedia - !{{#Ff3333}}wiki.redage.net!{{#FFF}}."; // NOT WORKING
+ EnText[DataName.Greetings5] = "You can find a lot of useful information about the project on our Wikipedia - !{{#Ff3333}}wiaget!{{#FFF}}."; // NOT WORKING
  EnText[DataName.Parking] = "Parking";
  EnText[DataName.Theather] = "Amphitheater";
  EnText[DataName.Yacht] = "Yacht";

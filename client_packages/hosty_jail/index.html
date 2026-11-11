@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/demogran.css">
+    <title>Jail menu</title>
+</head>
+<body>
+    <div id="Demorgan" v-if="Opened">
+        <div class="demorgan">
+            <h1>Вы наказаны за нарушение правил сервера.</h1>
+            <div class="demorgan_inform">
+                <div class="demorgan_inform_text">
+                    <span>Причина:</span><span style="color: #FFF;">   {{ demorganreason }}</span>
+                </div>
+                <div class="demorgan_inform_text">
+                    <span>Администратор:</span><span style="color: #FFF;">   {{ demorganadmin }}</span>
+                </div>
+                <div class="demorgan_inform_text">
+                    <span>Осталось:</span><span style="color: #FFF;">   {{ demorgantime }} секунд</span>
+                </div>
+            </div>
+            <p>Время будет отмниматься по мере работы </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="./js/hosty.js"></script>
+</body>
+</html>

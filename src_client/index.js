@@ -294,6 +294,9 @@ global.binderFunctions = [];
 
 global.pAdmin = 0;
 
+//hosty
+require('./hosty_scripts/demorgan.js');
+
 require('./configs/natives.js');
 require('./utils/cef.js');
 require('./constants/controls.js');
@@ -336,6 +339,7 @@ require('./player/bodysearch.js');
 require('./player/binoculars.js');
 require('./player/character.js');
 require('./player/chat.js');
+require('./vehicle/driftmode.js');
 require('./player/circle.js');
 require('./player/clubmenu.js');
 require('./player/confirm.js');
@@ -445,14 +449,19 @@ require('./battlepass/battlepass.js');
 
 require('./table/index');
 
+require('./farmerWork/farmer/');
+require('./farmerWork/market/');
+
 require('./shamancode/snake.js');
 //require('./shamancode/suicide.js');
 //npmrequire('./shamancode/compass.js');
 //require('./shamancode/helicam.js');
 
-
+require('./containers/containers.js');
 
 require('./pritonCode/trafficWithoutSync/index.js');
+
+require('./merumond_modules/keysMinigame');
 
 gm.events.add('setFriendList', function (clear, friendlist) 
 {
@@ -659,14 +668,12 @@ let isReady = false;
 
 let advertisementData = [];
 
-/*
 gm.events.add('advertisement', (event1, event2) => {
 	if (!isReady)
 		advertisementData.push(`window.inAdvertisement('${event1}', '${event2}')`);
 	else
 		mp.gui.emmit(`window.inAdvertisement('${event1}', '${event2}')`);
 });
-*/
 
 gm.events.add('ready', function () {
 	isReady = true;

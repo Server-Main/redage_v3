@@ -357,7 +357,6 @@ namespace NeptuneEvo.Character.Models
         public string SelectedQuest { get; set; } = Zdobich.QuestName;
         [JsonIgnore]
         public bool IsForbesShow { get; set; }
-        public bool IsLucky { get; set; }
     }
     
 }

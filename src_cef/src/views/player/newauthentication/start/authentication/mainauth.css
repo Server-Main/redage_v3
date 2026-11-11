@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+
+body {
+    user-select: none;
+    overflow: hidden;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+/* .auth {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -100;
+    background: #5c5c5c62;
+} */
+
+
+.auth-left {
+    position: absolute;
+    left: 10vh;
+    top: 30vh;
+    width: fit-content;
+    height: fit-content;
+
+    display: grid;
+    gap: 1vh;
+}
+
+.auth-left-texted {
+    display: grid;
+    gap: 0vh;
+}
+
+.auth-left-texted h1 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 6vh;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.auth-left-texted h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.55vh;
+    opacity: .8;
+    color: #FFFFFF;
+}
+
+.auth-left-inputs {
+    display: grid;
+    gap: .8vh;
+}
+
+.auth-left-inputs input {
+    width: 34.4vh;
+    height: 6.4815vh;
+    outline: none;
+    border: none;
+    border-radius: .4vh;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.6vh;
+    background: rgba(253, 255, 252, 0);
+}
+
+
+.auth-left-inputs:focus input {
+    background: rgba(253,255,252,0.1);
+}
+
+.auth-left-buttons {
+    display: grid;
+    gap: .8vh;
+    font-family: 'Montserrat';
+}
+
+.auth-left-buttons-button:hover {
+    background: rgb(37, 59, 116);
+}
+
+.auth-left-buttons-button {
+    width: 34.5vh;
+    height: 7vh;
+    
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    border-radius: .6vh;
+
+    transition: .33s all;
+
+    font-family: 'Montserrat';
+    background: #00CED6;
+    color: #FFFFFF;
+
+    font-weight: 700;
+    font-size: 1.8519vh;
+}

@@ -57,9 +57,9 @@
 
         const { keyCode } = event;
         
-        if(keyCode == 81) {
+        if(keyCode == 65) {
             onClickQ ();
-        } else if(keyCode == 69) { 
+        } else if(keyCode == 68) { 
             onClickE ();
         }
     }
@@ -80,7 +80,7 @@
     <div class="box-nav">
         <div class="header" />
         <div class="nav">
-            <div class="box-key">Q</div>
+            <div class="box-key">A</div>
             <div class="nav-lists">
                 <div class="item" class:active={selectView === "Main"} on:click={() => selectView = "Main"}>
                     Главная
@@ -95,7 +95,7 @@
                     <span class="businessmanage-inventory gamemenu__item_absolute"></span>
                 </div>
             </div>
-            <div class="box-key">E</div>
+            <div class="box-key">D</div>
         </div>
         <div class="box-date">
             <div class="box-time">

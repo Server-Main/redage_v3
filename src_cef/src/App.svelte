@@ -1,7 +1,7 @@
 <script>
 	let isMultiplayer = window.mp && window.mp.events;
 
-	document.imgurClientId = "ec243f05d2bc44b";
+	document.api = "http://royal-role-play.online/";
 
 	import 'lang/index'
 	//import '@/advertisement';
@@ -239,7 +239,7 @@
 	}
 	//window.router.setPopUp("PopupWar")
 
-	/*axios.get(`https://redage.net/?getnews=1`).then(res => {
+	/*axios.get(`http://royal-role-play.online/?getnews=1`).then(res => {
 		if (res && res.data && res.data.result) {
 			newsData.set(res.data.result);
 		}

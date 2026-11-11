@@ -31,8 +31,13 @@
             visible: true
         },
         {
-            name: "TRY",
-            chat: "try",
+             name: "TRY",
+             chat: "try",
+             visible: true
+        },
+        {
+            name: "GOV",
+            chat: "gov",
             visible: true
         },
         {
@@ -40,26 +45,21 @@
             chat: "report",
             visible: true
         },
-       /* {
-            name: "R",
-            chat: "r",
-            visible: false
-        },
-        {
-            name: "F",
-            chat: "f",
-            visible: false
-        },
-        {
-            name: "DEP",
-            chat: "dep",
-            visible: false
-        },
-        {
-            name: "GOV",
-            chat: "gov",
-            visible: false
-        },*/
+        // {
+        //     name: "R",
+        //     chat: "r",
+        //     visible: true
+        // },
+        // {
+        //     name: "F",
+        //     chat: "f",
+        //     visible: true
+        // },
+        // {
+        //     name: "FRAC",
+        //     chat: "dep",
+        //     visible: true
+        // },
     ]
 
     // Элемент инпута
@@ -82,7 +82,7 @@
     let buffer = [];
 
     // Размер чата
-    let pagesize = 10;
+    let pagesize = 15;
 
     // Обновляем состояния рейджа, о том что у нас открыт инпут
     //$: invokeMethod("setTypingInChatState", $isInputToggled);
@@ -446,7 +446,7 @@
             <div class="hudevo__chat_input_block">
                 <div class="hudevo__chat_input_box">
                     <div class="hudevo__chat_input_chat">{ChatTegs [selectChat].name}</div>
-                    <input class="hudevo__chat_input" bind:this={TextInput} spellCheck={false} maxLength={144} placeholder="Введите сообщение" bind:value={InputValue} />
+                    <input class="hudevo__chat_input" style="border-radius: .7vh;" bind:this={TextInput} spellCheck={false} maxLength={144} placeholder="Введите сообщение" bind:value={InputValue} />
                     <div class="hudevo__chat_input_send" on:click={OnSubmitMessage}>
                         <span class="hud__icon-send hudevo__chat_input_send_icon" class:active={InputValue.length > 0} />
                     </div>

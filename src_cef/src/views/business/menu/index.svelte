@@ -7,13 +7,12 @@
     import { getPng } from './getPng.js' 
 
 
-
     let
         title = '',
         titleIcon = '',
         btn = '',
         elements = [],
-        type = 0;
+        type = 1;
 
     window.smOpen = (_title, _titleIcon, _btn, _json, _type = 0) => {
         title = _title;
@@ -22,7 +21,9 @@
         elements = JSON.parse (_json);
         type = _type;
     }
-
+    const onExit = () => {
+        executeClient ('escape');
+    }
     const configImages = [
         { name: 'Сим-карта', url: 'inventoryItems/items/sm-icon-sim.png' },
         { name: 'Рабочий топор', url: 'inventoryItems/items/244.png' },
@@ -126,11 +127,9 @@
     const HandleKeyDown = (event) => {
         const { keyCode } = event;
         if (keyCode !== 27) return;
-        ClickExit();
-    }
-
-    const ClickExit = () => {
-        executeClient ('client.sm.exit');
+        executeClient ('escape');
+        //onExit();
+        //executeClient ('client.sm.exit');
     }
 </script>
 <svelte:window on:keyup={HandleKeyDown} />
@@ -138,10 +137,13 @@
     <div class="box-ch">
         <div class="box-info">
             <div class="l">
+
                 <div class="title"><span class="i-title {titleIcon}" />{title}</div>
             </div>
             <div class="button-box">
-                <div class="btn red" on:click={ClickExit}>{translateText('business', 'Выйти')}</div>
+                <div class="btn red" on:click={onExit}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M6.18278 6.18281C6.51681 5.84888 6.9698 5.66129 7.44212 5.66129C7.91445 5.66129 8.36743 5.84888 8.70147 6.18281L15 12.4813L21.2985 6.18281C21.6344 5.85834 22.0844 5.6788 22.5514 5.68286C23.0184 5.68692 23.4652 5.87425 23.7955 6.20451C24.1257 6.53477 24.313 6.98153 24.3171 7.44857C24.3212 7.9156 24.1416 8.36555 23.8172 8.7015L17.5187 15L23.8172 21.2985C24.1416 21.6344 24.3212 22.0844 24.3171 22.5514C24.313 23.0185 24.1257 23.4652 23.7955 23.7955C23.4652 24.1257 23.0184 24.3131 22.5514 24.3171C22.0844 24.3212 21.6344 24.1417 21.2985 23.8172L15 17.5187L8.70147 23.8172C8.36552 24.1417 7.91557 24.3212 7.44854 24.3171C6.9815 24.3131 6.53474 24.1257 6.20448 23.7955C5.87422 23.4652 5.68689 23.0185 5.68283 22.5514C5.67877 22.0844 5.85831 21.6344 6.18278 21.2985L12.4813 15L6.18278 8.7015C5.84885 8.36747 5.66125 7.91448 5.66125 7.44216C5.66125 6.96983 5.84885 6.51684 6.18278 6.18281Z" fill="white"/>
+                </svg></div>
             </div>
         </div>
         <div class="item-info">
@@ -165,7 +167,7 @@
                         {#if value.Price}
                             <div class="price">
                                 {value.Price.replace(/[^\d]+/g,'')}
-                                <span class="green"> {value.Price.replace(/[0-9]+/,'')}</span>
+                                {value.Price.replace(/[0-9]+/,'')}  
                             </div>
                         {/if}
                     </div>

@@ -422,6 +422,8 @@ namespace NeptuneEvo.Chars.Models
         Giftcoin = 390,
         CombatRifle = 391,
         Glock = 392,
+        Hay = 393,
+        Seed = 394,
 
     }
     #endregion

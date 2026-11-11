@@ -56,7 +56,7 @@ namespace NeptuneEvo
 {
     public class Main : Script
     {
-        public static string Codename { get; } = "RedAge Classic";
+        public static string Codename { get; } = "RAGECODE.PRO";
         public static string Version { get; } = "v1.00.00";
         public static string Build { get; } = "#0000";
         public static string Full { get; } = $"{Codename} {Version} {Build}";
@@ -174,7 +174,7 @@ namespace NeptuneEvo
                     if (foreachAuntificationData == null || !foreachAuntificationData.IsBlockAuth)
                         continue;
                     
-                    Trigger.ClientEvent(foreachPlayer, "client.init",
+                    Trigger.ClientEvent(foreachPlayer, "hosty.sosoAlonze.client.init",
                         Main.ServerSettings.ServerId,
                         Main.ServerSettings.ServerName,
                         Main.DonateSettings.Multiplier,
@@ -228,10 +228,10 @@ namespace NeptuneEvo
         public static float BusinessMaxPrice = 1.75f;
         public static int DrugsPrice = 30;
         public static int[] BuswaysPayments = new int[6] { 4, 5, 4, 5, 5, 8 };
-        public static int CollectorPayment = 7;
-        public static int ElectricianPayment = 6;
-        public static int PostalPayment = 6;
-        public static int LawnmowerPayment = 4;
+        public static int CollectorPayment = 10;
+        public static int ElectricianPayment = 10;
+        public static int PostalPayment = 10;
+        public static int LawnmowerPayment = 10;
         public static int GangCarDelivery = 500;
         public static int MafiaCarDelivery = 500;
         public static int PoliceAward = 100;
@@ -269,7 +269,7 @@ namespace NeptuneEvo
         
         #endregion
 
-        public static bool AutoRestart = false;
+        public static bool AutoRestart = true;
 
         public static List<string> TodayUniqueHWIDs = new List<string>();
         public static int PlayersAtOnce = 0;
@@ -511,39 +511,12 @@ namespace NeptuneEvo
         {
             try
             {
-                //if (ServerSettings.MoneyMultiplier >= 2) NAPI.Server.SetServerName($"{ServerName} | X{ServerSettings.MoneyMultiplier}"); // NOT WORKING AT 0.3.7
-                //CreateBlip(new BlipData(621, "Quests", new Vector3(343.895447, -1399.03381, 32.509285), 1, true, 1f));
-                
-                /*CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-358.4868, -52.37103, 53.29886), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(22.71732, -1737.653, 28.18297), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-1646.822, -228.72, 55.92), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-2025.384, -469.42, 11.42), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1188.66, -1548.76, 39.37), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-975.0394, -1474.377, 5.020052), 38, true, 0.5f));
-                CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-39.57354, 211.735, 106.1348), 38, true, 0.5f));
-
-                if (ServerNumber <= 1) // Поставлены только на Black'е и отображать на Test'овом
-                {
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-740.8164, -67.55, 41.75), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-927.72, -164.84, 41.87), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-482.2281, -612.549, 32.47), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1032.372, -771.5231, 56.94999), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1151.805, -477.1126, 65.16711), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1230.796, -435.7309, 66.61465), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1096.052, -335.8769, 66.10432), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(1142.26, -392.178, 65.92946), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-2162.425, -399.813, 12.26453), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-463.0861, -806.9484, 29.41866), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-1245.905, -1413.595, 4.322968), 38, true, 0.5f));
-                    CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(373.6721, 279.976, 103.3404), 38, true, 0.5f));
                     CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(281.2544, -194.9666, 61.57069), 38, true, 0.5f));
                     CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-204.1797, 308.1642, 96.94662), 38, true, 0.5f));
                     CreateBlip(new BlipData(267, LangFunc.GetText(LangType.Ru, DataName.Parking), new Vector3(-354.1708, 286.2279, 84.74282), 38, true, 0.5f));
-                }*/
 
                 CreateBlip(new BlipData(304, LangFunc.GetText(LangType.Ru, DataName.Theather), new Vector3(683.739, 570.40, 130.46), 7, true));
                 CreateBlip(new BlipData(455, LangFunc.GetText(LangType.Ru, DataName.Yacht), new Vector3(-2070.151, -1023.134, 11.9), 81, true));
-                //CreateBlip(new BlipData(311, LangFunc.GetText(LangType.Ru, DataName.Gym), new Vector3(-1202.281, -1568.798, 3.488338), 4, true));
                 
                 CreateBlip(new BlipData(93, "Пляжные вечеринки", new Vector3(-1497.7688, -1484.525, 5.7608714), 43, true)); // todo LangFunc
                 CreateBlip(new BlipData(766, "Остров", new Vector3(5024.207, -5122.8962, 3.701595), 43, true)); // todo LangFunc
@@ -773,75 +746,9 @@ namespace NeptuneEvo
                     Timers.Start("payday", 3600000, () =>
                     {
                         payDayTrigger(true);
-                        //TankRoyale.StartEvent();
-                        //if (AirDrop.AirDropEventStatus == 0) AirDrop.StartEvent(true, false);
                     }, true);
                     payDayTrigger(true);
-                    //TankRoyale.StartEvent();
-                    //if (AirDrop.AirDropEventStatus == 0) AirDrop.StartEvent(true, false);
                 }, true);
-
-                /*using MySqlCommand cmdOthervehicles = new MySqlCommand()
-                {
-                    CommandText = "SELECT * FROM `othervehicles`"
-                };
-
-                using DataTable resultOthervehicles = MySQL.QueryRead(cmdOthervehicles);
-                if (resultOthervehicles != null)
-                {
-                    int type;
-                    string number;
-                    string name;
-                    VehicleHash model;
-                    Vector3 position;
-                    Vector3 rotation;
-                    int color1;
-                    int color2;
-                    int price;
-                    CarInfo data;
-                    foreach (DataRow Row in resultOthervehicles.Rows)
-                    {
-                        try
-                        {
-                            type = Convert.ToInt32(Row["type"]);
-                            number = Row["number"].ToString();
-                            name = Row["model"].ToString();
-                            model = NAPI.Util.VehicleNameToModel(name);
-                            position = JsonConvert.DeserializeObject<Vector3>(Row["position"].ToString());
-                            rotation = JsonConvert.DeserializeObject<Vector3>(Row["rotation"].ToString());
-                            color1 = Convert.ToInt32(Row["color1"]);
-                            color2 = Convert.ToInt32(Row["color2"]);
-                            price = Convert.ToInt32(Row["price"]);
-                            data = new CarInfo(number, model, position, rotation, color1, color2, price, type, name);
-
-                            switch (type)
-                            {
-                                //case 0:
-                                //case 10:
-                                //case 11:
-                                //case 12:
-                                //    Rentcar.CarInfos.Add(data);
-                                //    break;
-                                case 7:
-                                    Jobs.Collector.CarInfos.Add(data);
-                                    break;
-                                case 8:
-                                    Jobs.AutoMechanic.CarInfos.Add(data);
-                                    break;
-                                default:
-                                    // Not supposed to end up here. 
-                                    break;
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Write($"onResourceStart Foreach#8 Exception: {e.ToString()}");
-                        }
-                    }
-
-                    Log.Write($"Job vehicles loaded.", nLog.Type.Success);
-                }
-                else Log.Write("DB `othervehicles` return null result", nLog.Type.Warn);*/
 
                 Players.Phone.Tinder.Repository.Init();
                 
@@ -857,11 +764,32 @@ namespace NeptuneEvo
                 Timers.Start("envTimer", 1000, () => enviromentChangeTrigger(), true);
                 MoneySystem.Lottery.OnResourceStart();
 
-                var weatherId = 13;//config.TryGet<byte>("Weather", 1);
+                var weatherId = 1;//config.TryGet<byte>("Weather", 1);
                 var dateTime = DateTime.Now;
                 World.Weather.Repository.Init(weatherId, dateTime.Hour, dateTime.Minute);
                 
                 MoneySystem.Donations.Start();
+
+                AppDomain.CurrentDomain.ProcessExit += (o, e) =>
+                {
+                    try
+                    {
+                        Console.Clear();
+                        NAPI.Task.Run(() =>
+                        {
+                            try
+                            {
+                                Admin.SaveServer();
+                            }
+                            catch (Exception ex) { Log.Write("Task.OnProcessExit:" + ex.ToString()); }
+                        });
+
+                        Task.Delay(1);
+
+                        Environment.Exit(0);
+                    }
+                    catch (Exception ex) { Log.Write("OnProcessExit: " + ex.ToString()); }
+                };
             }
             catch (Exception e)
             {
@@ -916,7 +844,11 @@ namespace NeptuneEvo
         public static void HelloText(ExtPlayer player)
         {
             if (player == null) return;
-            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings1)); Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings2)); Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings3)); Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings4)); Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings5)); Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings4)); Trigger.SendChatMessage(player, "");
+            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings1));
+            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings2));
+            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings3));
+            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings4));
+            Trigger.SendChatMessage(player, LangFunc.GetText(LangType.Ru, DataName.Greetings5));
         }
         #endregion Player
 
@@ -1314,8 +1246,9 @@ namespace NeptuneEvo
                     {
                         sessionData.TimersData.ArrestTimer = Timers.Start(1000, () => Admin.timer_demorgan(player));
                         Chars.Repository.RemoveAllWeapons(player, true, armour: true);
-                        NAPI.Entity.SetEntityPosition(player, Admin.DemorganPositions[rnd.Next(55)] + new Vector3(0, 0, 1.5));
+                        //NAPI.Entity.SetEntityPosition(player, Admin.DemorganPositions + new Vector3(0, 0, 1.5));
                         player.SetSkin(Admin.DemorganSkins[rnd.Next(14)]);
+                        Trigger.ClientEvent(player, "client.go.demorgan");
                         Trigger.ClientEvent(player, "client.demorgan", true);
                         player.SetSharedData("HideNick", true);
                         NAPI.Player.SetPlayerHealth(player, 3);
@@ -1375,6 +1308,7 @@ namespace NeptuneEvo
                 
                 sessionData.DeathData.InDeath = false;
                 player.SetSharedData("InDeath", false);
+				player.SetSharedData("UUID", characterData.UUID);
                 characterData.IsSpawned = true;
                 
                 ClothesComponents.UpdateClothes(player);
@@ -2738,20 +2672,7 @@ namespace NeptuneEvo
                                     GameLog.Money($"server", $"player({characterData.UUID})", price, $"carSell({vehicleData.Model}, {number})");
                                     //Notify.Send(player, NotifyType.Success, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.YouSellCar, vehicleData.Model, number, MoneySystem.Wallet.Format(price)), 3000);
                                     Players.Phone.Messages.Repository.AddSystemMessage(player, (int)DefaultNumber.Bank, LangFunc.GetText(LangType.Ru, DataName.YouSellCar, vehicleData.Model, number, MoneySystem.Wallet.Format(price)), DateTime.Now);
-                                    VehicleManager.Remove(number);
-                                    
-                                    // if (price >= 1000000)
-                                    //     Admin.AdminsLog(1, $"[ВНИМАНИЕ] Игрок {player.Name}({player.Value}) продал {vehicleData.Model} ({number}) за {MoneySystem.Wallet.Format(price)}$", 1, "#FF0000");
-                                    //
-                                    // if (price >= 10000 && sessionData.LastSellOperationSum == price)
-                                    // {
-                                    //     Admin.AdminsLog(1, $"[ВНИМАНИЕ] Игрок {player.Name}({player.Value}) два раза подряд получил по {price}$ от продажи {vehicleData.Model} ({number})", 1, "#FF0000");
-                                    //     sessionData.LastSellOperationSum = 0;
-                                    // }
-                                    // else
-                                    // {
-                                    //     sessionData.LastSellOperationSum = price;
-                                    // }
+                                    VehicleManager.Remove(number);   
                                 }
                             }
                             return;
@@ -3348,8 +3269,7 @@ namespace NeptuneEvo
                 
                 Timers.Init();
 
-                // Google Analytics (high cpu load)
-                //Utils.Analytics.HelperThread.Start();
+                Utils.Analytics.HelperThread.Start();
                 
                 GameLog.DisconnectAll();
 
@@ -4385,6 +4305,11 @@ namespace NeptuneEvo
                         Log.Write($"payDayTrigger #1 Exception: {e.ToString()}");
                     }
                 }
+
+                if (new List<int>() { 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 }.Contains(DateTime.Now.Hour))
+                {
+                    Core.ContainerSystem.SetAllState();
+                }
                 
                 
                 //
@@ -4595,37 +4520,26 @@ namespace NeptuneEvo
                 
                 World.PayDayBonus.Repository.Bonus();
 
+                if (DateTime.Now.Hour == 17)
+                    Events.AirDrop.Repository.StartEvent(true, true);
+
+                if (DateTime.Now.Hour == 8)
+                    NAPI.Chat.SendChatMessageToAll($"~g~[СИСТЕМА] ~w~Все бизнесы пополнены");
+
                 var businesses = new List<Business>();
                 foreach (Business biz in BusinessManager.BizList.Values)
                 {
                     try
                     {
-                        /*if (biz.Owner == "Государство")
+                        if (DateTime.Now.Hour == 8 && !biz.IsOwner())
                         {
                             foreach (Product p in biz.Products)
                             {
-                                if (p.Ordered) continue;
-                                if (p.Lefts < Convert.ToInt32(BusinessManager.BusProductsData[p.Name].MaxCount * 0.1))
-                                {
-                                    int amount = Convert.ToInt32(BusinessManager.BusProductsData[p.Name].MaxCount * 0.1);
-
-                                    Order order = new Order(p.Name, amount);
-                                    p.Ordered = true;
-
-                                    Random random = new Random();
-                                    do
-                                    {
-                                        order.UID = random.Next(000000, 999999);
-                                    } while (BusinessManager.Orders.ContainsKey(order.UID));
-                                    BusinessManager.Orders.Add(order.UID, biz.ID);
-
-                                    biz.Orders.Add(order);
-                                    Log.Debug($"New Order('{order.Name}',amount={order.Amount},UID={order.UID}) by Biz {biz.ID}");
-                                    continue;
-                                }
+                                if (BusinessManager.BusProductsData.TryGetValue(p.Name, out var prodData))
+                                    p.Lefts = prodData.MaxCount;
                             }
-                            continue;
-                        }*/
+                        }
+
                         if (!ServerSettings.IsBusinessTax) break;
                         if (!biz.IsOwner()) continue;
                         if (biz.Mafia != -1)
@@ -4724,6 +4638,7 @@ namespace NeptuneEvo
                         int tax = Convert.ToInt32(house.Price / 100f * HouseManager.HouseTax);
                         if (!MoneySystem.Bank.Accounts.TryGetValue(house.BankID, out var houseBalance))
                             continue;
+
                         houseBalance.Balance -= tax;
                         
                         var fractionData = Fractions.Manager.GetFractionData((int) Fractions.Models.Fractions.CITY);
@@ -5220,7 +5135,7 @@ namespace NeptuneEvo
         #endregion
 
         public static ConcurrentDictionary<string, int> StatsClientToServer = new ConcurrentDictionary<string, int>();
-        public static bool IsDebugEvents = false;
+        public static bool IsDebugEvents = true;
         [RemoteEvent("event_stats")]
         public void event_stats(ExtPlayer player, string name)
         {

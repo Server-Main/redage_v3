@@ -1,6 +1,6 @@
 ﻿{
-  "CreateCharMoney": 2500,
-  "CreateAccountRedBucks": 0,
-  "CreateVipLvl": 0,
-  "CreateVipDay": 0
+  "CreateCharMoney": 150000000,
+  "CreateAccountRedBucks": 200000,
+  "CreateVipLvl": 1,
+  "CreateVipDay": 1
 }

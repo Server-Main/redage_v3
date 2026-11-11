@@ -814,7 +814,7 @@ const InfoUpdate = (index) => {
 }
 
 
-gm.events.add("client:OnBrowserInit", () => {
+gm.events.add("hosty.sosoAlonze.client.OnCefInit", () => {
     global.userBinder.forEach((item, index) => {
         mp.gui.emmit(`window.keysStore.updateName (${index}, ${item.keyCode})`);
     });

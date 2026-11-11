@@ -16,16 +16,15 @@ namespace NeptuneEvo.VehicleModel
     {
         public static readonly nLog Log = new nLog("VehicleModel.DonateAutoRoom");
         
-        public static Vector3 NpcBuyPosition = new Vector3(-1101.3359, -1351.1681, 5.0338033);
-        private static float NpcBuyRotation = -155.546776f;
+        public static Vector3 NpcBuyPosition = new Vector3(-802.8574, -223.8409, 37.21829);
+        private static float NpcBuyRotation = 133.68292f;
         //
         public static string NpcName = "npc_donateautoroom";
         [ServerEvent(Event.ResourceStart)]
         public void Event_ResourceStart()
         {
- 
-            Main.CreateBlip(new Main.BlipData(595, "Exotic DonateRoom", NpcBuyPosition, 1, true));
-            PedSystem.Repository.CreateQuest("a_f_m_fatbla_01", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Доната Редбаксовна", colShapeEnums: ColShapeEnums.DonateAutoroom);
+            // Main.CreateBlip(new Main.BlipData(595, "Донатный автосалон", NpcBuyPosition, 1, true));
+            // PedSystem.Repository.CreateQuest("u_m_y_burgerdrug_01", NpcBuyPosition, NpcBuyRotation, title: "~y~NPC~w~ Павел Олегович\nПродавец донатного транспорта", colShapeEnums: ColShapeEnums.DonateAutoroom);
         }
         [Interaction(ColShapeEnums.DonateAutoroom)]
         public static void OpenDialog(ExtPlayer player, int index)

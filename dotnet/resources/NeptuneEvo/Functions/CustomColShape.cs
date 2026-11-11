@@ -197,6 +197,14 @@ namespace NeptuneEvo.Functions
         WarGangZone,
         
         QuestBonus,
+        ContainerSys,
+
+        FarmerMenu,
+        FarmerPoint,
+
+        MarketMenu,
+
+        MinerOrePlace
     }
     class CustomColShape : Script
     {

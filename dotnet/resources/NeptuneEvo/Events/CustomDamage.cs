@@ -48,7 +48,7 @@ namespace NeptuneEvo.Events
             { (uint)WeaponHash.Heavypistol, 12f },
             { (uint)WeaponHash.Vintagepistol, 12f },
             { (uint)WeaponHash.Marksmanpistol, 60f },
-            { (uint)WeaponHash.Revolver, 50f },
+            { (uint)WeaponHash.Revolver, 57f },
             { (uint)WeaponHash.Appistol, 7f },
             { (uint)WeaponHash.Stungun, 1f },
             { (uint)WeaponHash.Flaregun, 4f },

@@ -113,7 +113,7 @@ export default {
         {id: 33, name: 'Высечка', price: 100, creator: false},
     ],
     facialhair: [
-        {id: 255, name: "Гладкая кожа", price: 100, creator: true},
+        {id: 255, name: "Нет", price: 100, creator: true},
         {id: 0, name: 'Легкая щетина', price: 100, creator: true},
         {id: 1, name: 'Бальбо', price: 100, creator: true},
         {id: 2, name: 'Круглая борода', price: 100, creator: true},

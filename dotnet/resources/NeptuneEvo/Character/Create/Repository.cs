@@ -71,7 +71,7 @@ namespace NeptuneEvo.Character.Create
                     Armor = characterData.Armor,
                     Lvl = characterData.LVL,
                     Exp = characterData.EXP,
-                    Money = (int)characterData.Money,
+                    Money = (int?)characterData.Money,
                     Bank = characterData.Bank,
                     Work = characterData.WorkID,
                     Drugaddi = characterData.DrugsAddiction,

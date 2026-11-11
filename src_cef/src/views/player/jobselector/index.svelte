@@ -3,15 +3,16 @@
     import { executeClient } from 'api/rage'
     import { charLVL, charWorkID } from 'store/chars';
 
-
-
     import PadUnlock from './assets/images/padlock-unlock.svg';
     import PadLock from './assets/images/lock.svg';
     import './assets/css/main.css'
     import {hasJsonStructure} from "api/functions";
 
+    import border from './assets/images/border.png';
 
     export let viewData;
+
+    const imagePath = `/src/views/player/jobselector/assets/images/`;
 
     if (hasJsonStructure (viewData))
         viewData = JSON.parse(viewData);
@@ -24,7 +25,7 @@
             {class: "bus", name: translateText('player', 'Водитель автобуса'), level: 0, jobid: 4},
             {class: "mechanic", name: translateText('player', 'Автомеханик'), level: 0, jobid: 8},
             {class: "truck", name: translateText('player', 'Дальнобойщик'), level: 1, jobid: 6},
-            {class: "inkos", name: translateText('player', 'Инкассатор'), level: 1, jobid: 7},
+            {class: "mechanic", name: translateText('player', 'Инкассатор'), level: 1, jobid: 7},
         ];
 
     const selectJob = (selectedjob) => {
@@ -36,57 +37,47 @@
     
 </script> 
 
-<div class="joblist">
-    <div class="adaptive">
-        <div class="boxtop">
-            <div class="box">
-                <div class="header"> 
-                    <div on:click={closeJobMenu} class="arrow"></div>
-                    <p class="txtheader">{translateText('player', 'Устроиться на работу')}</p>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="main-wrapper1">
+    <div class="header1">
+        <p class="title1">{translateText('player', 'Устроиться на работу')}</p>
+        <p class="description1">Привет! Я Эмма, и я помогу тебе найте работу. Не знаешь кто я? Я помогаю находить вакансии, даю советы и помогаю составить резюме.</p>
+        <div class="close1" on:click={() => closeJobMenu()}>x</div>
+    </div>
+    <div class="job-list1">
+        {#each list as forjob, index}
+            <div key={index} class={"job-box1 " + forjob.class}>
+                <p class="job-name1">{forjob.name}</p>
+                <img src={`${imagePath}${forjob.class}.svg`} class={`job-logo1 ${forjob.class}`} alt="job-logo">
+                <img src={border} class="border1" alt="border">
+                {#if viewData[forjob.jobid] <= $charLVL}
+                    <div class="job-name1" style="top: 12.7vh">
+                        <img class="workimg1" src={PadUnlock} alt="PadUnlock"/>
+                    </div>   
+                {:else}
+                    <div class="job-name1" style="top: 12.7vh">
+                        <img class="workimg1" src={PadLock} alt="PadLock"/>
+                    </div>
+                {/if}
+                 <div class="inkoslvl1" style="margin-top: 0.5vh;margin-left: 1vh;">
+                    <p class="textlvl1">LVL {viewData[forjob.jobid]}</p>
                 </div>
-                <div class="workbox">
-                    {#each list as forjob, index}
-                    <div key={index} class={"workboxes " + forjob.class}>
-                        <div class="inkoslvl">
-                            <p class="textlvl">LVL</p>
-                            <p class="textlvl2">{viewData[forjob.jobid]}</p>
-                        </div>
-        
-                        <div class="worktoptxt ">
-                            <p class="textboxwork"></p> {forjob.name}
-        
-                            {#if viewData[forjob.jobid] <= $charLVL}
-                            <div class="jobstatus">
-                                <img class="workimg" src={PadUnlock} alt="PadUnlock"/>
-                                <p class="worktextopen">{translateText('player', 'Открыто')}</p>
-                            </div>   
-                            {:else}
-                            <div class="jobstatus">
-                                <img class="workimg" src={PadLock} alt="PadLock"/>
-                                <p class="worktextopen">{translateText('player', 'Закрыто')}</p>
+                {#if (viewData[forjob.jobid] <= $charLVL)}
+                    {#if (forjob.jobid == $charWorkID)}
+                        <div>
+                            <div class="job-name1" style="top: 17.4vh;color: red" on:click={() => selectJob(-1)}>
+                                <p сlass="buttontxtgetsettled1">{translateText('player', 'Уволиться')}</p>
                             </div>
-                            {/if}
                         </div>
-
-                        {#if (viewData[forjob.jobid] <= $charLVL)}
-                            {#if (forjob.jobid == $charWorkID)}
-                                <div>
-                                    <div class="buttongetsettledred" on:click={() => selectJob(-1)}>
-                                        <p сlass="buttontxtgetsettled">{translateText('player', 'Уволиться')}</p>
-                                    </div>
-                                </div>
-                            {:else}
-                                <div>
-                                    <div class="buttongetsettled" on:click={() => selectJob(forjob.jobid)}>
-                                        <div сlass="buttontxtgetsettled">{translateText('player', 'Устроиться')}</div>
-                                    </div>
-                                </div>
-                            {/if}
-                        {/if}
+                        {:else}
+                        <div>
+                            <div class="job-name1" style="top: 17.4vh;color: green" on:click={() => selectJob(forjob.jobid)}>
+                                <div сlass="buttontxtgetsettled1">{translateText('player', 'Устроиться')}</div>
+                            </div>
                         </div>
-                    {/each}
-                </div>
+                    {/if}
+                {/if}
             </div>
-        </div>
+        {/each}
     </div>
 </div>

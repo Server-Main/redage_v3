@@ -47,9 +47,9 @@
             return;
         const { keyCode } = event;
         
-        if(keyCode == 81) {
+        if(keyCode == 65) {
             onClickQ ();
-        } else if(keyCode == 69) { 
+        } else if(keyCode == 68) { 
             onClickE ();
         }
     }
@@ -66,7 +66,7 @@
         }
         else {
             SelectViews = "Authentication";
-            PagesSorted = ["News", "Authentication", "Restore"];
+            PagesSorted = [];
         }
     });
 </script>
@@ -82,30 +82,20 @@
         <div class="auth-mail newauthentication__popup_iconmail"></div>
     </div>
     {/if}
-
-    <div class="header">
-        <div class="header__logo"/>
-        <div class="box-flex">
-            <div class="header-key box-center" class:active={false} on:click={onClickQ}>
-                Q
-            </div>
+    <div class="mainregister">
+        <div class="regatext">
+            <!-- <div class="header-key box-center" class:active={false} on:click={onClickQ}>
+                Q -->
+            <!-- </div>
             <div class="header__element" class:active={SelectViews === "News"} on:click={() => OnSelectViews("News")}>
                 {translateText('player2', 'Новости')}
-            </div>
-            {#if PagesSorted.includes("Authentication")}
-            <div class="header__element" class:active={SelectViews === "Authentication"} on:click={() => OnSelectViews("Authentication")}>
-                {translateText('player2', 'Авторизация')}
-            </div>
-            {:else if PagesSorted.includes("Registration")}
-            <div class="header__element" class:active={SelectViews === "Registration"} on:click={() => OnSelectViews("Registration")}>
-                {translateText('player2', 'Регистрация')}
-            </div>
-            {/if}
-            <div class="header-key box-center" class:active={false} on:click={onClickE}>
-                E
-            </div>
+            </div> -->
+
+            <!-- <div class="header-key box-center" class:active={false} on:click={onClickE}> -->
         </div>
-        <div class="header__money" />
+        <!-- <div class="header__money" /> -->
     </div>
     <svelte:component this={Views[SelectViews]} OnSelectViews={OnSelectViews}/>
 </div>
+
+

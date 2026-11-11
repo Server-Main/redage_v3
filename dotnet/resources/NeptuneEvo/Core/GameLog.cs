@@ -20,7 +20,9 @@ namespace NeptuneEvo.Core
             cmd.Add("CALL `addLogsData`(@var0, @var1, @var2)");
             cmd.Add("`stocklog`");
             cmd.Add("`time`,`frac`,`uuid`,`name`,`type`,`amount`,`in`");
-            cmd.Add($"'{DateTime.Now.ToString("s")}',{Frac},{Uuid},'{Name}','{Type}',{Amount},'{In}'");
+
+            int intIn = In == "in" ? 1 : 0;
+            cmd.Add($"'{DateTime.Now.ToString("s")}',{Frac},{Uuid},'{Name}','{Type}',{Amount},{intIn}");
             CmdQueue.Add(cmd);
         }
         public static void Admin(string Admin, string Action, string Player)

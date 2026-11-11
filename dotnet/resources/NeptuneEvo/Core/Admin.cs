@@ -424,11 +424,7 @@ namespace NeptuneEvo.Core
                     }
                     
                     Log.Write($"[{DateTime.Now - speedSave}] All players saved!", nLog.Type.Success);
-
-                    // Сброс участия в колесе удачи
-                    await Character.Save.Repository.ResetLuckyWheel();
-                    //
-
+                    
                     await Accounts.Email.Repository.VerificationsDelete();
                     
                     BusinessManager.SavingBusiness();
@@ -3093,7 +3089,11 @@ namespace NeptuneEvo.Core
                 var targetSessionData = target.GetSessionData();
                 if (targetSessionData == null) return;
                 if (!target.IsCharacterData()) return;
-                if (admin == target) return;
+                //if (admin == target)
+                //{
+                // Notify.Send(admin, NotifyType.Error, NotifyPosition.BottomCenter, $"Команда не может быть использована на себе", 3000);
+                // return;
+                // }
 
                 if (time < 5 || time > 10080)
                 {
@@ -3123,8 +3123,8 @@ namespace NeptuneEvo.Core
 
                 Trigger.SendPunishment($"{CommandsAccess.AdminPrefix}{admin.Name} посадил в деморган {target.Name}({target.Value}) на {time} {deTimeMsg}. Причина: {reason}", target);
 
-                targetCharacterData.DemorganInfo.Admin = admin.Name;
-                targetCharacterData.DemorganInfo.Reason = reason;
+                targetCharacterData.DemorganInfo.Admin = Newtonsoft.Json.JsonConvert.SerializeObject(admin.Name);
+                targetCharacterData.DemorganInfo.Reason = Newtonsoft.Json.JsonConvert.SerializeObject(reason);
                 targetCharacterData.ArrestTime = 0;
                 targetCharacterData.ArrestType = 0;
                 targetCharacterData.DemorganTime = firstTime;
@@ -3136,8 +3136,7 @@ namespace NeptuneEvo.Core
                 targetSessionData.CuffedData.CuffedByCop = false;
                 targetSessionData.CuffedData.CuffedByMafia = false;
                 //
-                target.Position = DemorganPositions[Main.rnd.Next(55)] + new Vector3(0, 0, 1.5);
-                target.SetSkin(DemorganSkins[Main.rnd.Next(14)]);
+                target.Position = DemorganPosition + new Vector3(0, 0, 1.5);
                 //
                 if (targetSessionData.TimersData.ArrestTimer != null) Timers.Stop(targetSessionData.TimersData.ArrestTimer);
                 targetSessionData.TimersData.ArrestTimer = Timers.Start(1000, () => timer_demorgan(target));
@@ -3145,6 +3144,9 @@ namespace NeptuneEvo.Core
                 target.SetSharedData("vmuted", true);
                 //
                 Trigger.ClientEvent(target, "client.demorgan", true);
+
+                Trigger.ClientEvent(target, "client.go.demorgan", firstTime, Newtonsoft.Json.JsonConvert.SerializeObject(reason), Newtonsoft.Json.JsonConvert.SerializeObject(admin.Name.Replace("_", " ")));
+
                 target.Eval($"mp.game.audio.playSoundFrontend(-1, \"Deliver_Pick_Up\", \"HUD_FRONTEND_MP_COLLECTABLE_SOUNDS\", true);");
                 target.SetSharedData("HideNick", true);
                 //
@@ -3152,7 +3154,7 @@ namespace NeptuneEvo.Core
                 Chars.Repository.RemoveAllWeapons(target, true, true, armour: true);
                 GameLog.Admin(admin.Name, $"demorgan({time}{deTimeMsg},{reason})", target.Name);
                 //Players.Phone.Messages.Repository.AddSystemMessage(target, (int)DefaultNumber.RedAge,$"{admin.Name} отправил Вас в деморган на {time} {deTimeMsg}. Причина: {reason}", DateTime.Now); 
-                EventSys.SendCoolMsg(target,"Администрация", $"{admin.Name}", $"Отправил Вас в деморган на {time} {deTimeMsg}. Причина: {reason}", "", 15000); 
+                EventSys.SendCoolMsg(target, "Администрация", $"{admin.Name}", $"Отправил Вас в деморган на {time} {deTimeMsg}. Причина: {reason}", "", 15000);
                 //
             }
             catch (Exception e)
@@ -3174,11 +3176,15 @@ namespace NeptuneEvo.Core
                     Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, "Игрок не находится в спец.тюрьме.", 3000);
                     return;
                 }
-                targetCharacterData.DemorganTime = 1;
+                targetCharacterData.DemorganTime = 0;
+                Trigger.ClientEvent(target, "client.stop.demorgan");
+                Trigger.ClientEvent(player, "client.stop.demorgan");
                 Trigger.SendPunishment($"{CommandsAccess.AdminPrefix}{player.Name} выпустил из деморгана {target.Name} ({target.Value})");
                 GameLog.Admin($"{player.Name}", $"undemorgan", $"{target.Name}");
                 //Players.Phone.Messages.Repository.AddSystemMessage(target, (int)DefaultNumber.RedAge,$"{player.Name} выпустил Вас из деморгана.", DateTime.Now);
-                EventSys.SendCoolMsg(target,"Администрация", $"{player.Name}", $"Выпустил Вас из деморгана. Приятной игры и больше не нарушайте! :)", "", 15000); 
+                EventSys.SendCoolMsg(target, "Администрация", $"{player.Name}", $"Выпустил Вас из деморгана. Приятной игры и больше не нарушайте! :)", "", 15000);
+                Trigger.ClientEvent(target, "client.stop.demorgan");
+                Trigger.ClientEvent(player, "client.stop.demorgan");
             }
             catch (Exception e)
             {
@@ -3206,64 +3212,7 @@ namespace NeptuneEvo.Core
             PedHash.Pigeon
         };
 
-        public static Vector3[] DemorganPositions = new Vector3[55]
-        {
-            new Vector3(-323.5328, 1370.41, 346.4068),
-            new Vector3(791.201, 2311.601, 47.13044),
-            new Vector3(383.2664, 773.5862, 183.8618),
-            new Vector3(1301.362, 1447.964, 98.23167),
-            new Vector3(-78.97045, 6597.737, 28.42492),
-            new Vector3(1266.669, 1911.738, 77.65078),
-            new Vector3(-1852.087, 1931.88, 149.0496),
-            new Vector3(125.2143, 6593.171, 30.85273),
-            new Vector3(-2599.767, 1689.187, 139.9411),
-            new Vector3(1404.253, 2169.581, 96.66694),
-            new Vector3(-2291.825, 2485.236, 1.914838),
-            new Vector3(-44.12902, 6299.675, 30.50067),
-            new Vector3(-98.26251, 2801.208, 52.12306),
-            new Vector3(-248.8021, 6200.921, 30.36921),
-            new Vector3(-396.2312, 6053.582, 30.38009),
-            new Vector3(1212.61, 2651.768, 36.69186),
-            new Vector3(143.9709, 1669.224, 227.5427),
-            new Vector3(-514.4248, 6275.275, 8.819883),
-            new Vector3(1471.917, 1318.306, 113.9579),
-            new Vector3(1469.517, 2718.285, 36.45533),
-            new Vector3(1316.378, 653.1463, 81.45456),
-            new Vector3(2497.466, 1582.359, 31.60028),
-            new Vector3(-214.658, 6561.28, 9.756557),
-            new Vector3(2531.433, 2039.337, 18.69318),
-            new Vector3(2062.655, 3481.989, 42.38651),
-            new Vector3(2545.573, 2637.896, 36.82483),
-            new Vector3(112.0649, 6842.445, 15.012),
-            new Vector3(2682.535, 2803.837, 39.21159),
-            new Vector3(2155.056, 3018.603, 44.15971),
-            new Vector3(291.8854, 6793.59, 14.57676),
-            new Vector3(1876.9, 3967.318, 35.13688),
-            new Vector3(2446.471, 3768.721, 39.95733),
-            new Vector3(778.8936, 6439.555, 30.84892),
-            new Vector3(-1543.886, 1366.205, 124.9902),
-            new Vector3(410.5818, 6457.222, 27.68898),
-            new Vector3(-788.4865, 1672.407, 198.4508),
-            new Vector3(2538.595, 4477.067, 36.10785),
-            new Vector3(-262.9102, 2608.396, 62.22501),
-            new Vector3(221.4821, 2961.687, 41.5982),
-            new Vector3(485.4037, 3501.335, 33.06005),
-            new Vector3(1557.167, 3753.676, 33.27285),
-            new Vector3(2852.622, 3714.04, 47.53786),
-            new Vector3(2732.895, 4414.241, 46.5253),
-            new Vector3(2883.424, 347.9111, 1.930261),
-            new Vector3(2943.639, 4655.853, 47.42477),
-            new Vector3(2762.99, 1264.434, 2.839344),
-            new Vector3(2083.99, 3838.34, 30.67446),
-            new Vector3(2374.62, 2427.864, 61.85823),
-            new Vector3(2872.061, 4873.417, 61.47282),
-            new Vector3(1544.658, 3911.407, 30.57072),
-            new Vector3(1801.522, 4524.824, 30.87487),
-            new Vector3(-133.3322, 6336.445, 30.37035),
-            new Vector3(-179.7547, 4295.339, 31.85094),
-            new Vector3(-261.8268, 6303.704, 31.166),
-            new Vector3(-345.2491, 6150.061, 30.363)
-        };
+        public static Vector3 DemorganPosition = new Vector3(1680.3871, 2513.0054, 44.444855);
         public static void timer_demorgan(ExtPlayer player)
         {
             try
@@ -3272,7 +3221,15 @@ namespace NeptuneEvo.Core
                 var characterData = player.GetCharacterData();
 
                 if (characterData == null) return;
-                if (characterData.DemorganTime-- <= 0) Fractions.FractionCommands.freePlayer(player, true);
+                if (characterData.DemorganTime-- <= 0)
+                {
+                    Fractions.FractionCommands.freePlayer(player, true);
+                    Trigger.ClientEvent(player, "client.stop.demorgan");
+                }
+                var targetCharacterData = player.GetCharacterData();
+
+
+                // Trigger.ClientEvent(player, "client.stop.demorgan");
             }
             catch (Exception e)
             {

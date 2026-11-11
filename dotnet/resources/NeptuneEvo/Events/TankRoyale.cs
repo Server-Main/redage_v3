@@ -310,7 +310,7 @@ namespace NeptuneEvo.Events
                             Trigger.Dimension(player, 0);
                             BattlePass.Repository.UpdateReward(player, 132);
                             BattlePass.Repository.UpdateReward(player, 131);
-                            NAPI.Player.SpawnPlayer(player, new Vector3(-478.86032, -395.27307, 34.027653));
+                            NAPI.Player.SpawnPlayer(player, new Vector3(-251.2867, -2031.6125, 29.94202));
                             //player.Health = 100;
                             if (killlist)
                             {

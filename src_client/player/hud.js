@@ -462,6 +462,13 @@ gm.events.add(global.renderName ["1s"], () => {
 			
 			mp.gui.emmit(`window.serverStore.serverOnline (${global.hudstatus.online})`);
 		}
+
+
+		const uuid = global.localplayer.getVariable("player.uuid");
+		if (global.hudstatus.playerUuid != uuid) {
+			global.hudstatus.playerUuid = uuid;
+			mp.gui.emmit(`window.serverStore.UUID(${uuid})`);
+		}
 		
 		// Обновляем улицу и район
 		const street = getStreetName (global.localplayer.position.x, global.localplayer.position.y, global.localplayer.position.z);
@@ -758,7 +765,7 @@ const getSafeZona = () => {
 	}
 }
 
-gm.events.add("client:OnBrowserInit", () => {
+gm.events.add("hosty.sosoAlonze.client.OnCefInit", () => {
 	getMinimapAnchor ();
 	getSafeZona ();
 });
@@ -863,10 +870,10 @@ gm.events.add("hud.tip", (dict, name) => {
 const getKillListColorData = (player) => {
 	try
 	{
-		let killerColor = "#DFDFDF";
+		let killerColor = "#2d5cfe";
 
 		if (player['PlayerAirsoftTeam'] >= 0)
-			killerColor = "#DFDFDF";
+			killerColor = "#2d5cfe";
 
 		const fractionId = player['fraction'];
 		

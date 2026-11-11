@@ -291,18 +291,15 @@ namespace NeptuneEvo.Core
                     NAPI.TextLabel.CreateTextLabel(Main.StringToU16($"Нажмите \n'Взаимодействие'\n~g~{moneyFlowers[b]}"), moneyFlowPoints[b] + new Vector3(0, 0, 1.125), 5F, 0.8F, 0, new Color(255, 255, 255));
                 }*/
 
-                CustomColShape.CreateCylinderColShape(new Vector3(-2.1323678, -1821.9778, 29.543238), 1.5F, 2, 0, ColShapeEnums.BlackMarket);
+                CustomColShape.CreateCylinderColShape(new Vector3(2451.0967, 4970.4883, 46.571575), 1.5F, 2, 0, ColShapeEnums.BlackMarket);
 
-                NAPI.TextLabel.CreateTextLabel(Main.StringToU16("Нажмите \n'Взаимодействие'\n~g~Caleb Baker"), new Vector3(-2.1323678, -1821.9778, 29.543238), 5F, 0.8F, 0, new Color(255, 255, 255));
+                NAPI.TextLabel.CreateTextLabel(Main.StringToU16("Нажмите \n'Взаимодействие'\n~g~Caleb Baker"), new Vector3(2451.0967, 4970.4883, 46.571575), 5F, 0.8F, 0, new Color(255, 255, 255));
 
                 for (int b = 0; b < salutePoints.Count; b++)
                 {
-                    PedSystem.Repository.CreateQuest("ig_ramp_hic", salutePoints[b], 105.93525f, 0, title: "~y~NPC~w~ Сергей\nПродавец фейерверков", colShapeEnums: ColShapeEnums.SaluteShop);
-                    //CustomColShape.CreateCylinderColShape(salutePoints[b], 1.5F, 2, 0, ColShapeEnums.SaluteShop);
+                    PedSystem.Repository.CreateQuest("ig_ramp_hic", new Vector3(-695.42615, 5802.357, 17.33095), 105.93525f, 0, title: "~y~NPC~w~ Сергей\nПродавец фейерверков", colShapeEnums: ColShapeEnums.SaluteShop);
 
-                    Main.CreateBlip(new Main.BlipData(654, "Салют", salutePoints[b], 32, true));
-
-                    //NAPI.TextLabel.CreateTextLabel(Main.StringToU16($"Нажмите \n'Взаимодействие'\n~g~{saluteBotName[b]}"), salutePoints[b] + new Vector3(0, 0, 1.125), 5F, 0.8F, 0, new Color(255, 255, 255));
+                    Main.CreateBlip(new Main.BlipData(654, "Салют", new Vector3(-695.42615, 5802.357, 17.33095), 32, true));
                 }
 
 

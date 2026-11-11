@@ -1,4 +1,4 @@
-gm.events.add('client.rentcar.open', (json) => {
+gm.events.add('hosty.sosoAlonze.client.rentcar.open', (json) => {
     if (global.menuCheck()) return;
     global.menuOpen();
 

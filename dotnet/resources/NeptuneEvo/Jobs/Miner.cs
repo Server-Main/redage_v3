@@ -64,11 +64,10 @@ namespace NeptuneEvo.Jobs
             try
             {
                 
-                Main.CreateBlip(new Main.BlipData(527, "Гражданская шахта", new Vector3(124.831116, -397.94046, 41.263977), 4, true));
-                //Main.CreateBlip(new Main.BlipData(527, "Государственная шахта", new Vector3(-596, 2089, 131), 4, true));
-               // Main.CreateBlip(new Main.BlipData(566, "Автомастерская самообслуживания", new Vector3(501.32233, -1336.5303, 29.32083), 4, true));
+                // Main.CreateBlip(new Main.BlipData(527, "Гражданская шахта", new Vector3(124.831116, -397.94046, 41.263977), 4, true));
+                // Main.CreateBlip(new Main.BlipData(527, "Государственная шахта", new Vector3(-596, 2089, 131), 4, true));
+                Main.CreateBlip(new Main.BlipData(566, "Автомастерская самообслуживания", new Vector3(501.32233, -1336.5303, 29.32083), 4, true));
                 //Main.CreateBlip(new Main.BlipData(648, "Металлургический завод", new Vector3(1100.942, -2008.321, 47.42521), 4, true));
-               // Main.CreateBlip(new Main.BlipData(618, "Скупщик драгоценностей", new Vector3(1054.20, -1952.84, 32.09), 70, true));
 
                 UpdateOres();
 
@@ -110,7 +109,8 @@ namespace NeptuneEvo.Jobs
                 MineStockLabel = (ExtTextLabel) NAPI.TextLabel.CreateTextLabel(Main.StringToU16($"~y~Состояние хранилища:\n\nИскопаемого угля {MineStockOres[0]} ед.\nЖелезной руды {MineStockOres[1]} ед.\nСерной руды {MineStockOres[3]} ед.\nДрагоценных камней {MineStockOres[2] + MineStockOres[4] + MineStockOres[5]} ед."), new Vector3(-595.855, 2094.609, 131.4356), 5F, 0.5F, 0, new Color(255, 255, 255), true, 0);
                 PlantStockLabel = (ExtTextLabel) NAPI.TextLabel.CreateTextLabel(Main.StringToU16($"~y~Состояние хранилища:\n\nИскопаемого угля {PlantStockOres[0]} ед.\nЖелезной руды {PlantStockOres[1]} ед.\nЗолотой руды {PlantStockOres[2]} ед.\nДрагоценных камней {PlantStockOres[4] + PlantStockOres[5]} ед."), new Vector3(1066.399, -1980.138, 31.01464), 5F, 0.5F, 0, new Color(255, 255, 255), true, 0);
 
-                PedSystem.Repository.CreateQuest("s_m_y_construct_01", new Vector3(-1637.993, -800.12006, 10.246064), 57.71f, title: "~y~NPC~w~ Марк\nСкупщик руды", colShapeEnums: ColShapeEnums.OresSell);
+                PedSystem.Repository.CreateQuest("s_m_y_construct_01", new Vector3(-543.68604, 5380.4375, 70.536995), 167.02905f, title: "~y~NPC~w~ Марк\nСкупщик руды", colShapeEnums: ColShapeEnums.OresSell);
+                Main.CreateBlip(new Main.BlipData(478, "Скупщик руды", new Vector3(-543.68604, 5380.4375, 70.536995), 32, true));
 
                 CustomColShape.CreateSphereColShape(new Vector3(-595.855, 2094.609, 131.4356), 5f, 0, ColShapeEnums.GovMineStock);
             }
@@ -360,12 +360,12 @@ namespace NeptuneEvo.Jobs
                     {
                         Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.YouHaveNoPickaxe), 3000);
                         return;
-                    }*/
+                    } */
                     Trigger.StopAnimation(player);
 
                     Attachments.AddAttachment(player, Attachments.AttachmentsName.Pickaxe);
                     Trigger.PlayAnimation(player, "melee@large_wpn@streamed_core", "car_side_attack_a", 1);
-                    // Trigger.ClientEventInRange(player.Position, 250f, "PlayAnimToKey", player, false, "miner");
+                    Trigger.ClientEventInRange(player.Position, 250f, "PlayAnimToKey", player, false, "miner");
 
                     Trigger.ClientEvent(player, "mineJob_startMining");
                 }
@@ -497,9 +497,9 @@ namespace NeptuneEvo.Jobs
                 var characterData = player.GetCharacterData();
                 if (characterData == null) return;
 
-                //Trigger.StopAnimation(player);
-                //Main.OffAntiAnim(player);
-                //Attachments.RemoveAttachment(player, Attachments.AttachmentsName.Pickaxe);
+                Trigger.StopAnimation(player);
+                Main.OffAntiAnim(player);
+                Attachments.RemoveAttachment(player, Attachments.AttachmentsName.Pickaxe);
 
                 var mainPickaxe = Chars.Repository.isItem(player, "inventory", ItemId.Pickaxe3);
 
@@ -511,12 +511,12 @@ namespace NeptuneEvo.Jobs
                     return;
                 }
                 
-                /*if (DateTime.Now.Hour > 10 && DateTime.Now.Hour != 22 && DateTime.Now.Hour != 23)
+                if (DateTime.Now.Hour > 10 && DateTime.Now.Hour != 22 && DateTime.Now.Hour != 23)
                 { // todo translate
                     Notify.Send(player, NotifyType.Error, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.OgranVremyaMiner), 3000);
                     Trigger.ClientEvent(player, "mineJob_stopMining");
                     return;
-                }*/
+                }
 
                 if (mainPickaxe.Item.Data == "" || mainPickaxe.Item.Data.Length < 1)
                 {
@@ -709,7 +709,7 @@ namespace NeptuneEvo.Jobs
                     GameLog.Money($"server", $"player({characterData.UUID})", totalmoney, $"sellOre({stock_item_index},{amount})");
 
                     Notify.Send(player, NotifyType.Success, NotifyPosition.BottomCenter, LangFunc.GetText(LangType.Ru, DataName.SellResources, Wallet.Format(totalmoney)), 3000);
-                    //BattlePass.Repository.UpdateReward(player, 58);
+                    BattlePass.Repository.UpdateReward(player, 58);
 
                     PlantStockOres[stock_item_index] += amount;
                     SaveMineStocks(2);

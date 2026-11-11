@@ -13,7 +13,7 @@ gm.events.add('client.ticket.open', (json) => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 
@@ -28,7 +28,7 @@ gm.events.add('client.ticket.close', () => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 
@@ -42,7 +42,7 @@ gm.events.add('client.ticket.end', (ticketText, ticketPrice, cameraLink, isEvac)
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 
@@ -69,7 +69,7 @@ gm.events.add('client.ticket.myOpen', (json) => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 
@@ -83,7 +83,7 @@ gm.events.add('client.ticket.payment', (autoId) => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 

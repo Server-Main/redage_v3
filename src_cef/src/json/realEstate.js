@@ -9,6 +9,7 @@ export const houseType = [
     "Парковка",
     "Премиум++",
     "Люкс",
+    "Особняк",
 ]
 
 export const businessType = [

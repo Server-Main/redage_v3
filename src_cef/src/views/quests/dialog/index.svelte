@@ -241,75 +241,132 @@
 <svelte:window on:keyup={handleArrowKeys} />
 
 {#if questData && questData.data}
-<div id="questsnewdialog">
-    <div class="questsnewdialog-main">
-        <div class="questsnewdialog-slideblock" in:fly={{x: -200, duration: 1000}}>
-            <div class="questsnewdialog-title">{getActors (questData.actorName).name}</div>
+    <div id="dialog">
+        <div class="dialog">
+            <div class="dialog_name">
+                <a>{getActors (questData.actorName).name}</a>
+                <p>Местный барыжало</p>
+            </div>
             {#if typeof titleData [selectTitleData] != 'undefined'}
-                <div class="questsnewdialog-subtitle">{titleData [selectTitleData]}</div>
+                <div class="dialog_text">
+                    <a>{titleData [selectTitleData]}</a>
+                </div>
             {/if}
-            <div class="questsnewdialog-slider">
-                {#each titleData as item, index}
-                <div class="questsnewdialog-slider-element" class:active={index === selectTitleData} />
-                {/each}
-            </div>
-            <div class="questsnewdialog-slider-buttons">
-                <div class="questsnewdialog-slider-button" on:click={onLeft}>
-                    <span class="questsnewdialogicon-left"/>
-                </div>
-                <div class="questsnewdialog-slider-button" on:click={onRight}>
-                    <span class="questsnewdialogicon-right"/>
-                </div>
-            </div>
-            <span class="questsnewdialogicon-question sliderbigicon"/>
-        </div>
-        <div class="questsnewdialog-answers" in:fly={{x: 200, duration: 1000}}>
-            <div class="questsnewdialog-answer active answer-title">
-               <div class="box-column">
-                    <div class="questsnewdialog-subtitle">{titleData [titleData.length - 1]}</div>
-                    <!--<div class="questsnewdialog-condition">
-                        <span class="questsnewdialogicon-star icon-condition"/> Необходим 3 уровень
-                    </div>-->
-               </div>
-               <span class="questsnewdialogicon-warning icon-answer"/>
-            </div>
-            <!--<div class="questsnewdialog-answer">
-               <div class="box-column">
-                    <div class="questsnewdialog-subtitle">Слушай, я согласен, когда мне приступать? Предупреждаю, у меня есть ствол</div>
-                    <div class="questsnewdialog-condition">
-                        <span class="questsnewdialogicon-star icon-condition"/> Необходим 3 уровень
-                    </div>
-               </div>
-               <span class="questsnewdialogicon-warning icon-answer"/>
-            </div>
-            <div class="questsnewdialog-answer">
-                <div class="box-column">
-                     <div class="questsnewdialog-subtitle">Расскажи подробнее о деле</div>
-                </div>
-                <span class="questsnewdialogicon-loop icon-answer"/>
-             </div>
-             <div class="questsnewdialog-answer exit">
-                <div class="box-column">
-                     <div class="questsnewdialog-subtitle">Я занят</div>
-                </div>
-                <span class="questsnewdialogicon-exit icon-answer"/>
-             </div>-->
-            <div class="questsnewdialog-box-answer">
+            <div class="dialog_line"></div>
+            <div class="dialog_buttons">
                 {#each questData.data.buttons as item, index}
-
-                <div class="questsnewdialog-answer {item.style}" class:active={questData.select === index} on:click={() => clickButton(item)}>
-                    {item.name}
-                </div>
-
+                    <div class="dialog_buttons-button" class:active={questData.select === index} on:click={() => clickButton(item)}>
+                        {item.name}
+                    </div>
                 {/each}
-            </div>
-            <div class="questsnewdialog-buttonblock-exit">
-                Уйти
-                <div class="questsnewdialog-button-exit">ESC</div>
             </div>
         </div>
     </div>
-</div>
 {:else if QuestCompilityData}
     <Achivment questData={QuestCompilityData} onEnter={handleEnter} />
 {/if}
+
+<style>
+body {
+    user-select: none;
+    overflow: hidden;
+    font-family: Montserrat;
+
+    background: grey;
+}
+
+a, p, span {
+    margin: 0;
+}
+
+.dialog {
+    position: absolute;
+    bottom: 3vh;
+    left: 4vh;
+    
+    display: grid;
+    gap: 1.8vh;
+}
+
+.dialog_name a {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 3.3333vh;
+    font-weight: 700;
+}
+
+.dialog_name p {
+    color: #FFB649;
+    font-family: Montserrat;
+    font-size: 1.8519vh;
+    font-weight: 600;
+}
+
+.dialog_text {
+    height: fit-content;
+    width: fit-content;
+
+    background: #fff;
+
+    padding: 1vh;
+
+    border-radius: 0.463vh;
+
+    max-width: 81vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #010101;
+    font-family: Montserrat;
+    font-size: 1.9vh;
+    font-weight: 600;
+}
+
+.dialog_text a {
+    margin-left: .4vh;
+}
+
+.dialog_line {
+    width: 100%;
+    height: .2vh;
+
+    border-radius: 9999vh;
+    background: #58595c;
+}
+
+.dialog_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vh;
+}
+
+.dialog_buttons-button {
+    width: 39vh;
+    height: 7vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.6vh;
+    border: 0.1852vh solid #505155;
+    background: rgba(55, 56, 58, 0.15);
+    backdrop-filter: blur(0.9259vh);
+
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.4vh;
+    font-weight: 600;
+    color: #fff;
+
+    transition: .33s all;
+}
+
+.dialog_buttons-button:hover {
+    background: #375BDE;
+    border: 0.1852vh solid #375BDE;
+}
+
+</style>

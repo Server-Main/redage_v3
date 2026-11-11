@@ -966,6 +966,7 @@ namespace NeptuneEvo.Fractions
                 var characterData = player.GetCharacterData();
                 if (characterData == null) return;
                 if (characterData.ArrestTime-- <= 0) freePlayer(player, false);
+                Trigger.ClientEvent(player, "client.stop.demorgan");
             }
             catch (Exception e)
             {
@@ -993,7 +994,9 @@ namespace NeptuneEvo.Fractions
                             {
                                 characterData.DemorganInfo = new DemorganInfo();
                                 player.ResetSharedData("HideNick");
+                                Trigger.ClientEvent(player, "client.stop.demorgan");
                                 Trigger.ClientEvent(player, "client.demorgan", false);
+                                Trigger.ClientEvent(player, "client.stop.demorgan");
                                 player.SetDefaultSkin();
                                 if (characterData.Unmute <= 0)
                                 {
@@ -1006,17 +1009,30 @@ namespace NeptuneEvo.Fractions
                             {
                                 SeatingArrangements.LandingEnd(player);
                             }
-                            
-                            if (characterData.ArrestType == 1) player.Position = Sheriff.FirstExitPrisonPosition;
-                            else if (characterData.ArrestType == 2) player.Position = Sheriff.SecondExitPrisonPosition;
-                            else player.Position = Police.ExitPrisonPosition;
-                            
+                            Trigger.ClientEvent(player, "client.stop.demorgan");
+                            if (characterData.ArrestType == 1)
+                            {
+                                player.Position = new Vector3(-198.3876, -791.96643, 30.454018);
+                                Trigger.ClientEvent(player, "client.stop.demorgan");
+                            }
+                            else if (characterData.ArrestType == 2)
+                            {
+                                player.Position = new Vector3(-198.3876, -791.96643, 30.454018);
+                                Trigger.ClientEvent(player, "client.stop.demorgan");
+                            }
+                            else
+                            {
+                                player.Position = new Vector3(-198.3876, -791.96643, 30.454018);
+                                Trigger.ClientEvent(player, "client.stop.demorgan");
+                            }
+
                             characterData.ArrestTime = 0;
                             characterData.ArrestType = 0;
                             characterData.DemorganTime = 0;
                             Police.setPlayerWantedLevel(player, null);
                             Trigger.Dimension(player);
                             Notify.Send(player, NotifyType.Warning, NotifyPosition.BottomCenter, "Вы были освобождены из тюрьмы", 3000);
+                            Trigger.ClientEvent(player, "client.stop.demorgan");
                         }
                         catch (Exception e)
                         {

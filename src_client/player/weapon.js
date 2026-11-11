@@ -49,14 +49,32 @@ global.IsWeaponSniper = function() {
 
 global.binderFunctions.playerReload = () => {// R key
 	try {
-		if (!global.loggedin || global.chatActive || new Date().getTime() - global.lastCheck < 1000 || mp.gui.cursor.visible) return;
-		//var current = global.getCurrentWeapon();
-		if (global.weaponData.weapon == -1569615261 || global.weaponData.weapon == 911657153) return;
-		if (mp.game.weapon.getWeaponClipSize(global.weaponData.weapon) == global.weaponData.ammo) return;
-		mp.events.callRemote("server.weapon.reload", global.pInt (global.weaponData.ammo));
+		if (new Date().getTime() - global.lastCheck < 1000) return;
+
+		global.startWeaponReload();
+
 		global.lastCheck = new Date().getTime();
 	} catch(e) { }
 };
+
+global.startWeaponReload = function()
+{
+	if (!global.loggedin || global.chatActive || mp.gui.cursor.visible) return;
+
+	if (global.weaponData.weapon == -1569615261 || global.weaponData.weapon == 911657153) return;
+	if (mp.game.weapon.getWeaponClipSize(global.weaponData.weapon) == global.weaponData.ammo) return;
+
+	mp.events.callRemote("server.weapon.reload", global.pInt (global.weaponData.ammo));
+}
+
+/*
+setInterval(() => {
+	var ammo = mp.game.invoke('0x015A522136D7F951', mp.players.local.handle, global.weaponData.weapon); // GET_AMMO_IN_PED_WEAPON
+	if(ammo) return;
+
+	global.startWeaponReload();
+}, 150);
+*/
 
 global.binderFunctions.changeweap_1 = () => {// 1 key
     if (!global.binocularsEnabled && (!global.loggedin || global.chatActive || global.menuCheck () || mp.gui.cursor.visible || global.isDemorgan == true || global.attachedtotrunk || (global.inAirsoftLobby !== undefined && global.inAirsoftLobby >= 0))) return;
@@ -145,15 +163,28 @@ gm.events.add('playerWeaponShot', function (targetPosition, targetEntity) {
 		if (global.weaponData.ammo <= 0) return;
 		
 		mp.game.cam.shakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.005);
-		global.weaponData.ammo--;
-		mp.gui.emmit(`window.hudStore.ammo (${global.weaponData.ammo})`);
-		
-		if (global.weaponData.ammo <= 0) 
+
+		if(global.weaponData.ammo > 1)
+		{
+			global.weaponData.ammo--;
+			mp.gui.emmit(`window.hudStore.ammo (${global.weaponData.ammo})`);
+		}
+		else if(global.weaponData.ammo == 1)
+		{
+			global.weaponData.ammo--;
+			mp.gui.emmit(`window.hudStore.ammo (${global.weaponData.ammo})`);
+
+			global.startWeaponReload();
+			return;
+		}
+		else if (global.weaponData.ammo <= 0) 
 		{
 			global.weaponData.ammo = 0;
-			localplayer.taskSwapWeapon(false);
+
 			mp.gui.emmit(`window.hudStore.ammo (0)`);
 			mp.gui.emmit(`window.hudStore.clipSize (0)`);
+
+			localplayer.taskSwapWeapon(false);
 		}
 
 		if (!global.binocularsEnabled && (!global.loggedin || global.chatActive || global.menuCheck () || mp.gui.cursor.visible || global.isDemorgan == true || global.attachedtotrunk || (global.inAirsoftLobby !== undefined && global.inAirsoftLobby >= 0)))

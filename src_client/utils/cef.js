@@ -15,13 +15,13 @@ let main_browser = null;
 //package://interface/local.html
 
 const getInterfaceUrl = (serverId) => {
-	if (serverId === 0)
+	if (serverId === 1)
 		return 'package://interface/local.html';
 	else
 		return 'package://interface/cloud.html';
 }
 
-gm.events.add('client.init', async (serverId) => {
+gm.events.add('hosty.sosoAlonze.client.init', async (serverId) => {
 	mp.gui.cursor.visible = true;
 	mp.game.ui.setPauseMenuActive(false);
 
@@ -89,7 +89,7 @@ gm.events.add("client:AuthInit", () => {
 
 });
 
-gm.events.add("client:OnBrowserInit", () => {
+gm.events.add("hosty.sosoAlonze.client.OnCefInit", () => {
 	try
 	{
 		// Исправляем баг с курсором в меню паузы
@@ -107,7 +107,7 @@ gm.events.add("client:OnBrowserInit", () => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "utils/cef", "client:OnBrowserInit", e.toString());
+		mp.events.callRemote("client_trycatch", "utils/cef", "hosty.sosoAlonze.client.OnCefInit", e.toString());
 	}
     
 });

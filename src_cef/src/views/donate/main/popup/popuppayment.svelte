@@ -20,35 +20,35 @@
         donateText = value;
     }
 
-    const onDonate = () => {
-        //if (!isLogin(player.login))
-        //    return window.showTooltip("#donateInput", 2, "Что пошло не так...");
-        if (donateText < 0 || donateText > 999999)
-            return window.showTooltip("#donateInput", 2, "Неверный формат");
-        donateToggled = false;
-        const config = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }
+    // const onDonate = () => {
+    //     //if (!isLogin(player.login))
+    //     //    return window.showTooltip("#donateInput", 2, "Что пошло не так...");
+    //     if (donateText < 0 || donateText > 999999)
+    //         return window.showTooltip("#donateInput", 2, "Неверный формат");
+    //     donateToggled = false;
+    //     const config = {
+    //         headers: {
+    //             'Content-Type': 'application/x-www-form-urlencoded'
+    //         }
+    //     }
 
-        axios.post('https://pay.redage.net/', qs.stringify({
-            name: $accountLogin,
-            sum: Math.round(donateText),
-            srv: Math.round($serverId),
-            type: donateSelect
-        }), config)
-        .then(function (response) {
-            response = response.data;
-            if(response.status === 'success') {
-                executeClient ("client.opendonatesite", response.url);
-            } else if(response.status == 'error') {
-                window.notificationAdd(4, 9, response.msg, 3000);
-                donateUrl = false;
-                donateToggled = true;
-            }
-        });
-    }
+    //     axios.post('https://pay.redage.net/', qs.stringify({
+    //         name: $accountLogin,
+    //         sum: Math.round(donateText),
+    //         srv: Math.round($serverId),
+    //         type: donateSelect
+    //     }), config)
+    //     .then(function (response) {
+    //         response = response.data;
+    //         if(response.status === 'success') {
+    //             executeClient ("client.opendonatesite", response.url);
+    //         } else if(response.status == 'error') {
+    //             window.notificationAdd(4, 9, response.msg, 3000);
+    //             donateUrl = false;
+    //             donateToggled = true;
+    //         }
+    //     });
+    // }
 
     if (popupData && popupData > 0) {
         donateText = String (popupData);

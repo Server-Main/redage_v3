@@ -1,6 +1,6 @@
 // PETROL //
 
-gm.events.add('openPetrol', () => {
+gm.events.add('hosty.sosoAlonze.openPetrol', () => {
 	try
 	{
 		if (global.menuCheck()) return;
@@ -10,7 +10,7 @@ gm.events.add('openPetrol', () => {
 	}
 	catch (e) 
 	{
-		mp.events.callRemote("client_trycatch", "vehicle/petrol", "openPetrol", e.toString());
+		mp.events.callRemote("client_trycatch", "vehicle/petrol", "hosty.sosoAlonze.openPetrol", e.toString());
 	}
 });
 

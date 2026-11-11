@@ -154,7 +154,7 @@
             @include fluid("width", 400)
             //@include fluid("height", 630)
             height: fit-content
-            background: #121317
+            background: #fff
             @include fluid("border", 3, "solid #474A56")
             box-sizing: border-box
             @include fluid("border-radius", 6)
@@ -167,7 +167,7 @@
             @include fluid("padding-bottom", 23)
 
             .arenda-customize__title
-                @include fluid("font-size", 26)
+                @include fluid("font-size", 21)
                 @include fluid("line-height", 35)
                 @include fluid("margin-bottom", 6)
             
@@ -175,7 +175,7 @@
                 @include fluid("font-size", 20)
                 @include fluid("line-height", 27)
                 @include fluid("margin-bottom", 13)
-                color: #D33437
+                color: #000
 
             .arenda-customize__img
                 @include fluid("height", 223)
@@ -203,11 +203,11 @@
                     background: #24262D
                     
                 .rangeslider__fill
-                    background: #D33437
+                    background: #325DFD
 
                 .rangeslider__handle 
                     border: none
-                    background: #D33437
+                    background: #325DFD
                     @include fluid("top", 1)
                     @include fluid("width", 10)
                     @include fluid("height", 10)
@@ -222,7 +222,7 @@
                 @include fluid("margin-bottom", 17)
                 
                 .arenda-customize_gray
-                    color: #3F424B
+                    color: #000
             .adrenda-customize__radio-buttons
                 width: 100%
                 display: flex
@@ -236,6 +236,7 @@
                     border-radius: 50%
                     cursor: pointer
                     box-sizing: border-box
+                    @include fluid("border", 1, "solid #000")
 
                     &.active
                         @include fluid("border", 2, "solid rgba(255,255,255,0.6)")
@@ -249,20 +250,28 @@
                 display: flex
                 align-items: center
                 justify-content: center
-                @include fluid("font-size", 20)
+                background: #33D8DE
+                @include fluid("font-size", 17)
                 @include fluid("line-height", 27)
                 cursor: pointer
                 transition: all 0.4s ease
                 @include fluid("margin-bottom", 14)
                 &:hover
                     transition: all 0.4s ease
-                    background: #3A3E4E
                 
                 .arenda-customize__money
-                    color: #34D387
+                    color: #C1FF33
                     @include fluid("margin-left", 5)
             
             .arenda-customize__exit
-                @include fluid("font-size", 14)
+                @include fluid("width", 250)
+                @include fluid("height", 50)
+                background: #3A73B8
+                display: flex
+                align-items: center
+                justify-content: center
+                @include fluid("border-radius", 6)
+                @include fluid("font-size", 18)
                 @include fluid("line-height", 19)
+                @include fluid("border", 1, "solid #3A3E4E")
                 cursor: pointer

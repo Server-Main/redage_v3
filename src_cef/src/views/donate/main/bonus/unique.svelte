@@ -7,8 +7,8 @@
 
 
     let ItemList = {
-        packages: false,
-        cases: false
+        packages: true,
+        cases: true
     };
 
 
@@ -55,31 +55,4 @@
 </script>
 
 {#if ItemList.cases && ItemList.packages}
-<div class="main-menu__header-element" class:isBuy={isBuy}>
-    <div class="main-menu__star-block">
-        {#if $accountUnique.split("_")[0] === "cases"}
-        <div class="star-img" style="background-image: url({document.cloud + `img/roulette/${selectListId.image}.png`})"/>
-        {:else}
-        <div class="star-img" style="background-image: url({document.cloud + `donate/personal/${selectListId.id + 1}.png`})"/>
-        {/if}
-    </div>
-    <div class="main-menu__element-info">
-        <div class="main-menu__timer-box">
-            <div class="main-menu__timer box-center">{translateText('donate', 'Предложение дня')} (-30%)</div>
-        </div>
-        <div class="main-menu__title">{selectListId.name}</div>
-        {#if selectListId.list}
-        <div class="main-menu__paragraph">
-        {#each selectListId.list as text, index}
-            <b>- </b>{text}<br />
-        {/each} 
-        </div>
-        {:else if selectListId.desc}
-        <div class="main-menu__paragraph">{selectListId.desc}</div>
-        {/if}
-        <div class="newdonate__button_small" on:click={onSelectMenu}>
-            <div class="newdonate__button-text">{translateText('donate', 'Купить за')} {format("money", Math.round (selectListId.price * 0.7))} RB</div>
-        </div>
-    </div>
-</div>
 {/if}

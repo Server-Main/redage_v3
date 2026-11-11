@@ -1,0 +1,56 @@
+@import url('https://fonts.cdnfonts.com/css/inter');
+
+body {
+    user-select: none;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.demorgan {
+    position: absolute;
+    left: 3vh;
+    bottom: 21vh;
+    padding-top: .5vh;
+    padding-bottom: 1.7vh;
+    padding-left: 1vh;
+    /* padding-right: 7vh; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.3vh;
+    background: rgba(209, 8, 5, 0.877);
+    border-radius: 0.8333vh;
+    width: 39vh;
+    height: fit-content;
+}
+
+.demorgan h1 {
+    font-size: 1.4vh;
+    font-weight: 400;
+    letter-spacing: 0.0079vh;
+    height: 0;
+}
+
+.demorgan_inform {
+    height: fit-content;
+}
+
+.demorgan_inform_text {
+    color: #BDBDBD;
+    font-size: 1.4vh;
+    font-weight: 400;
+    letter-spacing: 0.0079vh;
+}
+
+
+.demorgan_inform_text span {
+    height: 0;
+}
+
+.demorgan p {
+    margin-top: -.7vh;
+    height: 0;
+    font-size: 1.4vh;
+    font-weight: 400;
+    letter-spacing: 0.0079vh;
+}

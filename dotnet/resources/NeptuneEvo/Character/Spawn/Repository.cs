@@ -44,12 +44,13 @@ namespace NeptuneEvo.Character.Spawn
 
                 Fractions.GangsCapture.LoadBlips(player);
 
-                if (Main.Media.Contains(characterData.UUID)) 
+                if (Main.Media.Contains(characterData.UUID))
                     player.SetSharedData("IS_MEDIA", true);
-                
+
                 NeptuneEvo.Events.Festive.InitPlayerData(player);
 
-                //
+
+		player.SetSharedData("player.uuid", characterData.UUID);
 
                 if (characterData.LVL == 0) 
                     Trigger.DamageDisable(player, true);

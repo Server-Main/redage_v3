@@ -1179,7 +1179,7 @@ namespace NeptuneEvo.Core
 
                             playerToKick.SetSharedData("mafiaGameRole", 0);
 
-                            NAPI.Entity.SetEntityPosition(playerToKick, new Vector3(-478.86032, -395.27307, 34.027653));
+                            NAPI.Entity.SetEntityPosition(playerToKick, new Vector3(-251.2867, -2031.6125, 29.94202));
                             Trigger.Dimension(playerToKick);
                             Trigger.ClientEvent(playerToKick, "freeze", false);
                             Trigger.ClientEvent(playerToKick, "mafia_clearGameInfo");
@@ -1369,7 +1369,7 @@ namespace NeptuneEvo.Core
 
                                 playerToKick.SetSharedData("mafiaGameRole", 0);
 
-                                NAPI.Entity.SetEntityPosition(playerToKick, new Vector3(-478.86032, -395.27307, 34.027653));
+                                NAPI.Entity.SetEntityPosition(playerToKick, new Vector3(-251.2867, -2031.6125, 29.94202));
                                 Trigger.Dimension(playerToKick);
                                 Trigger.ClientEvent(playerToKick, "freeze", false);
                                 Trigger.ClientEvent(playerToKick, "mafia_clearGameInfo");
@@ -1487,7 +1487,7 @@ namespace NeptuneEvo.Core
 
                             MafiaPlayer.SetSharedData("mafiaGameRole", 0);
                             
-                            NAPI.Entity.SetEntityPosition(MafiaPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                            NAPI.Entity.SetEntityPosition(MafiaPlayer, new Vector3(-248.10521, -2031.04, 29.94603));
                             Trigger.ClientEvent(MafiaPlayer, "setTimeCmd", -1, -1, -1);
                             Animations.AnimationPlay(MafiaPlayer, "-1");
                             Trigger.Dimension(MafiaPlayer);
@@ -1531,7 +1531,7 @@ namespace NeptuneEvo.Core
                         {
                             player.SetSharedData("mafiaGameRole", 0);
 
-                            NAPI.Entity.SetEntityPosition(player, new Vector3(-478.86032, -395.27307, 34.027653));
+                            NAPI.Entity.SetEntityPosition(player, new Vector3(-248.10521, -2031.04, 29.94603));
                             Trigger.Dimension(player);
                             Trigger.ClientEvent(player, "freeze", false);
                             Trigger.ClientEvent(player, "mafia_clearGameInfo");
@@ -1560,7 +1560,7 @@ namespace NeptuneEvo.Core
 
                                         MafiaPlayer.SetSharedData("mafiaGameRole", 0);
 
-                                        NAPI.Entity.SetEntityPosition(MafiaPlayer, new Vector3(-478.86032, -395.27307, 34.027653));
+                                        NAPI.Entity.SetEntityPosition(MafiaPlayer, new Vector3(-248.10521, -2031.04, 29.94603));
                                         Trigger.Dimension(MafiaPlayer);
                                         Trigger.ClientEvent(MafiaPlayer, "freeze", false);
                                         Trigger.ClientEvent(MafiaPlayer, "mafia_clearGameInfo");
@@ -1677,7 +1677,7 @@ namespace NeptuneEvo.Core
                 int index = sessionData.InMafiaLobby;
                 if (index >= 0 && LobbyList.ContainsKey(index) && player.HasSharedData("mafiaGameRole") && player.GetSharedData<int>("mafiaGameRole") >= 1)
                 {
-                    NAPI.Entity.SetEntityPosition(player, new Vector3(-478.86032, -395.27307, 34.027653));
+                    NAPI.Entity.SetEntityPosition(player, new Vector3(-248.10521, -2031.04, 29.94603));
                     Trigger.Dimension(player);
                     
                     if (LobbyList[index].MafiaPlayers.Contains(player))

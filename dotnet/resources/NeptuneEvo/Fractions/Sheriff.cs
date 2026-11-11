@@ -39,7 +39,7 @@ namespace NeptuneEvo.Fractions
         public static Vector3 FirstExitPrisonPosition = new Vector3(1856.585, 3705.3735, 34.26975); 
         public static Vector3 SecondExitPrisonPosition = new Vector3(-428.31613, 5988.3354, 31.490107); 
          
-        public static Vector3 FirstPosition = new Vector3(1846.0203, 3692.7175, 34.26693); 
+        public static Vector3 FirstPosition = new Vector3(-445.4818, 6014.4785, 31.716375); 
         public static Vector3 CloakroomPosition = new Vector3(1850.7942, 3693.731, 34.26696); 
         private static Vector3 CloakroomSpecialPosition = new Vector3(1848.5563, 3695.9812, 34.26695); 
         private static Vector3 VehicleBoostPosition = new Vector3(1866.0756, 3698.5723, 33.59682); 
@@ -59,8 +59,8 @@ namespace NeptuneEvo.Fractions
         { 
             try 
             { 
-                Main.CreateBlip(new Main.BlipData(526, "Sheriff", FirstPosition, 38, true)); 
-                Main.CreateBlip(new Main.BlipData(526, "Sheriff", SecondPosition, 38, true)); 
+                Main.CreateBlip(new Main.BlipData(526, "LSSD", FirstPosition, 38, true)); 
+                //Main.CreateBlip(new Main.BlipData(526, "Sheriff", SecondPosition, 38, true)); 
  
                 CustomColShape.CreateCylinderColShape(FirstArrestPosition, 6, 3, 0, ColShapeEnums.FractionSheriffArrest, 1); 
                 CustomColShape.CreateCylinderColShape(SecondArrestPosition, 7, 3, 0, ColShapeEnums.FractionSheriffArrest, 2); 

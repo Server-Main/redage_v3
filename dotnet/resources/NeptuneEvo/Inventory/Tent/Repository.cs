@@ -95,7 +95,7 @@ namespace NeptuneEvo.Inventory.Tent
             Main.CreateBlip(new Main.BlipData(565, LangFunc.GetText(LangType.Ru, DataName.GlavRinok), TentList.PositionGps[0], 36, true));
             CustomColShape.CreateCylinderColShape(TentList.PositionGps[0], 90, 30, 0, colShapeEnums: ColShapeEnums.SafeZoneTent);
 
-            Main.CreateBlip(new Main.BlipData(484, LangFunc.GetText(LangType.Ru, DataName.CherRinok), TentList.PositionGps[1], 54, true));
+            Main.CreateBlip(new Main.BlipData(844, "Черный рынок", new Vector3(2451.9685, 4968.389, 46.57157), 38, true));
             CustomColShape.CreateCylinderColShape(TentList.PositionGps[1], 90, 30, 0, colShapeEnums: ColShapeEnums.SafeZoneTent);
          
             Log.Write($"Load Tent {index}");

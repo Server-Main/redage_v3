@@ -13,21 +13,21 @@
 	let selectedStation = $radioStation;
 	let radioStationsUrls = 
 	[
-		"https://radio.redage.net:8000/radio.mp3", // Общий
-		"https://radio.redage.net:8010/radio.mp3", // Рэп/Хип-хоп
-		"https://radio.redage.net:8040/radio.mp3", // Рок
-		"https://radio.redage.net:8050/radio.mp3", // Фонк
-		"https://radio.redage.net:8020/radio.mp3", // Поп
-		"https://radio.redage.net:8060/radio.mp3"  // Чил
+		"https://radio.virtual.net/:8000/radio.mp3", // Общий
+		"https://radio.virtual.net/:8010/radio.mp3", // Рэп/Хип-хоп
+		"https://radio.virtual.net/:8040/radio.mp3", // Рок
+		"https://radio.virtual.net/:8050/radio.mp3", // Фонк
+		"https://radio.virtual.net/:8020/radio.mp3", // Поп
+		"https://radio.virtual.net/:8060/radio.mp3"  // Чил
 	];
 	let radioStationsNames = 
 	[
-		"RedAge",
-		"RedAge Rap",
-		"RedAge Rock",
-		"RedAge Phonk",
-		"RedAge Pop",
-		"RedAge Chill"
+		"Virtual",
+		"Virtual Rap",
+		"Virtual Rock",
+		"Virtual Phonk",
+		"Virtual Pop",
+		"Virtual Chill"
 	];
 	
 	const enableStation = () => 

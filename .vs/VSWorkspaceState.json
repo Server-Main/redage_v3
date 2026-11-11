@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\dotnet",
+    "\\dotnet\\resources",
+    "\\dotnet\\resources\\Localization",
+    "\\dotnet\\resources\\Localization\\Lang",
+    "\\dotnet\\resources\\NeptuneEvo",
+    "\\dotnet\\resources\\NeptuneEvo\\Accounts",
+    "\\dotnet\\resources\\NeptuneEvo\\Accounts\\Recovery",
+    "\\dotnet\\resources\\NeptuneEvo\\Chars",
+    "\\dotnet\\resources\\NeptuneEvo\\Core"
+  ],
+  "SelectedNode": "\\dotnet\\resources\\NeptuneEvo\\Chars\\Repository.cs",
+  "PreviewInSolutionExplorer": false
+}

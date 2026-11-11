@@ -1,31 +1,17 @@
-[![RedAge Role Play](readme.png)](https://ragemp.pro/)
-
 # redage_v3 (NeptuneEvo)
+RedAge Role Play build 3.0 is gamemode for RAGE:MP (GTA 5).
 
-RedAge Role Play build 3.0 — gamemode for **RAGE:MP (GTA V)**.
+https://ragemp.pro/ - Everything for RageMP GTA 5, ready-made servers, articles, mods, order table, etc.
+- Ready bases
+- Unique scripts
+- Ready sites
+- Section "Freelance" (services, search for programmers and customers)
+- Video tutorials according to the server
+- and etc.
 
-## 🚀 Recommended Hosting
+Discord server - https://discord.gg/edAJjWN
 
-For stable operation of **RedAge / NeptuneEvo servers** we recommend our partner hosting.
 
-⚡ Optimized for **RAGE:MP**  
-⚡ NVMe storage & low latency network  
-⚡ Used for community infrastructure  
-
-**Forum users receive a discount when topping up balance.**
-
-Promocode: https://ragemp.pro/threads/2711/#post-20793  
-More info: https://ragemp.pro/threads/2711
-
----
-
-## Community
-
-Website: https://ragemp.pro  
-Discord: https://discord.gg/edAJjWN
-
-## Installation (Video)
-
-https://www.youtube.com/watch?v=LzkXVzAZVKo
-
-[![Installation Video](https://i3.ytimg.com/vi/LzkXVzAZVKo/maxresdefault.jpg)](https://www.youtube.com/watch?v=LzkXVzAZVKo)
+## How to install (Video tutorial)
+Link - https://www.youtube.com/watch?v=LzkXVzAZVKo
+[![](https://i3.ytimg.com/vi/LzkXVzAZVKo/maxresdefault.jpg)](https://www.youtube.com/watch?v=LzkXVzAZVKo)

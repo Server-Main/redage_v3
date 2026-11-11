@@ -100,7 +100,6 @@
             }, 0)
         });
     });
-
     const GetSpec = (num, max) => {
         
         let step;
@@ -201,15 +200,17 @@
                 {translateText('vehicle', 'Выйти')}
             </div>
         </div>
+       <div style="margin-left: 20vw;margin-top: -4.5vw" class="box-button">
+            <div class="button" on:click={() => executeClient("client.custom.repair")}>
+                Починиться
+            </div>
+        </div>
 
     </div>
     <div class="centerSide">
         <div class="buttonInfo">
             <div class="btn">ESC</div>
             <div class="text">{translateText('vehicle', 'Выйти/Назад')}</div>
-        </div>
-        <div class="buttonInfo">
-            <div class="btn"><i class="range"/></div>
         </div>
     </div>
     <div class="rightSide">

@@ -100,11 +100,11 @@ namespace NeptuneEvo.Jobs
                 //Main.CreateBlip(new Main.BlipData(569, LangFunc.GetText(LangType.Ru, DataName.SkladLesa), new Vector3(-540.13434, 5380.038, 70.48429), 4, true));
 /*                 Main.CreateBlip(new Main.BlipData(480, LangFunc.GetText(LangType.Ru, DataName.SkladDereva), new Vector3(-575.54004, 5350.516, 70.214424), 70, true));
  */
-                Main.CreateBlip(new Main.BlipData(119, LangFunc.GetText(LangType.Ru, DataName.OhotnMagaz), new Vector3(-758.8592, -618.1002, 30.2762), 21, true));
+                Main.CreateBlip(new Main.BlipData(119, LangFunc.GetText(LangType.Ru, DataName.OhotnMagaz), new Vector3(200.91302, 2441.9019, 60.454025), 21, true));
 
                 TreeStockLabel = (ExtTextLabel) NAPI.TextLabel.CreateTextLabel(Main.StringToU16(LangFunc.GetText(LangType.Ru, DataName.Hranilishe, TreeStock[0], TreeStock[1], TreeStock[2])), new Vector3(-540.13434, 5380.038, 70.48429), 5F, 0.5F, 0, new Color(255, 255, 255), true, 0);
 
-                PedSystem.Repository.CreateQuest("s_m_y_construct_01", new Vector3(-758.8592, -618.1002, 30.2762), -90.1f, title: LangFunc.GetText(LangType.Ru, DataName.BearGrylls), colShapeEnums: ColShapeEnums.HuntingShop);
+                PedSystem.Repository.CreateQuest("s_m_y_construct_01", new Vector3(200.91302, 2441.9019, 60.454025), -90.1f, title: LangFunc.GetText(LangType.Ru, DataName.BearGrylls), colShapeEnums: ColShapeEnums.HuntingShop);
                 PedSystem.Repository.CreateQuest("s_m_y_construct_01", new Vector3(-1640.2056, -802.55475, 10.231294), 58.71f, title: LangFunc.GetText(LangType.Ru, DataName.DmitrySkupshik), colShapeEnums: ColShapeEnums.TreesSell);
             }
             catch (Exception e)

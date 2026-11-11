@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.lift_main {
+  width: 495px;
+  height: 237px;
+  opacity: 1;
+  position: relative;
+  top: 39%;
+  left: 37%;
+  overflow: hidden;
+}
+
+.lift_main_background {
+  width: 495px;
+  height: 237px;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: url("./images/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.lift_main_stop {
+  width: 302px;
+  height: 102px;
+  flex-shrink: 0;
+  background: url("./images/stop.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 125px;
+  left: -14px;
+  overflow: hidden;
+}
+
+
+.lift_main_start {
+  width: 302px;
+  height: 102px;
+  flex-shrink: 0;
+  background: url("./images/start.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 125px;
+  left: 208px;
+  overflow: hidden;
+}
+
+.lift_main_poloska {
+  border-radius: 5px;
+  background: var(--poloskagray, #2B2C2F);
+  opacity: 1;
+  position: absolute;
+  top: 143px;
+  left: 247px;
+  width: 1px;
+  height: 50px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.lift_main_buttons {
+  width: 137px;
+  height: 50px;
+  opacity: 1;
+  position: absolute;
+  top: 39px;
+  left: 37px;
+  overflow: hidden;
+}
+
+.lift_main_buttons_up {
+  width: 67px;
+  height: 59px;
+  flex-shrink: 0;
+  background: url("./images/up.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  overflow: hidden;
+}
+
+.lift_main_buttons_down {
+  width: 67px;
+  height: 59px;
+  flex-shrink: 0;
+  background: url("./images/down.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 43px;
+  overflow: hidden;
+}
+
+.lift_main_text_elevator {
+  width: 64px;
+  color: #FFF;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 53px;
+  left: 160px;
+  opacity: 1;
+  text-align: left;
+}
+
+
+.lift_main_text_floor {
+  display: flex;
+  width: 127px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  top: -82%;
+  left: 66%;
+  color: #FFF;
+  text-align: center;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  opacity: 1;
+}
